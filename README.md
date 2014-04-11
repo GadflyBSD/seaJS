@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #git@osc
 #前言
 JavsScript模块化已成为发展趋势，由阿里、腾讯等公司共同维护的Sea.js，无疑是前端JS模块化方面最有力的支持者，其发展势头强劲，越来越多的网站正在受益其中。将常用的JS功能整理成库，于是就有了SeaJS组件库。
@@ -7,3 +8,6 @@ JavsScript模块化已成为发展趋势，由阿里、腾讯等公司共同维护的Sea.js，无疑是前端JS
 
 **fdsfsdf**
 > sdfsdfsdf
+=======
+#seaJS
+>>>>>>> fb63f29dba6236725bee2fd14e37ca5c33e84172
