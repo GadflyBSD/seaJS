@@ -28,7 +28,6 @@ define(function(require, exports, module){
 			Collapse: function(options){
 				var $this = $(this), config = {addActive:true, active: 'li', parent: document, speed: 'slow', easing: 'swing', css: 'sea.css'};
 				$.seaBase.run(config, options, function(config){
-					console.log(config);
 					var activeID = $('.sea-collapse-in', $(config.parent)).attr('id');
 					var current=(config.active == 'this')?$('[href=#'+activeID+']'):$('[href=#'+activeID+']').closest(config.active);
 					if(config.addActive) current.addClass('active').find('a').addClass('active');
