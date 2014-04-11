@@ -1,0 +1,248 @@
+<style type="text/css" media="screen">
+	[data-sea=CarouFredSel] {
+		margin: 20px 0;
+		width: 100%;
+		padding: 0;
+	}
+	[data-sea=CarouFredSel] img {
+		border: 1px solid #ccc;
+		background-color: white;
+		padding: 9px;
+		margin: 7px;
+		cursor: pointer;
+	}
+</style>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">jQuery CarouFredSel旋转轮播式幻灯片效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>关于</h3>
+		<p>基于jQuery旋转轮播式CarouFredSel插件制作的焦点幻灯片特效，支持无限循环播放，carouFredSel是一个内容无限循环播放容器jQuery，可以展示任何类型的HTML元素。支持水平和垂直两个方向。项目的高度和宽度可以不相同。可以动态从容器中删除/添加项目，可以利用向前/向后按纽播放项目或设置成自动播放。<br>
+			插件兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。<br>
+			插件自带有39种样式可以使用。</p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="seaseaseaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。通过 <code>sea-options</code>设置可选参数<br>
+			以下是可选参数：
+		<ul>
+			<li><code>target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
+			<li><code>language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
+			<li><code>style</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaseaseaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>showNum</code> 属性指定是否显示行号。默认是true；</li>
+			<li><code>collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，showMsg、hideMsg属性有效；</li>
+			<li><code>showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当collapse为true时有效，默认是“展开示例代码”；</li>
+			<li><code>hideMsg</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当collapse为true时有效，默认是“隐藏示例代码”。</li>
+		</ul>
+		</p>
+		<div class="bs-example">
+			<div class="row">
+				<div class="col-sm-12">
+					<h4><strong>横排样式（点击展示使用Colorbox插件）</strong></h4>
+					<ul data-sea="seaElastislide" data-option="style:'horizontal'">
+						<li data-preview="images/large/1.jpg"><a href="#"><img src="images/small/1.jpg" alt="image01" /></a></li>
+						<li data-preview="images/large/2.jpg"><a href="#"><img src="images/small/2.jpg" alt="image02" /></a></li>
+						<li data-preview="images/large/3.jpg"><a href="#"><img src="images/small/3.jpg" alt="image03" /></a></li>
+						<li data-preview="images/large/4.jpg"><a href="#"><img src="images/small/4.jpg" alt="image04" /></a></li>
+						<li data-preview="images/large/5.jpg"><a href="#"><img src="images/small/5.jpg" alt="image05" /></a></li>
+						<li data-preview="images/large/6.jpg"><a href="#"><img src="images/small/6.jpg" alt="image06" /></a></li>
+						<li data-preview="images/large/7.jpg"><a href="#"><img src="images/small/7.jpg" alt="image07" /></a></li>
+						<li data-preview="images/large/8.jpg"><a href="#"><img src="images/small/8.jpg" alt="image08" /></a></li>
+						<li data-preview="images/large/9.jpg"><a href="#"><img src="images/small/9.jpg" alt="image09" /></a></li>
+						<li data-preview="images/large/10.jpg"><a href="#"><img src="images/small/10.jpg" alt="image10" /></a></li>
+						<li data-preview="images/large/11.jpg"><a href="#"><img src="images/small/11.jpg" alt="image11" /></a></li>
+						<li data-preview="images/large/12.jpg"><a href="#"><img src="images/small/12.jpg" alt="image12" /></a></li>
+						<li data-preview="images/large/13.jpg"><a href="#"><img src="images/small/13.jpg" alt="image13" /></a></li>
+						<li data-preview="images/large/14.jpg"><a href="#"><img src="images/small/14.jpg" alt="image14" /></a></li>
+						<li data-preview="images/large/15.jpg"><a href="#"><img src="images/small/15.jpg" alt="image15" /></a></li>
+						<li data-preview="images/large/16.jpg"><a href="#"><img src="images/small/16.jpg" alt="image16" /></a></li>
+						<li data-preview="images/large/17.jpg"><a href="#"><img src="images/small/17.jpg" alt="image17" /></a></li>
+						<li data-preview="images/large/18.jpg"><a href="#"><img src="images/small/18.jpg" alt="image18" /></a></li>
+						<li data-preview="images/large/19.jpg"><a href="#"><img src="images/small/19.jpg" alt="image19" /></a></li>
+						<li data-preview="images/large/20.jpg"><a href="#"><img src="images/small/20.jpg" alt="image20" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+				<div class="col-sm-5">
+					<h4><strong>竖排样式（点击展示使用Colorbox插件）</strong></h4>
+					<ul data-sea="seaElastislide" sea-options="minItems:2,style:'vertical'">
+						<li data-preview="images/large/1.jpg"><a href="#"><img src="images/small/1.jpg" alt="image01" /></a></li>
+						<li data-preview="images/large/2.jpg"><a href="#"><img src="images/small/2.jpg" alt="image02" /></a></li>
+						<li data-preview="images/large/3.jpg"><a href="#"><img src="images/small/3.jpg" alt="image03" /></a></li>
+						<li data-preview="images/large/4.jpg"><a href="#"><img src="images/small/4.jpg" alt="image04" /></a></li>
+						<li data-preview="images/large/5.jpg"><a href="#"><img src="images/small/5.jpg" alt="image05" /></a></li>
+						<li data-preview="images/large/6.jpg"><a href="#"><img src="images/small/6.jpg" alt="image06" /></a></li>
+						<li data-preview="images/large/7.jpg"><a href="#"><img src="images/small/7.jpg" alt="image07" /></a></li>
+						<li data-preview="images/large/8.jpg"><a href="#"><img src="images/small/8.jpg" alt="image08" /></a></li>
+						<li data-preview="images/large/9.jpg"><a href="#"><img src="images/small/9.jpg" alt="image09" /></a></li>
+						<li data-preview="images/large/10.jpg"><a href="#"><img src="images/small/10.jpg" alt="image10" /></a></li>
+						<li data-preview="images/large/11.jpg"><a href="#"><img src="images/small/11.jpg" alt="image11" /></a></li>
+						<li data-preview="images/large/12.jpg"><a href="#"><img src="images/small/12.jpg" alt="image12" /></a></li>
+						<li data-preview="images/large/13.jpg"><a href="#"><img src="images/small/13.jpg" alt="image13" /></a></li>
+						<li data-preview="images/large/14.jpg"><a href="#"><img src="images/small/14.jpg" alt="image14" /></a></li>
+						<li data-preview="images/large/15.jpg"><a href="#"><img src="images/small/15.jpg" alt="image15" /></a></li>
+						<li data-preview="images/large/16.jpg"><a href="#"><img src="images/small/16.jpg" alt="image16" /></a></li>
+						<li data-preview="images/large/17.jpg"><a href="#"><img src="images/small/17.jpg" alt="image17" /></a></li>
+						<li data-preview="images/large/18.jpg"><a href="#"><img src="images/small/18.jpg" alt="image18" /></a></li>
+						<li data-preview="images/large/19.jpg"><a href="#"><img src="images/small/19.jpg" alt="image19" /></a></li>
+						<li data-preview="images/large/20.jpg"><a href="#"><img src="images/small/20.jpg" alt="image20" /></a></li>
+					</ul>
+				</div>
+				<div class="col-sm-7">
+					<h4><strong>横排+展示样式</strong></h4>
+					<ul data-sea="seaElastislide" sea-options="minItems:5">
+						<li data-preview="images/large/1.jpg"><a href="#"><img src="images/small/1.jpg" alt="image01" /></a></li>
+						<li data-preview="images/large/2.jpg"><a href="#"><img src="images/small/2.jpg" alt="image02" /></a></li>
+						<li data-preview="images/large/3.jpg"><a href="#"><img src="images/small/3.jpg" alt="image03" /></a></li>
+						<li data-preview="images/large/4.jpg"><a href="#"><img src="images/small/4.jpg" alt="image04" /></a></li>
+						<li data-preview="images/large/5.jpg"><a href="#"><img src="images/small/5.jpg" alt="image05" /></a></li>
+						<li data-preview="images/large/6.jpg"><a href="#"><img src="images/small/6.jpg" alt="image06" /></a></li>
+						<li data-preview="images/large/7.jpg"><a href="#"><img src="images/small/7.jpg" alt="image07" /></a></li>
+						<li data-preview="images/large/8.jpg"><a href="#"><img src="images/small/8.jpg" alt="image08" /></a></li>
+						<li data-preview="images/large/9.jpg"><a href="#"><img src="images/small/9.jpg" alt="image09" /></a></li>
+						<li data-preview="images/large/10.jpg"><a href="#"><img src="images/small/10.jpg" alt="image10" /></a></li>
+						<li data-preview="images/large/11.jpg"><a href="#"><img src="images/small/11.jpg" alt="image11" /></a></li>
+						<li data-preview="images/large/12.jpg"><a href="#"><img src="images/small/12.jpg" alt="image12" /></a></li>
+						<li data-preview="images/large/13.jpg"><a href="#"><img src="images/small/13.jpg" alt="image13" /></a></li>
+						<li data-preview="images/large/14.jpg"><a href="#"><img src="images/small/14.jpg" alt="image14" /></a></li>
+						<li data-preview="images/large/15.jpg"><a href="#"><img src="images/small/15.jpg" alt="image15" /></a></li>
+						<li data-preview="images/large/16.jpg"><a href="#"><img src="images/small/16.jpg" alt="image16" /></a></li>
+						<li data-preview="images/large/17.jpg"><a href="#"><img src="images/small/17.jpg" alt="image17" /></a></li>
+						<li data-preview="images/large/18.jpg"><a href="#"><img src="images/small/18.jpg" alt="image18" /></a></li>
+						<li data-preview="images/large/19.jpg"><a href="#"><img src="images/small/19.jpg" alt="image19" /></a></li>
+						<li data-preview="images/large/20.jpg"><a href="#"><img src="images/small/20.jpg" alt="image20" /></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row"style="margin-bottom: 50px;">
+				<div class="col-sm-12">
+					<h4><strong>底部横排浮动样式</strong></h4>
+					<p>详见页面底部区域</p>
+				</div>
+					<ul data-sea="seaElastislide" sea-options="minItems:2,style:'horizontalBottom'">
+						<li data-preview="images/large/1.jpg"><a href="#"><img src="images/small/1.jpg" alt="image01" /></a></li>
+						<li data-preview="images/large/2.jpg"><a href="#"><img src="images/small/2.jpg" alt="image02" /></a></li>
+						<li data-preview="images/large/3.jpg"><a href="#"><img src="images/small/3.jpg" alt="image03" /></a></li>
+						<li data-preview="images/large/4.jpg"><a href="#"><img src="images/small/4.jpg" alt="image04" /></a></li>
+						<li data-preview="images/large/5.jpg"><a href="#"><img src="images/small/5.jpg" alt="image05" /></a></li>
+						<li data-preview="images/large/6.jpg"><a href="#"><img src="images/small/6.jpg" alt="image06" /></a></li>
+						<li data-preview="images/large/7.jpg"><a href="#"><img src="images/small/7.jpg" alt="image07" /></a></li>
+						<li data-preview="images/large/8.jpg"><a href="#"><img src="images/small/8.jpg" alt="image08" /></a></li>
+						<li data-preview="images/large/9.jpg"><a href="#"><img src="images/small/9.jpg" alt="image09" /></a></li>
+						<li data-preview="images/large/10.jpg"><a href="#"><img src="images/small/10.jpg" alt="image10" /></a></li>
+						<li data-preview="images/large/11.jpg"><a href="#"><img src="images/small/11.jpg" alt="image11" /></a></li>
+						<li data-preview="images/large/12.jpg"><a href="#"><img src="images/small/12.jpg" alt="image12" /></a></li>
+						<li data-preview="images/large/13.jpg"><a href="#"><img src="images/small/13.jpg" alt="image13" /></a></li>
+						<li data-preview="images/large/14.jpg"><a href="#"><img src="images/small/14.jpg" alt="image14" /></a></li>
+						<li data-preview="images/large/15.jpg"><a href="#"><img src="images/small/15.jpg" alt="image15" /></a></li>
+						<li data-preview="images/large/16.jpg"><a href="#"><img src="images/small/16.jpg" alt="image16" /></a></li>
+						<li data-preview="images/large/17.jpg"><a href="#"><img src="images/small/17.jpg" alt="image17" /></a></li>
+						<li data-preview="images/large/18.jpg"><a href="#"><img src="images/small/18.jpg" alt="image18" /></a></li>
+						<li data-preview="images/large/19.jpg"><a href="#"><img src="images/small/19.jpg" alt="image19" /></a></li>
+						<li data-preview="images/large/20.jpg"><a href="#"><img src="images/small/20.jpg" alt="image20" /></a></li>
+					</ul>
+			</div>
+
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" sea-options="style:'ide-eclipse'">
+&lt;h4&gt;&lt;strong&gt;&#27178;&#25490;&#26679;&#24335;&#65288;&#28857;&#20987;&#23637;&#31034;&#20351;&#29992;Colorbox&#25554;&#20214;&#65289;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul data-sea=&quot;Elastislide&quot; sea-options=&quot;style:'horizontal'&quot;&gt;
+	&lt;li data-preview=&quot;images/large/1.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/1.jpg&quot; alt=&quot;image01&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/2.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/2.jpg&quot; alt=&quot;image02&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/3.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/3.jpg&quot; alt=&quot;image03&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/4.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/4.jpg&quot; alt=&quot;image04&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/5.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/5.jpg&quot; alt=&quot;image05&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/6.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/6.jpg&quot; alt=&quot;image06&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/7.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/7.jpg&quot; alt=&quot;image07&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/8.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/8.jpg&quot; alt=&quot;image08&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/9.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/9.jpg&quot; alt=&quot;image09&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/10.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/10.jpg&quot; alt=&quot;image10&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/11.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/11.jpg&quot; alt=&quot;image11&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/12.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/12.jpg&quot; alt=&quot;image12&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/13.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/13.jpg&quot; alt=&quot;image13&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/14.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/14.jpg&quot; alt=&quot;image14&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/15.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/15.jpg&quot; alt=&quot;image15&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/16.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/16.jpg&quot; alt=&quot;image16&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/17.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/17.jpg&quot; alt=&quot;image17&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/18.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/18.jpg&quot; alt=&quot;image18&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/19.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/19.jpg&quot; alt=&quot;image19&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/20.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/20.jpg&quot; alt=&quot;image20&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;&lt;strong&gt;&#31446;&#25490;&#26679;&#24335;&#65288;&#28857;&#20987;&#23637;&#31034;&#20351;&#29992;Colorbox&#25554;&#20214;&#65289;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul data-sea=&quot;Elastislide&quot; sea-options=&quot;minItems:2,style:'vertical'&quot;&gt;
+	&lt;li data-preview=&quot;images/large/1.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/1.jpg&quot; alt=&quot;image01&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/2.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/2.jpg&quot; alt=&quot;image02&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/3.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/3.jpg&quot; alt=&quot;image03&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/4.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/4.jpg&quot; alt=&quot;image04&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/5.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/5.jpg&quot; alt=&quot;image05&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/6.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/6.jpg&quot; alt=&quot;image06&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/7.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/7.jpg&quot; alt=&quot;image07&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/8.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/8.jpg&quot; alt=&quot;image08&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/9.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/9.jpg&quot; alt=&quot;image09&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/10.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/10.jpg&quot; alt=&quot;image10&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/11.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/11.jpg&quot; alt=&quot;image11&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/12.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/12.jpg&quot; alt=&quot;image12&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/13.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/13.jpg&quot; alt=&quot;image13&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/14.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/14.jpg&quot; alt=&quot;image14&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/15.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/15.jpg&quot; alt=&quot;image15&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/16.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/16.jpg&quot; alt=&quot;image16&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/17.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/17.jpg&quot; alt=&quot;image17&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/18.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/18.jpg&quot; alt=&quot;image18&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/19.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/19.jpg&quot; alt=&quot;image19&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/20.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/20.jpg&quot; alt=&quot;image20&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;&lt;strong&gt;&#27178;&#25490;+&#23637;&#31034;&#26679;&#24335;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul data-sea=&quot;Elastislide&quot; sea-options=&quot;minItems:5&quot;&gt;
+	&lt;li data-preview=&quot;images/large/1.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/1.jpg&quot; alt=&quot;image01&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/2.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/2.jpg&quot; alt=&quot;image02&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/3.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/3.jpg&quot; alt=&quot;image03&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/4.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/4.jpg&quot; alt=&quot;image04&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/5.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/5.jpg&quot; alt=&quot;image05&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/6.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/6.jpg&quot; alt=&quot;image06&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/7.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/7.jpg&quot; alt=&quot;image07&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/8.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/8.jpg&quot; alt=&quot;image08&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/9.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/9.jpg&quot; alt=&quot;image09&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/10.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/10.jpg&quot; alt=&quot;image10&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/11.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/11.jpg&quot; alt=&quot;image11&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/12.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/12.jpg&quot; alt=&quot;image12&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/13.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/13.jpg&quot; alt=&quot;image13&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/14.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/14.jpg&quot; alt=&quot;image14&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/15.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/15.jpg&quot; alt=&quot;image15&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/16.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/16.jpg&quot; alt=&quot;image16&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/17.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/17.jpg&quot; alt=&quot;image17&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/18.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/18.jpg&quot; alt=&quot;image18&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/19.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/19.jpg&quot; alt=&quot;image19&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/20.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/20.jpg&quot; alt=&quot;image20&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h4&gt;&lt;strong&gt;&#24213;&#37096;&#27178;&#25490;&#28014;&#21160;&#26679;&#24335;&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul data-sea=&quot;Elastislide&quot; sea-options=&quot;style:horizontalBottom&quot;&gt;
+	&lt;li data-preview=&quot;images/large/1.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/1.jpg&quot; alt=&quot;image01&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/2.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/2.jpg&quot; alt=&quot;image02&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/3.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/3.jpg&quot; alt=&quot;image03&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/4.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/4.jpg&quot; alt=&quot;image04&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/5.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/5.jpg&quot; alt=&quot;image05&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/6.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/6.jpg&quot; alt=&quot;image06&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/7.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/7.jpg&quot; alt=&quot;image07&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/8.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/8.jpg&quot; alt=&quot;image08&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/9.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/9.jpg&quot; alt=&quot;image09&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/10.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/10.jpg&quot; alt=&quot;image10&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/11.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/11.jpg&quot; alt=&quot;image11&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/12.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/12.jpg&quot; alt=&quot;image12&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/13.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/13.jpg&quot; alt=&quot;image13&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/14.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/14.jpg&quot; alt=&quot;image14&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/15.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/15.jpg&quot; alt=&quot;image15&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/16.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/16.jpg&quot; alt=&quot;image16&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/17.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/17.jpg&quot; alt=&quot;image17&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/18.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/18.jpg&quot; alt=&quot;image18&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/19.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/19.jpg&quot; alt=&quot;image19&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li data-preview=&quot;images/large/20.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/small/20.jpg&quot; alt=&quot;image20&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

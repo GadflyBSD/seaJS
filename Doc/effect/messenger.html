@@ -1,0 +1,79 @@
+<script type="text/javascript">
+	seajs.use('messenger', function(){
+		var message = $.globalMessenger().post({
+			message: "Calculating position",
+			type: 'error',
+			showCloseButton: true,
+			hideAfter: 10,
+			actions: {
+				success: {
+					label: "成功",
+					action: function(){
+						message.update({
+							message: 'Thermonuclear war averted',
+							type: 'success',
+							actions: {}
+						})
+					}
+				},
+				cancel: {
+					label: "取消",
+					action: function(){
+						message.hide()
+					}
+				},
+				retry: {
+					label: '重试',
+					phrase: 'Retrying TIME',
+					auto: true,
+					delay: 10,
+					action: function(){
+						alert(0);
+					}
+				}
+			}
+		});
+		/*
+		var i = 0
+		$.globalMessenger().run({
+			progressMessage: 'Saving contact...',
+			errorMessage: 'Error destroying alien planet',
+			successMessage: 'Alien planet destroyed!',
+			action: function(opts){
+				console.log(opts);
+				//if (++i < 2)
+					opts.error({status: 500, readyState: 0, responseText: 0})
+
+				//else
+					//opts.success()
+			}
+		},{
+			retry: {
+				label: '重试',
+				phrase: 'Retrying TIME',
+				auto: true,
+				delay: 10
+			},
+			cancel: {
+				label: "取消",
+				action: function(msg){
+					alert(10);
+				}
+			},
+			error: function(resp){
+				//console.log(resp);
+				if (resp.status === 409)
+					return "A contact with that email already exists";
+			}
+		});
+		*/
+	});
+</script>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">元素抖动或摆动效果</h3>
+	</div>
+	<div class="panel-body">
+
+	</div>
+</div>

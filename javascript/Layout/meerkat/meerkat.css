@@ -1,0 +1,61 @@
+.button-meerkat{
+	background:url(button.png) 0 0  no-repeat;
+	cursor: pointer;
+	display: block;
+	height: 18px;
+	position: absolute;
+	text-indent: -9000px;
+	width: 18px;
+	z-index: 10;
+}
+#minimizeWrap{
+	background:url(minimize.png) 0 0  no-repeat;
+	cursor: pointer;
+	position: fixed;
+	width: 48px;
+	height: 48px;
+}
+.shutdown-meerkat {background-position: 0 -18px;}
+.minimize-meerkat {background-position: 0 -36px;}
+.minimize-top{top: 70px; right: 20px}
+.minimize-bottom{bottom: 30px; right: 20px}
+.minimize-left{top: 70px; left: 20px}
+.minimize-right{top: 70px; right: 20px}
+#meerkat-magin-top{margin-top: 15px;}
+#meerkat-magin-bottom{margin-bottom: 15px}
+.pos-bottom .adsense, .pos-top .adsense {
+	width: 728px;
+	height: 90px;
+	position: absolute;
+	left: 50%;
+	margin-left: -364px;
+}
+.pos-left, .pos-right {
+	color: #FFF;
+	display: none;
+	height: 100%;
+	width: 100%;
+}
+.pos-left .adsense, .pos-right .adsense {
+	width: 120px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	margin-top: -300px;
+}
+.pos-top .adsense {bottom: 20px;}
+.pos-top a.button-meerkat:nth-child(1) {right: 10px; bottom: 10px;}
+.pos-top a.button-meerkat:nth-child(2) {right: 30px; bottom: 10px;}
+.pos-top a.button-meerkat:nth-child(3) {right: 50px; bottom: 10px;}
+.pos-right .adsense {left: 20px;}
+.pos-right a.button-meerkat:nth-child(1) {left: 10px; top: 10px;}
+.pos-right a.button-meerkat:nth-child(2) {left: 30px; top: 10px;}
+.pos-right a.button-meerkat:nth-child(3) {left: 50px; top: 10px;}
+.pos-bottom .adsense {top: 20px;}
+.pos-bottom a.button-meerkat:nth-child(1) {right: 10px; top: 10px;}
+.pos-bottom a.button-meerkat:nth-child(2) {right: 30px; top: 10px;}
+.pos-bottom a.button-meerkat:nth-child(3) {right: 50px; top: 10px;}
+.pos-left .adsense {right: 20px;}
+.pos-left a.button-meerkat:nth-child(1) {right: 10px; top: 10px;}
+.pos-left a.button-meerkat:nth-child(2) {right: 30px; top: 10px;}
+.pos-left a.button-meerkat:nth-child(3) {right: 50px; top: 10px;}

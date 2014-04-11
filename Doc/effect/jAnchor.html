@@ -1,0 +1,51 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">Ajax锚点异步加载效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>关于</h3>
+		<p>在一些需要点击某个链接或按钮，另一个地方异步加载指定页面的地方，可以使用Ajax锚点异步加载效果，无刷新加载页面文件。<br />
+			本文档就是使用了这个效果，点击左边的导航按钮后，右边的面板窗口自动异步加载相应的页面。<br />
+			兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。</p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="seaAnchor"</code> 就可以为其赋予Ajax锚点异步加载效果。<br />
+			以下是其他相关属性：
+		<ul>
+			<li><code>data-target</code> 属性接受一个URL地址，将使用jQuery load函数Ajax加载url地址的内容，输出到指定位置；</li>
+			<li><code>data-anchorTo</code> 属性接受一个选择器，所要输出的目标位置，默认是【#anchor-main】；</li>
+			<li><code>data-callback</code> 属性接受一个回调函数的名称，默认是空，如指定了回调函数，需要定义该回调函数；</li>
+		</ul>
+		</p>
+		<div class="bs-example">
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-option="style:'ide-eclipse'">
+&lt;ul id=&quot;effect&quot; class=&quot;nav sea-collapse&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/jAnchor.html&quot; sea-toggle=&quot;Anchor&quot;&gt;Ajax&#38170;&#28857;&#24322;&#27493;&#21152;&#36733;&#25928;&#26524;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/collapse.html&quot; sea-toggle=&quot;Anchor&quot;&gt;&#25240;&#21472;&#65288;&#25163;&#39118;&#29748;&#65289;&#25928;&#26524;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/seaseaseaSnippet.html&quot; sea-toggle=&quot;Anchor&quot;&gt;seaseaseaSnippet&#35821;&#27861;&#39640;&#20142;&#25928;&#26524;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/jPage.html&quot; sea-toggle=&quot;Anchor&quot;&gt;jPage Ajax&#32763;&#39029;&#25928;&#26524;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/jCountdown.html&quot; sea-toggle=&quot;Anchor&quot;&gt;jCountdown &#20498;&#35745;&#26102;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;effect/shake.html&quot; sea-toggle=&quot;Anchor&quot;&gt;&#20803;&#32032;&#25238;&#21160;&#25110;&#25670;&#21160;&#25928;&#26524;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&quot;anchor-main&quot;&gt;&lt;/div&gt;</pre>
+				<pre data-sea="seaSnippet" data-option="language:'javascript',style:'ide-eclipse'">
+//custom_jAnchor回调函数
+function custom_jAnchor(){
+	$('[data-type=seaseaseaSnippet]').each(function(i, dom){
+		$(dom).seaseaseaSnippetHighlight();
+	});
+}
+
+//custom_collapse回调函数
+function custom_collapse(){
+	$('[data-type=collapse]', $('#anchor-main')).toggleCollapse();
+}
+				</pre>
+			</div>
+		</div>
+
+<div id="anchor-main"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+/*Sliding Text and Icon Menu Style*/
+.sti-menu{
+	position:relative;
+    height: 186px;
+	margin:0 0 14px 0;
+}
+.sti-menu li{
+	float:left;
+    display: inline;
+	width:105px;
+	height:92px;
+}
+.sti-menu li a{
+	display:block;
+	overflow:hidden;
+	background:#fff;
+	text-align:center;
+	height:92px;
+	width:105px;
+	position:relative;
+    border:1px solid #dcdcdc;
+}
+.sti-menu li a h2{
+	font-size:12px;
+	font-weight:bold;
+	text-transform:uppercase;
+	position:absolute;
+	width:105px;
+	top:70px;
+	left:0px; z-index: 100;
+}
+.sti-menu li a h3{
+	font-family: Baskerville, "Hoefler Text", Garamond, "Times New Roman", serif; 
+	font-size:12px;
+	font-style:italic;
+	color: #111;
+	position:absolute;
+	top:248px;
+	left:0px;
+	width:180px;
+	padding:10px;
+
+}
+.sti-icon{
+	width:105px;
+	height:70px;
+	position:absolute;
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	left:0px;
+	top:0px;
+}
+.sti-icon-1{ background-image: url(images/1.png);}
+.sti-icon-2{  background-image: url(images/2.png);}
+.sti-icon-3{ background-image: url(images/3.png);}
+.sti-icon-4{ background-image: url(images/4.png);}
+.sti-icon-5{ background-image: url(images/5.png);}
+.sti-icon-6{ background-image: url(images/6.png);}

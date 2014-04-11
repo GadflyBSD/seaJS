@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<title>seaJS模块化javascript</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="../javascript/sea.js"></script>
+	<script type="text/javascript" src="../javascript/seajs-config.js"></script>
+	<script type="text/javascript">
+		var SeaOptions = {
+			CarouFredSel: {
+				direction: "left",
+				scroll : {
+					fx: 'crossfade',
+					duration: 1000,
+					onBefore: function(data){
+						$('div.wrap>img',$(data.items.old)).removeAttr('style');
+						$(data.items.visible).find('div.wrap>img:eq(0)').animate({left:0}, 1000);
+						$(data.items.visible).find('div.wrap>img:eq(1)').animate({right:0}, 1000);
+					}
+				},
+				pagination: {
+					container: '#cameraPagination',
+					anchorBuilder: function( nr ) {
+						var Pagination = [{chn: '研究', eng: 'research'}, {chn: '检测', eng: 'testing'}, {chn: '干预', eng: 'adjustment'}, {chn: '教育', eng: '教育'}]
+						$('#cameraPagination').append('<li><a href="#"><b>'+Pagination[nr-1].chn+'</b><span>'+Pagination[nr-1].eng+'</span></a></li>');
+					}
+				},
+				auto:{
+					play: true
+				},
+				before: function(){
+					$('[data-sea=seaCarouFredSel]>a').css('width', $('body').width());
+					$('[data-sea=seaCarouFredSel]>a:eq(0)').find('div.wrap>img:eq(0)').animate({left:0}, 1000);
+					$('[data-sea=seaCarouFredSel]>a:eq(0)').find('div.wrap>img:eq(1)').animate({right:0}, 1000);
+				}
+			}
+		}
+		seajs.use(['seajs-control', 'bootstrap'], function(){
+			$(document).seaLoad();
+		});
+	</script>
+<body>
+<style>
+	a img{position: relative;}
+	a img:first-child{ left:-500px;}
+	a img:last-child{ right:-500px;}
+	li.selected{
+		background-color: red;
+	}
+</style>
+	<div data-sea="seaCarouFredSel" data-config="CarouFredSel" style="overflow: hidden;height:300px">
+		<a style="background-color: #333333; display: block;  " href="#">
+			<div class="wrap" style="width: 980px; margin: auto;">
+				<img src="images/slider/bridge.jpg" height="300px"/>
+				<img src="images/slider/sea.jpg" height="300px" />
+			</div>
+		</a>
+		<a style="background-color: #ccc6c6; display: block; " href="#">
+			<div class="wrap" style="width: 980px; margin: auto;">
+				<img src="images/slider/road.jpg" height="300px" />
+				<img src="images/slider/shelter.jpg" height="300px" />
+			</div>
+		</a>
+		<a style="background-color: #c0a16b; display: block;" href="#">
+			<div class="wrap" style="width: 980px; margin: auto;">
+				<img src="images/slider/sea.jpg" height="300px" />
+				<img src="images/slider/bridge.jpg" height="300px"/>
+			</div>
+		</a>
+		<a style="background-color: #0000ff; display: block;" href="#">
+			<div class="wrap" style="width: 980px; margin: auto;">
+				<img src="images/slider/shelter.jpg" height="300px" />
+				<img src="images/slider/road.jpg" height="300px" />
+			</div>
+		</a>
+	</div>
+	<div class="col-md-12 text-center">
+		<ul class="list-unstyled list-inline" id="cameraPagination">
+			<li class="selected">
+				<b>研究</b>
+				<span>research</span>
+			</li>
+			<li>
+				<b>检测</b>
+				<span>testing</span>
+			</li>
+			<li>
+				<b>干预</b>
+				<span>adjustment</span>
+			</li>
+			<li>
+				<b>教育</b>
+				<span>education</span>
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>

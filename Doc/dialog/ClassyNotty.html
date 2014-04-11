@@ -1,0 +1,119 @@
+<script>
+	$('#ClassyNotty').coffee({
+		click:{
+			'li:eq(0)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					title: '这是标题部分',
+					content: '这是正文部分，5秒钟自动关闭',
+					timeout:5000
+				});
+			},
+			'li:eq(1)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					title: '这是标题部分',
+					content: '这是正文部分，不关闭！'
+				});
+			},
+			'li:eq(2)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					title: '这是标题部分',
+					content: '有标题和正文部分，带图片，显示弹出框时间！',
+					img: 'images/classynotty/thumb.jpg',
+					position: 'left'
+				});
+			},
+			'li:eq(3)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					title: '这是标题部分',
+					content: '有标题和正文部分，带图片，不显示弹出框时间！',
+					showTime: false,
+					img: 'images/classynotty/thumb2.jpg'
+				});
+			},
+			'li:eq(4)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					content: '<em>仅有HTML正文部分，不显示弹出框时间！</em><br /><button>按钮</button>',
+					showTime: false
+				});
+			},
+			'li:eq(5)>button': function(){
+				$.seaMethod('ClassyNotty', {
+					title: '这是标题部分',
+					content: '<em>有标题和HTML正文部分，不显示弹出框时间！</em><br /><button class="btn btn-info btn-xs">按钮</button>',
+					showTime: false,
+					img: 'images/classynotty/thumb2.jpg'
+				});
+			}
+		}
+	});
+</script>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>ClassyNotty 提示框</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery ClassyNotty 项目主页：<a target="_blank" href="http://www.class.pm/projects/jquery/classynotty/">http://www.class.pm/projects/jquery/classynotty/</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p>
+				<strong><code>title </code>参数，默认值：<code>NULL</code>，说明：</strong>弹框标题部分
+			</p></li>
+			<li><p>
+				<strong><code>content</code>参数，默认值：<code>NULL</code>，说明：</strong>弹框正文内容
+			</p></li>
+			<li><p>
+				<strong><code>img </code>参数，默认值：<code>NULL</code>，说明：</strong>图片地址
+			</p></li>
+			<li><p>
+				<strong><code>showTime </code>参数，默认值：<code>True</code>，说明：</strong>是否显示弹框打开的时间
+			</p></li>
+			<li><p>
+				<strong><code>timeout </code>参数，默认值：<code>0</code>，说明：</strong>多长时间自动关闭，单位是毫秒，0为不自动关闭
+			</p></li>
+			<li><p>
+				<strong><code>hideMsg </code>参数，默认值：<code>关闭</code>，说明：</strong>关闭按钮的名称
+			</p></li>
+			<li><p>
+				<strong><code>top </code>参数，默认值：<code>70px</code>，说明：</strong>距离顶部的距离
+			</p></li>
+			<li><p>
+				<strong><code>offset </code>参数，默认值：<code>20px</code>，说明：</strong>距离两边（左边或者右边）的距离
+			</p></li>
+			<li><p>
+				<strong><code>width </code>参数，默认值：<code>280px</code>，说明：</strong>弹出框的宽度
+			</p></li>
+			<li><p>
+				<strong><code>position </code>参数，默认值：<code>right</code>，说明：</strong>弹出框显示位置，可选<code>left/right</code>
+			</p></li>
+			<li><p>
+				<strong><code>click </code>参数，默认值：<code>function(){}</code>，说明：</strong>点击关别按钮后的回调函数
+			</p></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div class="row">
+						<ul class="list-inline col-md-12" id="ClassyNotty">
+							<li class="col-md-4" style="padding-left: 5px;"><button class="btn btn-default btn-block">有标题和正文部分，无图片，5秒钟自动关闭</button></li>
+							<li class="col-md-4"><button class="btn btn-primary btn-block">有标题和正文部分，带图片，不会自动关闭</button></li>
+							<li class="col-md-4"><button class="btn btn-success btn-block">有标题和正文部分，带图片，显示弹框时间</button></li>
+							<li class="col-md-4" style="padding-top: 15px;"><button class="btn btn-info btn-block">有标题和正文部分，带图片，不显示弹框时间</button></li>
+							<li class="col-md-4" style="padding-top: 15px;"><button class="btn btn-warning btn-block">仅有HTML正文部分，不显示弹框时间</button></li>
+							<li class="col-md-4" style="padding-top: 15px;"><button class="btn btn-danger btn-block">有标题和HTML正文，不显示弹框时间</button></li>
+						</ul>
+					</div>
+					<pre data-sea="seaSnippet" data-config="seaSnippet">
+$.seaMethod('ClassyNotty', {
+	title: '这是标题部分',
+	content: '有标题和正文部分，带图片，不显示弹出框时间！',
+	showTime: false,
+	img: 'images/classynotty/thumb2.jpg'
+});</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

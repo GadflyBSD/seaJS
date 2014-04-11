@@ -1,0 +1,203 @@
+<script type="text/javascript">
+	SeaOptions.goods = {
+			property: {url:'http://www.cter1332.net/index/text', data:{type:'property'}},
+			price:{url: 'http://www.cter1332.net/index/text', data:{type:'price'}}
+		}
+</script>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>仿淘宝天猫的商品选择</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery Camera 项目主页：<a target="_blank" href="http://www.pixedelic.com/plugins/camera">http://www.pixedelic.com/plugins/camera</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p>
+				<strong><code>market</code>参数，默认值：<code>市场价</code>，说明：</strong>市场价标签所显示的名称，当为 <code>False</code>时，不显示
+			</p></li>
+			<li><p>
+				<strong><code>present</code>参数，默认值：<code>当前价</code>，说明：</strong>当前价标签所显示的名称，当为 <code>False</code>时，不显示
+			</p></li>
+			<li><p>
+				<strong><code>number</code>参数，默认值：<code>数量</code>，说明：</strong>数量标签所显示的名称，当为 <code>False</code>时，不显示
+			</p></li>
+			<li><p>
+				<strong><code>numberInput</code>参数，默认值：<code>number</code>，说明：</strong>表单数量输入框的名称
+			</p></li>
+			<li><p>
+				<strong><code>priceInput</code>参数，默认值：<code>price</code>，说明：</strong>表单价格输入框的名称，隐藏框
+			</p></li>
+			<li><p>
+				<strong><code>propTextInput</code>参数，默认值：<code>propText</code>，说明：</strong>表单产品属性输入框的名称，隐藏框
+			</p></li>
+			<li><p>
+				<strong><code>propertyInput</code>参数，默认值：<code>prop</code>，说明：</strong>表单每个产品属性的值输入框的名称，隐藏框
+			</p></li>
+			<li><p>
+				<strong><code>css</code>参数，默认值：<code>Other/productSelect/jquery.productSelect.css</code>，说明：</strong>样式表文件地址
+			</p></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div data-sea="productSelect" data-config="goods"></div>
+					<h4>HTML部分</h4>
+					<pre data-sea="seaSnippet" data-config="seaseaseaSnippet">&lt;div data-sea=&quot;productSelect&quot; data-config=&quot;goods&quot;&gt;&lt;/div&gt;</pre>
+					<h4>javaScript部分</h4>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var SeaOptions.goods = {
+	property: {url:'http://www.cter1332.net/index/text', data:{type:'property'}},
+	price:{url: 'http://www.cter1332.net/index/text', data:{type:'price'}}
+}</pre>
+					<h4>PHP所提供的Ajax Json数据格式</h4>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'php'">
+if($_GET['type'] == 'price'){
+	$data = array(
+		'0_0_0' => '16','1_0_0' => '16','2_0_0' => '17','3_0_0' => '18','4_0_0' => '19','5_0_0' => '20',
+		'0_1_0' => '21','1_1_0' => '22','2_1_0' => '23','3_1_0' => '24','4_1_0' => '25','5_1_0' => '26',
+		'0_2_0' => '21','1_2_0' => '22','2_2_0' => '23','3_2_0' => '24','4_2_0' => '25','5_2_0' => '26',
+		'0_3_0' => '21','1_3_0' => '22','2_3_0' => '23','3_3_0' => '24','4_3_0' => '25','5_3_0' => '26',
+		'0_0_1' => '16','1_0_1' => '16','2_0_1' => '17','3_0_1' => '18','4_0_1' => '19','5_0_1' => '20',
+		'0_1_1' => '21','1_1_1' => '22','2_1_1' => '23','3_1_1' => '24','4_1_1' => '25','5_1_1' => '26',
+		'0_2_1' => '21','1_2_1' => '22','2_2_1' => '23','3_2_1' => '24','4_2_1' => '25','5_2_1' => '26',
+		'0_3_1' => '21','1_3_1' => '22','2_3_1' => '23','3_3_1' => '24','4_3_1' => '25','5_3_1' => '26',
+	);
+}else{
+	$data = array(
+		array('prop'=> '颜色', 'type' => 'Img', 'value' => array(
+			array('src' => 'images/productSelect/1.png', 'alt' => '白色'),
+			array('src' => 'images/productSelect/2.png', 'alt' => '粉色'),
+			array('src' => 'images/productSelect/3.png', 'alt' => '蓝色'),
+			array('src' => 'images/productSelect/4.png', 'alt' => '绿色'),
+			array('src' => 'images/productSelect/5.png', 'alt' => '黄色'),
+			array('src' => 'images/productSelect/6.png', 'alt' => '灰色'),
+		)),
+		array('prop'=> '尺寸', 'type' => 'Text','value' => array(
+			array('alt' => 'SM'),
+			array('alt' => 'S'),
+			array('alt' => 'M'),
+			array('alt' => 'L')
+		)),
+		array('prop'=> '服务', 'type' => 'Text','value' => array(
+			array('alt' => '全国联保'),
+			array('alt' => '店铺保修')
+		))
+	);
+}
+json_encode($data);</pre>
+					<h4>商品属性的Json数据格式</h4>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'Json'">
+[{
+	"prop": "颜色",
+	"type": "Img",
+	"value": [{
+		"src": "images/productSelect/1.png",
+		"alt": "白色"
+	},
+	{
+		"src": "images/productSelect/2.png",
+		"alt": "粉色"
+	},
+	{
+		"src": "images/productSelect/3.png",
+		"alt": "蓝色"
+	},
+	{
+		"src": "images/productSelect/4.png",
+		"alt": "绿色"
+	},
+	{
+		"src": "images/productSelect/5.png",
+		"alt": "黄色"
+	},
+	{
+		"src": "images/productSelect/6.png",
+		"alt": "灰色"
+	}]
+},
+{
+	"prop": "尺寸",
+	"type": "Text",
+	"value": [{
+		"alt": "SM"
+	},
+	{
+		"alt": "S"
+	},
+	{
+		"alt": "M"
+	},
+	{
+		"alt": "L"
+	}]
+},
+{
+	"prop": "服务",
+	"type": "Text",
+	"value": [{
+		"alt": "全国联保"
+	},
+	{
+		"alt": "店铺保修"
+	}]
+}]</pre>
+					<h4>商品价格的Json数据格式</h4>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'Json'">
+{
+	"0_0_0": "16",
+	"1_0_0": "16",
+	"2_0_0": "17",
+	"3_0_0": "18",
+	"4_0_0": "19",
+	"5_0_0": "20",
+	"0_1_0": "21",
+	"1_1_0": "22",
+	"2_1_0": "23",
+	"3_1_0": "24",
+	"4_1_0": "25",
+	"5_1_0": "26",
+	"0_2_0": "21",
+	"1_2_0": "22",
+	"2_2_0": "23",
+	"3_2_0": "24",
+	"4_2_0": "25",
+	"5_2_0": "26",
+	"0_3_0": "21",
+	"1_3_0": "22",
+	"2_3_0": "23",
+	"3_3_0": "24",
+	"4_3_0": "25",
+	"5_3_0": "26",
+	"0_0_1": "16",
+	"1_0_1": "16",
+	"2_0_1": "17",
+	"3_0_1": "18",
+	"4_0_1": "19",
+	"5_0_1": "20",
+	"0_1_1": "21",
+	"1_1_1": "22",
+	"2_1_1": "23",
+	"3_1_1": "24",
+	"4_1_1": "25",
+	"5_1_1": "26",
+	"0_2_1": "21",
+	"1_2_1": "22",
+	"2_2_1": "23",
+	"3_2_1": "24",
+	"4_2_1": "25",
+	"5_2_1": "26",
+	"0_3_1": "21",
+	"1_3_1": "22",
+	"2_3_1": "23",
+	"3_3_1": "24",
+	"4_3_1": "25",
+	"5_3_1": "26"
+}</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

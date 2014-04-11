@@ -1,0 +1,84 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>seaJS 模块化 javascript 组件库【一般使用方法】</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>使用方法</strong></h3>
+		<p>给标签增加一个属性(data-sea="组件名")即可，比如需要调用日历组件，仅需要给input标签增加一个 data-sea="calendar"  的属性，日历就可以工作了。如下</p>
+		<form class="form-horizontal" role="form" data-sea="Validate">
+			<div class="form-group">
+				<label for="inputDatepicker" class="col-sm-2 control-label"><strong>demo</strong> 演示日历组件</label>
+				<div class="col-sm-10">
+					<input type="datepicker" class="form-control" id="inputDatepicker" placeholder="请输出年月日"  data-sea="Calendar">
+				</div>
+			</div>
+		</form>
+		<pre data-sea="seaSnippet" data-config="seaSnippet">&lt;input type="text" data-sea="Calendar" name="inputDatepicker" placeholder="请输出年月日" /&gt;</pre>
+
+		<h3><strong>使用 HTML 的自定义 data-* 属性进行一般性调用</strong></h3>
+		<ul>
+			<li><strong>JS调用方法：</strong>
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/sea.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/seajs-config.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+seajs.use(['seajs-control', 'bootstrap', '&#20854;&#20182;&#38656;&#21152;&#36733;&#27169;&#22359;...'], function(){
+	$(document).seaLoad();
+});
+&lt;/script&gt;</pre>
+			</li>
+			<li><strong><code>data-sea</code>属性：</strong>
+				<p>指定所需要调用的插件名称，例如： <code>data-sea="Uploadify"</code>将在该DOM上调用一个Uploadify上传组件。</p>
+			</li>
+			<li><strong><code>data-option</code>属性：</strong>
+				<p>接受一个Json数据格式或Object数据格式的插件参数，例如：
+				<ul>
+					<li>Json数据格式：<code>data-option='{"param_1":"value_1","param_2":"value_2"..."param_n":"value_n"}'</code></li>
+					<li>Object数据格式：<code>data-option="({param_1:'value_1',param_2:'value_2'...param_n:'value_n'})"</code></li>
+					<li>Object简写格式：<code>data-option='param_1:'value_1',param_2:'value_2'...param_n:'value_n''</code>，该格式适用于页面对 <code>{}</code> 指定为其他特殊用途时</li>
+				</ul></p>
+			</li>
+			<li><strong><code>data-config</code>属性：</strong>
+				<p>接受一个对象名称作为插件的参数，当插件参数自定义部分较多，并有自定义回调函数的时候，使用该方法，例如：
+<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+&lt;div data-sea=&quot;Plugin_1&quot; data-config=&quot;Plugin_1_Option&quot;&gt;&lt;/div&gt;
+&lt;div data-sea=&quot;Plugin_2&quot; data-config=&quot;Plugin_2_Option&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; &gt;
+var SeaOptions = ({
+	Plugin_1_Option: {
+		param_1: 'value_1',
+		param_2: 'value_2',
+		...
+		param_n: 'value_n',
+		callback: function(){
+			some code ...
+		}
+	},
+	Plugin_2_Option: {
+		param_1: 'value_1',
+		param_2: 'value_2',
+		...
+		param_n: 'value_n',
+		callback: function(){
+			some code ...
+		}
+	}
+});
+&lt;/script&gt;
+</pre>
+				</p>
+			</li>
+			<li><strong><code>date-option</code>和 <code>date-config</code>的优先顺序：</strong>
+				<div class="alert alert-warning">
+					<ul>
+						<li>如果没有指定<code>date-option</code>和 <code>date-config</code>将使用插件定义的默认值作为参数；</li>
+						<li>如果既指定了<code>date-option</code>又指定了<code>date-config</code>，<code>date-config</code>将会覆盖<code>date-option</code>后的一个新的参数传递给插件；</li>
+						<li>可以使用<code>date-config</code>定义多个调用的公共部分，使用<code>date-option</code>定义每个调用的不同部分；</li>
+						<li>如果调用存在回调函数，最好使用<code>date-config</code>定义。</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+</div>

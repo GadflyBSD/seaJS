@@ -1,0 +1,95 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>jQuery ColorBox 灯箱插件</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>表单验证是Web开发中最常见的流程，一般分为前端js验证，和后端服务器脚本验证两部分。前端js验证不是必须，但为了加强用户体验，却又往往是必不可少。但很多重复的表单验证却花去了开发人员大量宝贵时间。jQuery Validation Plugin为一款简单好用的表单验证插件.。<br />
+			兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。</p>
+		<h3><strong>通过HTML文档data属性</strong></h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="ColorBox"</code> 就可以为表单赋予Validation表单验证功能。<br />
+			<code>< form action="URL" method="ajax/debug/post/get" data-toggle="seaValidate" data-msgTime="2" data-async="true" data-callback="callback" ></code><br />
+			以下是其他相关属性：
+		<ul>
+			<li><code>action</code> 属性接受一个URL地址，指定表单提交方向；</li>
+			<li><code>method</code> 属性接受一个字符串，在原有method属性基础上扩展增加了ajax（Ajax方式提交）、debug（仅验证不提交），默认是ajax；</li>
+			<li><code>data-async</code> 属性接受一个布尔值，指定表单验证是否使用异步加载方式，当为True时，自动为提交按钮添加disabled属性，任何一个input,select,textarea元件获得焦点时触发加载，并将提交按钮的disabled属性删除。默认为True；</li>
+			<li><code>data-msgTime</code> 属性接受一个数字值，代表消息提示框多长时间后消失，默认值是5秒；</li>
+			<li><code>data-callback</code> 属性接受一个回调函数的名称，默认是空；本回调函数提供三个参数：data（表单提交数据序列化后的字符串）, note（Ajax返回的Json对象）, mess（提示框对象，用于操作提示框）</li>
+		</ul>
+		</p>
+		<h3><strong>注意：在弹框表单中此处定义的回调函数在表单验证提交成功触发关闭弹框后触发。如需要在弹框关闭事件前触发，请在弹框处指定回调函数。</strong></h3>
+		<h3><strong>特别注意：在哪里和如何自定义回调函数?</strong></h3>
+		<p>请在seaJS的入口位置，使用 <code>jQuery.extend(object)</code>的方式，或者 <code>function callback(){}</code>方式设定回调函数，例如：
+		<div class="bs-example">
+			<div class="bs-sidebar sea-example">
+				<div class="row">
+					<div class="col-sm-2">
+						<a href="images/large/1.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/1.jpg">
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="images/large/2.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/2.jpg">
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="images/large/3.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/3.jpg">
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="images/large/4.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/4.jpg">
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="images/large/5.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/5.jpg">
+						</a>
+					</div>
+					<div class="col-sm-2">
+						<a href="images/large/6.jpg" class="thumbnail" data-sea="ColorBox">
+							<img src="images/small/6.jpg">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/1.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/1.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/2.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/2.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/3.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/3.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/4.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/4.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/5.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/5.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/6.jpg&quot; class=&quot;thumbnail&quot; data-sea=&quot;ColorBox&quot;&gt;
+			&lt;img src=&quot;images/small/6.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+	</div>
+</div>

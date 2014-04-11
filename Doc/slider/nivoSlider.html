@@ -1,0 +1,182 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>nivoSlider 幻灯片</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>Nivo Slider号称世界最棒的轻量级JQuery图片幻灯插件，按它的官网所说，“以漂亮和易于使用而闻名于世”！ <br/>
+			jQuery nivo Slider项目主页：<a href="http://dev7studios.com/plugins/nivo-slider/">http://dev7studios.com/plugins/nivo-slider/</a>
+			版本号：jQuery Nivo Slider v3.2
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li>
+				<p><strong><code>css</code>参数</strong>，属性：<code>String</code>
+					说明：所加载的Theme样式表地址，采用相对SeaJS的路径。如果不指定CSS样式表文件地址，则加载系统自带的Theme。</p>
+			</li>
+			<li>
+				<p><strong><code>theme</code>参数</strong>，属性：<code>String</code>，默认值：<code>default</code>
+					说明：加载系统自带的Theme，可选择：
+				<ul class="list-inline">
+					<li><code>light</code></li>
+					<li><code>dark</code></li>
+					<li><code>bar</code></li>
+					<li><code>default</code></li>
+				</ul>
+				</p>
+			</li>
+			<li>
+				<p><strong><code>easing</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>False</code>
+					说明：切换图片时，图片说明部分是否自动使用动画效果</p>
+			</li>
+			<li><p><strong><code>effect</code>参数</strong>，属性：<code>String</code>，默认值：<code>random</code>
+				说明：过渡效果，默认是随机。可选：
+				<ul class="list-inline">
+					<li><code>sliceDown</code></li>
+					<li><code>sliceDownLeft</code></li>
+					<li><code>sliceUp</code></li>
+					<li><code>sliceUpLeft</code></li>
+					<li><code>sliceUpDown</code></li>
+					<li><code>sliceUpDownLeft</code></li>
+					<li><code>fold</code></li>
+					<li><code>fade</code></li>
+					<li><code>random</code></li>
+					<li><code>slideInRight</code></li>
+					<li><code>slideInLeft</code></li>
+					<li><code>boxRandom</code></li>
+					<li><code>boxRain</code></li>
+					<li><code>boxRainReverse</code></li>
+					<li><code>boxRainGrow</code></li>
+					<li><code>boxRainGrowReverse</code></li>
+				</ul>
+				</p>
+			</li>
+			<li>
+				<p><strong><code>slices</code>参数</strong>，属性：<code>Number</code>，默认值：<code>15</code>
+				说明：切片效果时的数量</p>
+			</li>
+			<li><p><strong><code>boxCols</code>参数</strong>，属性：<code>Number</code>，默认值：<code>8</code>
+				说明：格子效果时的列数</p>
+			</li>
+			<li><p><strong><code>boxRows</code>参数</strong>，属性：<code>Number</code>，默认值：<code>4</code>
+				说明：格式效果时的行数</p>
+			</li>
+			<li><p><strong><code>animSpeed</code>参数</strong>，属性：<code>Number</code>，默认值：<code>1000</code>
+				说明：图片过渡时间  </p>
+			</li>
+			<li><p><strong><code>pauseTime</code>参数</strong>，属性：<code>Number</code>，默认值：<code>5000</code>
+				说明：图片显示时间  </p>
+			</li>
+			<li><p><strong><code>startSlide</code>参数</strong>，属性：<code>Number</code>，默认值：<code>0</code>
+				说明：从第几张图片开始（第一张为0）</p>
+			</li>
+			<li><p><strong><code>directionNav</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>True</code>
+				说明：是否显示图片方向切换按钮（上一页/下一页）</p>
+			</li>
+			<li><p><strong><code>controlNav</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>True</code>
+				说明：是否显示图片导航控制按钮（,2,3... ） </p>
+			</li>
+			<li><p><strong><code>controlNavThumbs</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>False</code>
+				说明：是否使用图片的缩略图做为导航控制按钮  </p>
+			</li>
+			<li><p><strong><code>pauseOnHover</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>True</code>
+				说明：鼠标县浮时是否停止动画  </p>
+			</li>
+			<li><p><strong><code>manualAdvance</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>False</code>
+				说明：是否手动切换  </p>
+			</li>
+			<li><p><strong><code>prevText</code>参数</strong>，属性：<code>String</code>，默认值：<code>Prev</code>
+				说明：上一页方向切换按钮的显示文本  </p>
+			</li>
+			<li><p><strong><code>nextText</code>参数</strong>，属性：<code>String</code>，默认值：<code>Next</code>
+				说明：下一页方向切换按钮的显示文本  </p>
+			</li>
+			<li><p><strong><code>randomStart</code>参数</strong>，属性：<code>Boolean</code>，默认值：<code>False</code>
+				说明：开始图片是否随机  </p>
+			</li>
+			<li><p><strong><code>beforeChange</code>参数</strong>，属性：<code>Function</code>，默认值：<code>function(){}</code>
+				说明：图片切换前触发函数  </p>
+			</li>
+			<li><p><strong><code>afterChange</code>参数</strong>，属性：<code>Function</code>，默认值：<code>function(){}</code>
+				说明：图片切换后触发函数  </p>
+			</li>
+			<li><p><strong><code>slideshowEnd</code>参数</strong>，属性：<code>Function</code>，默认值：<code>function(){}</code>
+				说明：在所有图片显示完毕后触发函数  </p>
+			</li>
+			<li><p><strong><code>lastSlide</code>参数</strong>，属性：<code>Function</code>，默认值：<code>function(){}</code>
+				说明：在最后一张图片显示完毕后触发函数  </p>
+			</li>
+			<li><p><strong><code>afterLoad</code>参数</strong>，属性：<code>Function</code>，默认值：<code>function(){}</code>
+				说明：图片加载完毕后触发函数  </p>
+			</li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div data-sea="seaNivoSlider" data-option="easing:true">
+						<img src="images/slider/nivoSlider/toystory.jpg" title="#sliderCaption1" />
+						<a href="http://dev7studios.com">
+							<img src="images/slider/nivoSlider/up.jpg" title="This is an example of a caption" />
+						</a>
+						<img src="images/slider/nivoSlider/walle.jpg" title="#sliderCaption2" data-transition="slideInLeft" />
+						<img src="images/slider/nivoSlider/nemo.jpg" title="#sliderCaption3" />
+					</div>
+					<div id="sliderCaption1" class="nivo-html-caption">
+						<h1>这是标题内容</h1>
+						<p>Nam elit ma, hendrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quis diam lorem, interdum vitae, dapibus ac, scelesque vitae, pede. Donec eget tellus non erat lacinia fermentum.</p>
+						<a class="button" title="Read More" href="#">Read More</a>
+					</div>
+					<div id="sliderCaption2" class="nivo-html-caption">
+						<h1>Perfect choice</h1>
+						<p>Donec in velit vel ipsum auctor pulvinar. Proin ullamcorper urna et felis. Sed in lacus ut enim adipiscing aliquet.</p>
+						<a class="button" title="Read More" href="#">Read More</a>
+					</div>
+					<div id="sliderCaption3" class="nivo-html-caption">
+						<h1>Everything is possible</h1>
+						<p>Nam elit ma, hendrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quis diam lorem, interdum vitae, dapibus ac, scelesque vitae, pede.</p>
+						<a class="button" title="Read More" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;col-md-12&quot;&gt;
+	&lt;div data-sea=&quot;seaNivoSlider&quot; data-option=&quot;easing:true&quot;&gt;
+		&lt;img src=&quot;images/slider/toystory.jpg&quot; title=&quot;#sliderCaption1&quot; /&gt;
+		&lt;a href=&quot;http://dev7studios.com&quot;&gt;
+			&lt;img src=&quot;images/slider/up.jpg&quot; title=&quot;This is an example of a caption&quot; /&gt;
+		&lt;/a&gt;
+		&lt;img src=&quot;images/slider/walle.jpg&quot; title=&quot;#sliderCaption2&quot; data-transition=&quot;slideInLeft&quot; /&gt;
+		&lt;img src=&quot;images/slider/nemo.jpg&quot; title=&quot;#sliderCaption3&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div id=&quot;sliderCaption1&quot; class=&quot;nivo-html-caption&quot;&gt;
+		&lt;h1&gt;&#36825;&#26159;&#26631;&#39064;&#20869;&#23481;&lt;/h1&gt;
+		&lt;p&gt;Nam elit ma, hendrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quis diam lorem, interdum vitae, dapibus ac, scelesque vitae, pede. Donec eget tellus non erat lacinia fermentum.&lt;/p&gt;
+		&lt;a class=&quot;button&quot; title=&quot;Read More&quot; href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div id=&quot;sliderCaption2&quot; class=&quot;nivo-html-caption&quot;&gt;
+		&lt;h1&gt;Perfect choice&lt;/h1&gt;
+		&lt;p&gt;Donec in velit vel ipsum auctor pulvinar. Proin ullamcorper urna et felis. Sed in lacus ut enim adipiscing aliquet.&lt;/p&gt;
+		&lt;a class=&quot;button&quot; title=&quot;Read More&quot; href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div id=&quot;sliderCaption3&quot; class=&quot;nivo-html-caption&quot;&gt;
+		&lt;h1&gt;Everything is possible&lt;/h1&gt;
+		&lt;p&gt;Nam elit ma, hendrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quis diam lorem, interdum vitae, dapibus ac, scelesque vitae, pede.&lt;/p&gt;
+		&lt;a class=&quot;button&quot; title=&quot;Read More&quot; href=&quot;#&quot;&gt;Read More&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+		<h3><strong>使用图片的缩略图做为导航控制按钮</strong></h3>
+		<p>使用图片的缩略图做为导航控制按钮，请先确保 <code>controlNavThumbs</code>被设置为 <code>True</code>。然后再图片上设置 <code>data-thumb</code>属性，值为缩略图的URL。如果URL错误，缩略图将不显示。例如：
+		<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div data-sea=&quot;seaNivoSlider&quot;&gt;
+    &lt;img src=&quot;images/up.jpg&quot; data-thumb=&quot;images/up_thumb.jpg&quot; /&gt;
+    &lt;img src=&quot;images/monstersinc.jpg&quot; data-thumb=&quot;images/monstersinc_thumb.jpg&quot; /&gt;
+    &lt;img src=&quot;images/nemo.jpg&quot; data-thumb=&quot;images/nemo_thumb.jpg&quot; /&gt;
+    &lt;img src=&quot;images/walle.jpg&quot; data-thumb=&quot;images/walle_thumb.jpg&quot; /&gt;
+&lt;/div&gt;</pre>
+		</p>
+		<h3><strong>为某个图片自定义过渡效果</strong></h3>
+		<p>您可以在需要指定过渡效果的图片上指定 <code>data-transition</code>属性即可，例如：</p>
+		<pre data-sea="seaSnippet" data-config="seaSnippet">&lt;img src=&quot;images/slide1.jpg&quot; data-transition=&quot;slideInLeft&quot; /&gt;</pre>
+	</div>
+</div>

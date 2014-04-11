@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<title>seaJS模块化javascript</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="../javascript/sea.js"></script>
+	<script type="text/javascript" src="../javascript/seajs-config.js"></script>
+	<script type="text/javascript" src="custom_main.js"></script>
+	<script type="text/javascript">
+		seajs.use(['seajs-control', 'bootstrap'], function(){
+			$(document).seaLoad();
+		});
+	</script>
+	<style>
+		div.page-header{
+			border-bottom: 0 none;
+		}
+		.bs-sidebar .nav .nav > li > a {
+			padding-bottom: 3px;
+			padding-left: 30px;
+			padding-top: 3px;
+		}
+		.bs-example {
+			border-color: #E5E5E5 #EEEEEE #EEEEEE;
+			border-style: solid;
+			border-width: 1px;
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05) inset;
+			padding: 45px 15px 15px;
+			position: relative;
+		}
+		.bs-example:after {
+			color: #BBBBBB;
+			content: "Example";
+			font-size: 12px;
+			font-weight: bold;
+			left: 15px;
+			letter-spacing: 1px;
+			position: absolute;
+			text-transform: uppercase;
+			top: 15px;
+		}
+		pre[data-sea=seaseaseaSnippet]{
+			margin-top: 10px;
+		}
+		p{
+			text-indent: 2em;
+		}
+		.mypagination>div:nth-child(2){
+			padding-top:15px;
+		}
+		.mypagination>div:last-child{
+			padding-top: 20px;
+		}
+	</style>
+	<style>
+		.focus-box {
+			top: 60px;
+			height: 220px;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+		}
+		.focus-box .focus-btn, .focus-box .focus-bd {
+			position: absolute;
+		}
+		.focus-box ul li a {
+			display: block;
+			height: 220px;
+			width: 100%;
+		}
+		.focus-box .focus-btn {
+			bottom: 10px;
+			right: 20px;
+		}
+		.focus-box .focus-btn li {
+			background-color: #D6D8DD;
+			border: 0 none;
+			border-radius: 11px;
+			color: #000000;
+			cursor: pointer;
+			display: inline;
+			float: left;
+			font-weight: bold;
+			height: 18px;
+			line-height: 18px;
+			margin-right: 5px;
+			padding: 0;
+			text-align: center;
+			width: 18px;
+		}
+		.focus-box .focus-btn li.on {
+			background-color: #FF0D1F;
+			color: #FFFFFF;
+		}
+		.focus-box .focus-bd {
+			left: 0;
+			top: 0;
+		}
+		.focus-box .focus-bd li {
+			display: inline;
+			float: left;
+			overflow: hidden;
+		}
+		.focus-box .focus-bd a, .focus-box .focus-bd img {
+			display: block;
+		}
+		.focus-bd li a img {
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">seaJS 模块化 javascript</a>
+		</div>
+		<div id="navbar-main" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a id="themes" href="#" data-toggle="dropdown" class="dropdown-toggle">组件库说明 <span class="caret"></span></a>
+					<ul aria-labelledby="themes" class="dropdown-menu">
+						<li><a href="../default/">前言</a></li>
+						<li class="divider"></li>
+						<li><a href="../amelia/">简介</a></li>
+						<li><a href="about/user.html" data-sea="Anchor">一般使用方法</a></li>
+						<li><a href="../cosmo/">自定义使用</a></li>
+						<li><a href="../cyborg/">组件开发注意事项</a></li>
+						<li><a href="../darkly/">支持组件列表</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a id="themes" href="#" data-toggle="dropdown" class="dropdown-toggle">函数库、前端框架 <span class="caret"></span></a>
+					<ul aria-labelledby="themes" class="dropdown-menu">
+						<li><a href="frame/jquery.html" data-sea="Anchor">jQuery</a></li>
+						<li><a href="frame/jqueryui.html" data-sea="Anchor">jQuery UI</a></li>
+						<li><a href="frame/bootstrap2.html" data-sea="Anchor">bootstrap 2</a></li>
+						<li><a href="frame/bootstrap3.html" data-sea="Anchor">bootstrap 3</a></li>
+						<li><a href="frame/underscore.html" data-sea="Anchor">Underscore 函数库</a></li>
+						<li><a href="frame/moment.html" data-sea="Anchor">Moment 日期处理类库</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://news.bootswatch.com">Blog</a>
+				</li>
+				<li class="dropdown">
+					<a id="download" href="#" data-toggle="dropdown" class="dropdown-toggle">Download <span class="caret"></span></a>
+					<ul aria-labelledby="download" class="dropdown-menu">
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">jQuery</a></li>
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">jQuery UI</a></li>
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">bootstrap 2</a></li>
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">bootstrap 3</a></li>
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">Underscore 函数库</a></li>
+						<li><a href="frame/bootstrap.html" data-sea="Anchor">Moment 日期处理类库</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a target="_blank" href="http://builtwithbootstrap.com/">Built With Bootstrap</a></li>
+				<li><a target="_blank" href="https://wrapbootstrap.com/?ref=bsw">WrapBootstrap</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="container page-header">
+	<div class="row page-header">
+		<div class="col-sm-2">
+			<div class="bs-sidebar">
+				<ul class="nav nav-pills nav-stacked" id="collapse">
+					<li class="active">
+						<a href="#about" data-sea="Collapse" data-config="collapseMenu1"><strong>Javascript组件库</strong></a>
+						<ul id="about" class="nav sea-collapse sea-collapse-in">
+							<li><a href="./index.html#btn-groups-single">前言</a></li>
+							<li><a href="./index.html#btn-groups-toolbar">简介</a></li>
+							<li><a href="about/user.html" data-sea="Anchor">一般使用方法</a></li>
+							<li><a href="./index.html#btn-groups-nested">自定义使用</a></li>
+							<li><a href="./index.html#btn-groups-nested">关于回调函数的使用</a></li>
+							<li><a href="./index.html#btn-groups-vertical">组件开发注意事项</a></li>
+							<li><a href="./index.html#btn-groups-justified">支持组件列表</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#frame" data-sea="Collapse" data-config="collapseMenu2"><strong>函数库、前端框架</strong></a>
+						<ul id="frame" class="nav sea-collapse">
+							<li><a href="frame/jquery.html" data-sea="Anchor">jQuery</a></li>
+							<li><a href="frame/jqueryui.html" data-sea="Anchor">jQuery UI</a></li>
+							<li><a href="frame/bootstrap2.html" data-sea="Anchor">bootstrap 2</a></li>
+							<li><a href="frame/bootstrap3.html" data-sea="Anchor">bootstrap 3</a></li>
+							<li><a href="frame/underscore.html" data-sea="Anchor">Underscore 函数库</a></li>
+							<li><a href="frame/moment.html" data-sea="Anchor">Moment 日期处理类库</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#effect" data-sea="Collapse" data-config="collapseMenu"><strong>动态效果</strong></a>
+						<ul id="effect" class="nav sea-collapse">
+							<li><a href="effect/jAnchor.html" data-sea="Anchor">Ajax锚点异步加载效果</a></li>
+							<li><a href="effect/collapse.html" data-sea="Anchor">折叠（手风琴）效果</a></li>
+							<li><a href="effect/Snippet.html" data-sea="Anchor">Snippet语法高亮效果</a></li>
+							<li><a href="effect/jPage.html" data-sea="Anchor">jPage Ajax翻页效果</a></li>
+							<li><a href="effect/InfiniteScroll.html" data-sea="Anchor">InfiniteScroll滚动翻页</a></li>
+							<li><a href="effect/jCountdown.html" data-sea="Anchor">jCountdown 倒计时</a></li>
+							<li><a href="effect/shake.html" data-sea="Anchor">元素抖动或摆动效果</a></li>
+							<li><a href="effect/infinitescroll.html" data-sea="Anchor">infinitescroll 翻页</a></li>
+							<li><a href="effect/zTree.html" data-sea="Anchor">zTree 树形目录结构</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#slider" data-sea="Collapse" data-config="collapseMenu"><strong>图片、幻灯片</strong></a>
+						<ul id="slider" class="nav sea-collapse">
+							<li><a href="slider/nivoSlider.html" data-sea="Anchor">nivo Slider 幻灯片</a></li>
+							<li><a href="slider/CarouFredSel.html" data-sea="Anchor">CarouFredSel幻灯片</a></li>
+							<li><a href="slider/nivoLightbox.html" data-sea="Anchor">nivo Lightbox灯箱插件</a></li>
+							<li><a href="slider/prettyPhoto.html" data-sea="Anchor">prettyPhoto 灯箱插件</a></li>
+							<li><a href="slider/Camera.html" data-sea="Anchor">Camera 相册幻灯片</a></li>
+							<li><a href="slider/Colorbox.html" data-sea="Anchor"> Colorbox 灯箱插件</a></li>
+							<li><a href="slider/Elastislide.html" data-sea="Anchor">Elastislide 幻灯片</a></li>
+							<li><a href="slider/TopAdvertisement.html" data-sea="Anchor">泰山压顶式广告栏</a></li>
+							<li><a href="slider/Stellar.html" data-sea="Anchor">Stellar 视察滚动</a></li>
+							<li><a href="slider/seaSlider.html" data-sea="Anchor">仿易迅Slider兼容ie6</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#form" data-sea="Collapse" data-config="collapseMenu"><strong>表单及其验证</strong></a>
+						<ul id="form" class="nav sea-collapse">
+							<li><a href="form/display.html" data-sea="Anchor">表单控件展示</a></li>
+							<li><a href="form/validate.html" data-sea="Anchor">Validation 表单验证</a></li>
+							<li><a href="form/modalDialogValidate.html" data-sea="Anchor">Dialog弹框表单验证</a></li>
+							<li><a href="form/smartWizard.html" data-sea="Anchor">SmartWizard分步提交</a></li>
+							<li><a href="form/productSelect.html" data-sea="Anchor">仿淘宝天猫的商品选择</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#upload" data-sea="Collapse" data-config="collapseMenu"><strong>文件上传组件</strong></a>
+						<ul id="upload" class="nav sea-collapse">
+							<li><a href="upload/swfupload.html" data-sea="Anchor">SWFupload 上传</a></li>
+							<li><a href="upload/Uploadify.html" data-sea="Anchor">Uploadify 上传</a></li>
+							<li><a href="upload/File-Upload.html" data-sea="Anchor">File-Upload 上传</a></li>
+							<li><a href="upload/plupload.html" data-sea="Anchor">Plupload 上传</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#layout" data-sea="Collapse" data-config="collapseMenu"><strong>Layout 页面布局</strong></a>
+						<ul id="layout" class="nav sea-collapse">
+							<li><a href="layout/Meerkat.html" data-sea="Anchor">Meerkat 四方向提示</a></li>
+							<li><a href="layout/jMosaic.html" data-sea="Anchor">jMosaic 布局</a></li>
+							<li><a href="layout/freewall.html" data-sea="Anchor">Freewall 布局</a></li>
+							<li><a href="layout/masonry.html" data-sea="Anchor">masonry 瀑布流</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#nav" data-sea="Collapse" data-config="collapseMenu"><strong>导航及下拉菜单</strong></a>
+						<ul id="nav" class="nav sea-collapse">
+							<li><a href="nav/hoverGrid.html" data-sea="Anchor">图文鼠标悬停切换</a></li>
+							<li><a href="nav/PopCircle.html" data-sea="Anchor">PopCircle 球形导航</a></li>
+							<li><a href="nav/ClassySocial.html" data-sea="Anchor">ClassySocial 导航</a></li>
+							<li><a href="nav/SmartMenus.html" data-sea="Anchor">SmartMenus 导航</a></li>
+							<li><a href="nav/masonry.html" data-sea="Anchor">masonry 瀑布流</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#dialog" data-sea="Collapse" data-config="collapseMenu"><strong>消息提示、弹框</strong></a>
+						<ul id="dialog" class="nav sea-collapse">
+							<li><a href="dialog/ArtDialog.html" data-sea="Anchor">ArtDialog 弹框效果</a></li>
+							<li><a href="dialog/messenger.html" data-sea="Anchor">messenger 提示框</a></li>
+							<li><a href="dialog/ClassyNotty.html" data-sea="Anchor">ClassyNotty 提示框</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-10" id="anchor-main">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">SeaJS Javascript组件库</h3>
+				</div>
+				<div class="panel-body">
+					<h2><strong>前言</strong></h2>
+					<p>JavsScript模块化已成为发展趋势，由阿里、腾讯等公司共同维护的Sea.js，无疑是前端JS模块化方面最有力的支持者，其发展势头强劲，越来越多的网站正在受益其中。将常用的JS功能整理成库，于是就有了SeaJS组件库。</p>
+					<h2><strong>简介</strong></h2>
+
+					<p><strong>让组件呼之即来，再也不需要写 script 标签来引用某个功能相关的js文件了。如有相关的css文件， Sea.js 也会自动帮你引入。只要是你看好的JS功能，基本上都可以成为这里的组件。</strong> </p>
+
+					<p>每个组件都是<a href="http://www.seajs.org" target="_blank">Sea.js</a>的模块，所以组件的使用依赖于Sea.js，也就是说要使用这些组件，需要在页面上先引入Sea.js。</p>
+					<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div data-sea=&quot;Plugin_1&quot; data-config=&quot;Plugin_1_Option&quot; data-option=&quot;P1_order1:'P1_value1',P1_order2:'P1_value2'&quot;&gt;&lt;/div&gt;
+&lt;div data-sea=&quot;Plugin_2&quot; data-config=&quot;Plugin_2_Option&quot; data-option=&quot;{P2_order1:'P2_value1',P2_order2:'P2_value2'}&quot;&gt;&lt;/div&gt;
+&lt;div data-sea=&quot;Plugin_3&quot; data-config=&quot;Plugin_3_Option&quot; data-option=&quot;({P3_order1:'P3_value1',P3_order2:'P3_value2'})&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var SeaOptions = ({
+	Plugin_1_Option: {
+		param_1: 'value_1',
+		param_2: 'value_2',
+		...
+		param_n: 'value_n',
+		callback: function(){
+			some code ...
+		}
+	},
+	Plugin_2_Option: {
+		param_1: 'value_1',
+		param_2: 'value_2',
+		...
+		param_n: 'value_n',
+		callback: function(){
+			some code ...
+		}
+	},
+	Plugin_3_Option: {
+		param_1: 'value_1',
+		param_2: 'value_2',
+		...
+		param_n: 'value_n',
+		callback: function(){
+			some code ...
+		}
+	}
+});
+seajs.use(['seajs-control', 'bootstrap', '&#20854;&#20182;&#38656;&#21152;&#36733;&#27169;&#22359;...'], function(){
+	$(document).seaLoad();
+});
+&lt;/script&gt;
+&lt;div data-sea=&quot;Plugin_1&quot; data-config=&quot;Plugin_1_Option&quot; data-option=&quot;Plugin_1_Orther&quot;&gt;&lt;/div&gt;
+&lt;div data-sea=&quot;Plugin_2&quot; data-config=&quot;Plugin_2_Option&quot; data-option=&quot;Plugin_2_Order&quot;&gt;&lt;/div&gt;
+</pre>
+					<p>其中 config/1.1.1/config 是全局的配置文件，在这个文件当中对Sea.js进行了扩展。Sea.js本身没有自动加载组件的功能，为了简化组件的使用，我们给Sea.js扩展了这个功能。</p>
+
+					<p><em>组件开发使用了 Grunt <a href="http://gruntjs.com/" target="_blank">http://gruntjs.com/</a>。Grunt 是针对Javascript项目的一个自动化工具，包括初始化文件、代码审查、单元测试，合并、压缩等一系列常用功能，还有其他插件，也可以自定义插件。总之，这是一个很牛X的工具。</em></p>
+
+					<p><a name="usage1" target="_blank"></a></p>
+
+					<h2><strong>超级使用方法</strong></h2>
+
+					<p>给标签增加一个属性(data-sea="组件名")即可，比如需要调用日历组件（在引入jquery和Sea.js之后），仅需要给input标签增加一个 data-sea="calendar"  的属性，日历就可以工作了。如下</p>
+
+					<p><code>&lt;input type="text" data-sea="calendar"/&gt;</code>
+					<form class="form-horizontal" role="form" data-sea="Validator" data-async="false" data-callback="callback">
+						<div class="form-group">
+							<label for="inputDatepicker" class="col-sm-2 control-label"><strong>demo</strong> 演示日历组件</label>
+							<div class="col-sm-10">
+								<input type="datepicker" class="form-control" id="inputDatepicker" placeholder="请输出年月日"  data-sea="Calendar">
+							</div>
+						</div>
+					</form>
+					<h2><strong>普通使用方法</strong></h2>
+
+					<p>除了上面这种超级简单的使用方式，一般情况下会这么使用，比如使用 underscore 组件</p>
+
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="langauge:'javascript'">
+seajs.use(['underscore'], function(_){
+    _.each([1, 2, 3], alert);
+})</pre>
+					<p><strong>注意</strong>，组件都是有版本的，如 seajs.use(['underscore/1.4.4/underscore'],...) 或 seajs.use(['underscore@1.4.4'],...) ，如果不指定版本seajs.use(['underscore'],...)，则默认使用最新版本。</p>
+
+					<p><a name="usage3" target="_blank"></a></p>
+					<h2><strong>组件开发注意事项</strong></h2>
+					<ul>
+						<li>尽量避免使用jQuery的live方法(jQuery1.9版本不再支持这个方法)，以及on\off(需1.7+)</li>
+						<li>尽量避免使用$.browser，jQuery1.9版本不再支持此对象</li>
+						<li>组件需要标明依赖的jQuery版本</li>
+						<li>组件需要有友好的演示示例</li>
+						<li>组件组件名称必须符合js变量命名（比如不能包含“-”等）</li>
+						<li>如果有css文件，css文件和js文件命名要相同（除了后缀.css的部分）。css文件也放在src目录，如有很多文件，在scr目录创建子目录即可。可参考autocomplete和artdialog两个组件的src目录。</li>
+					</ul>
+				</div>
+				<table class="table table-bordered table-hover">
+					<caption><h2><strong>支持组件列表</strong>（陆续更新中...）</h2></caption>
+					<thead>
+						<tr class="danger">
+							<th class="col-sm-2" class="text-center">data-sea属性</th>
+							<th class="col-sm-7" class="text-center">用途简介</th>
+							<th class="col-sm-3" class="text-center">官网地址</th>
+						</tr>
+						<tr class="success">
+							<th colspan="3" class="text-center">页面效果展示</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>seaAnchor</th>
+							<td>Ajax锚点异步加载效果</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaseaseaseaSnippet</th>
+							<td>jQuery插件seaseaseaSnippet代码语法高亮效果</td>
+							<td><a href="http://www.steamdev.com/seaseaseaSnippet">jQuery Syntax Highlighter</a></td>
+						</tr>
+						<tr>
+							<th>seaHighlight</th>
+							<td>jQuery插件highlight 代码语法高亮效果</td>
+							<td><a href="http://www.steamdev.com/seaseaseaSnippet">jQuery Syntax Highlighter</a></td>
+						</tr>
+						<tr>
+							<th>seaCollapse</th>
+							<td>支持折叠功能的组件，例如accordions、手风琴和导航特效</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaJpage</th>
+							<td>jQuery插件jPages Ajax无刷新翻页特效</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaCloud</th>
+							<td>jQuery插件jQCloud 云标签效果</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaArtDialog</th>
+							<td>jQuery插件artDialog 弹出框效果</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaZtree</th>
+							<td>jQuery插件zTree 树形菜单目录效果</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaMessenger</th>
+							<td>jQuery插件messenger 消息提示效果</td>
+							<td></td>
+						</tr>
+					</tbody>
+					<thead>
+						<tr class="success">
+							<th colspan="3" class="text-center">表单元件展示</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>seaCalendar</th>
+							<td>jQuery UI插件datepicker 日历组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">jQuery UI</a></td>
+						</tr>
+						<tr>
+							<th>seaReside</th>
+							<td>地区三级联动下拉选单</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>seaRadioCheckbox</th>
+							<td>jQuery UI插件buttons 按钮式单选、多选表单控件组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">jQuery UI</a></td>
+						</tr>
+						<tr>
+							<th>seaKindeditor</th>
+							<td>Kindeditor富文本输入框</td>
+							<td><a href="http://kindeditor.net">Kindeditor</a></td>
+						</tr>
+						<tr>
+							<th>seaUploadify</th>
+							<td>jQuery插件Uploadify 上传组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">Uploadify</a></td>
+						</tr>
+						<tr>
+							<th>seaSwfupload</th>
+							<td>jQuery插件SWFupload 上传组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">SWFupload</a></td>
+						</tr>
+						<tr>
+							<th>seaSwitch</th>
+							<td>jQuery插件Switch 开关组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">Switch</a></td>
+						</tr>
+						<tr>
+							<th>seaEditable</th>
+							<td>jQuery插件Editable 文本编辑组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">Editable</a></td>
+						</tr>
+						<tr>
+							<th>seaCheck</th>
+							<td>jQuery插件iCheck 选单组件</td>
+							<td><a href="http://luis-almeida.github.io/jPages">iCheck</a></td>
+						</tr>
+					</tbody>
+					<thead>
+					<tr class="success">
+						<th colspan="3" class="text-center">表单操作控制</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>seaSmartWizard</th>
+							<td>jQuery 插件SmartWizard 表单分步提交</td>
+							<td><a href="http://luis-almeida.github.io/jPages">jQuery UI</a></td>
+						</tr>
+						<tr>
+							<th>seaValidate</th>
+							<td>jQuery 插件Validation 表单验证</td>
+							<td><a href="http://jqueryvalidation.org">jQuery Validation Plugin</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

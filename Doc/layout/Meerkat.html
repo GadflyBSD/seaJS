@@ -1,0 +1,273 @@
+<style>
+	#arrows {
+		height: 280px;
+		position: relative;
+	}
+	#top, #right, #bottom, #left {
+		background: url("images/arrows.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+		display: block;
+		height: 112px;
+		position: absolute;
+		text-indent: -9000px;
+		width: 128px;
+	}
+	#top {
+		background-position: 0 -224px;
+		left: 50%;
+		margin-left: -64px;
+	}
+	#top:hover {
+		background-position: -128px -224px;
+	}
+	#right {
+		background-position: 0 -112px;
+		right: 0;
+		top: 82px;
+	}
+	#right:hover {
+		background-position: -128px -112px;
+	}
+	#bottom {
+		background-position: 0 -336px;
+		bottom: 0;
+		left: 50%;
+		margin-left: -64px;
+	}
+	#bottom:hover {
+		background-position: -128px -336px;
+	}
+	#left {
+		background-position: 0 0;
+		left: 0;
+		top: 82px;
+	}
+	#left:hover {
+		background-position: -128px 0;
+	}
+</style>
+<script>
+	$('#arrows').coffee({
+		click: {
+			'#top': function(){
+				var option =
+				$('#Meerkat').seaModule('Meerkat', {
+					background: '#333',
+					height: '150px',
+					width: '100%',
+					position: 'top',
+					animationIn: 'slide',
+					animationSpeed: 500
+				});
+				$('.seaseaseaSnippet-container').hide();
+				$('.seaseaseaSnippet-container:eq(0)').show();
+				return false;
+			},
+			'#right': function(){
+				$('#Meerkat').seaModule('Meerkat', {
+					background: '#444',
+					height: '100%',
+					width: '150px',
+					position: 'right',
+					animationIn: 'slide',
+					animationSpeed: 500
+				});
+				$('.seaseaseaSnippet-container').hide();
+				$('.seaseaseaSnippet-container:eq(1)').show();
+				return false;
+			},
+			'#bottom': function(){
+				$('#Meerkat').seaModule('Meerkat', {
+					background: '#555',
+					height: '150px',
+					width: '100%',
+					position: 'bottom',
+					animationIn: 'slide',
+					animationSpeed: 500
+				});
+				$('.seaseaseaSnippet-container').hide();
+				$('.seaseaseaSnippet-container:eq(2)').show();
+				return false;
+			},
+			'#left': function(){
+				$('#Meerkat').seaModule('Meerkat', {
+					background: '#222',
+					height: '100%',
+					width: '150px',
+					position: 'left',
+					animationIn: 'slide',
+					animationSpeed: 500
+				});
+				$('.seaseaseaSnippet-container').hide();
+				$('.seaseaseaSnippet-container:eq(3)').show();
+				return false;
+			}
+		}
+	});
+</script>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>Meerkat 页面四方向提示插件</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>Meerkat是一个jQuery插件用于在页面的底部和顶部创建一个固定的横幅。横幅的关闭有多种选项可以设置，可以一直不关闭直到离开当前页面，或者是当浏览器会话结束时自动关闭，可以设置时间定时关闭等。此外还可以设置横幅的背景、高度、显示/关闭动画的速度。</p>
+		<p>jQuery Meerkat 项目主页：<a target="_blank" href="http://meerkat.jarodtaylor.com">http://meerkat.jarodtaylor.com</a></p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p>
+				<strong><code>background</code>参数，默认值：<code>'none'</code>，说明：</strong>
+				The background option accepts CSS background (shorthand) property values.
+			</p></li>
+			<li><p>
+				<strong><code>opacity</code>参数，默认值：<code>null</code>，说明：</strong>
+				If opacity option is declared, meerkat will append an opacity layer, mirroring your background setting, but with transparency. This will not effect the opacity of the content, only the opacity background layer.
+			</p></li>
+			<li><p>
+				<strong><code>height</code>参数，默认值：<code>'auto'</code>，说明：</strong>
+				The height option accepts all CSS height property values (px, em, %, auto, etc).
+			</p></li>
+			<li><p>
+				<strong><code>width</code>参数，默认值：<code>'100%'</code>，说明：</strong>
+				The width option accepts all CSS width property values (px, em, %, auto, etc).
+			</p></li>
+			<li><p>
+				<strong><code>position</code>参数，默认值：<code>'bottom'</code>，说明：</strong>
+				The position setting will determine where Meerkat enters from and exits to. The available options are top, bottom, left, or right.
+			</p></li>
+			<li><p>
+				<strong><code>close</code>参数，默认值：<code>'.hide'</code>，说明：</strong>
+				The hide option attaches to an html element selector (ie. ".hide" or "#hide").
+			</p></li>
+			<li><p>
+				<strong><code>dontShowAgain</code>参数，默认值：<code>'#dont-show'</code>，说明：</strong>
+				The dontShowAgain option attaches to an html element selector (ie. ".dont-show" or "#dont-show"). Much like the hide option, this will remove Meerkat from the page, however, this also sets a cookie in the users browser telling it not to show Meerkat again. Depending on the cookieExpires setting, Meerkat will not show again for a set amount of days, or until the browser session ends (browser restarts).
+			</p></li>
+			<li><p>
+				<strong><code>cookieExpires</code>参数，默认值：<code>0</code>，说明：</strong>
+				If you use the dontShowAgain option, you can set the amount of days Meerkat will not show for. This option accepts whole numbers beginning with 0. Each number represents a day. If it's set to 0, Meerkat will not show again until that user's browser session has ended (browser restarts).'
+			</p></li>
+			<li><p>
+				<strong><code>removeCookie</code>参数，默认值：<code>'.removeCookie'</code>，说明：</strong>
+				By giving an HTML element a class or id that is assigned to the removeCookie option, users can click this element and the 'meerkat' cookie will be removed, allowing for meerkat to show again.
+			</p></li>
+			<li><p>
+				<strong><code>animationIn</code>参数，默认值：<code>'slide'</code>，说明：</strong>
+				This option accepts 'fade', 'slide', and 'none'. This will effect how Meerkat shows itself.
+			</p></li>
+			<li><p>
+				<strong><code>animationOut</code>参数，默认值：<code>'slide'</code>，说明：</strong>
+				This option accepts 'fade', 'slide', and 'none'. This will effect how Meerkat hides itself.
+			</p></li>
+			<li><p>
+				<strong><code>animationSpeed</code>参数，默认值：<code>'normal'</code>，说明：</strong>
+				The animationSpeed option accepts the following values: ("slow", "normal", or "fast") or the number of milliseconds to run the animation (e.g. 1000)
+				When animationSpeed is set to a number; The number represents the duration of the sliding/fading animation (in milliseconds). The smaller the value, the faster the animation.
+			</p></li>
+			<li><p>
+				<strong><code>delay</code>参数，默认值：<code>0</code>，说明：</strong>
+				This option accepts a whole number representing seconds. Setting this option's value to '2' will delay Meerkat from showing for 2 seconds.
+			</p></li>
+			<li><p>
+				<strong><code>timer</code>参数，默认值：<code>Null</code>，说明：</strong>
+				This option accepts a whole number representing seconds. Setting this option's value to '5' will hide Meerkat automatically 5 seconds after it's appeared, without needing the user to click your hide element.
+			</p></li>
+			<li><p>
+				<strong><code>dontShowAgainAuto</code>参数，默认值：<code>False</code>，说明：</strong>
+				This option accepts true or false.
+				This method works along side the timer method. If set to true, after Meerkat automatically closes, the dontShowAgainAuto will trigger the dontShowAgain method, which creates a cookie in the user's browser telling it not to show Meerkat again. Depending on the cookieExpires setting, Meerkat will not show again for a set amount of days, or until the browser session ends (browser restarts).
+			</p></li>
+			<li><p>
+				<strong><code>onMeerkatShow</code>参数，默认值：<code>function(){}</code>，说明：</strong>
+				The onMeerkatShow option is a callback function, an opportunity to add additional customization to Meerkat.
+			</p></li>
+			<li><p>
+				<strong><code>easingIn</code>参数，默认值：<code>'swing'</code>，说明：</strong>
+				The use of this option requires the jQuery Easing Plugin by George Smith. Coupled with the animationIn option, you have numerous choices for the easing of its animation. These options will not do anything without making reference to the jQuery Easing plugin BEFORE your jQuery Meerkat reference.
+			</p></li>
+			<li><p>
+				<strong><code>easingOut</code>参数，默认值：<code>'swing'</code>，说明：</strong>
+				The use of this option requires the jQuery Easing Plugin by George Smith. Coupled with the animationOut option, you have numerous choices for the easing of its animation. These options will not do anything without making reference to the jQuery Easing plugin BEFORE your jQuery Meerkat reference.
+			</p></li>
+			<li><p>
+				<strong><code>tmpl</code>参数，默认值：<code>False</code>，说明：</strong>
+			</p></li>
+			<li><p>
+				<strong><code>adsenseDiv</code>参数，默认值：<code>False</code>，说明：</strong>
+			</p></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div id="arrows" class="col-md-4">
+						<a id="top" href="#">Top</a>
+						<a id="right" href="#">Right</a>
+						<a id="bottom" href="#">Bottom</a>
+						<a id="left" href="#">Left</a>
+						<a class="removeCookie" href="#">Reset Demo</a>
+					</div>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" class="col-md-8" id="seaseaseaSnippet-top" style="display: none">
+&lt;script type=&quot;text/javascript&quot;&gt;
+var SeaOptions = ({
+		Meerkat :{
+			background: '#333',
+			height: '150px',
+			width: '100%',
+			position: 'top',
+			animationIn: 'slide',
+			animationSpeed: 500
+		}
+		......
+	});
+&lt;/script&gt;
+&lt;div data-sea=&quot;Meerkat&quot; data-config=&quot;Meerkat&quot;&gt;&lt;/div&gt;</pre>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" class="col-md-8" style="display: none">
+&lt;script type=&quot;text/javascript&quot;&gt;
+var SeaOptions = ({
+		Meerkat :{
+			background: '#444',
+			height: '100%',
+			width: '150px',
+			position: 'right',
+			animationIn: 'slide',
+			animationSpeed: 500
+		}
+		......
+	});
+&lt;/script&gt;
+&lt;div data-sea=&quot;Meerkat&quot; data-config=&quot;Meerkat&quot;&gt;&lt;/div&gt;</pre>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" class="col-md-8">
+&lt;script type=&quot;text/javascript&quot;&gt;
+var SeaOptions = ({
+		Meerkat :{
+			background: '#555',
+			height: '150px',
+			width: '100%',
+			position: 'bottom',
+			animationIn: 'slide',
+			animationSpeed: 500
+		}
+		......
+	});
+&lt;/script&gt;
+&lt;div data-sea=&quot;Meerkat&quot; data-config=&quot;Meerkat&quot;&gt;&lt;/div&gt;</pre>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" class="col-md-8" id="seaseaseaSnippet-left" style="display: none">
+&lt;script type=&quot;text/javascript&quot;&gt;
+var SeaOptions = ({
+		Meerkat :{
+			background: '#222',
+			height: '100%',
+			width: '150px',
+			position: 'left',
+			animationIn: 'slide',
+			animationSpeed: 500
+		}
+		......
+	});
+&lt;/script&gt;
+&lt;div data-sea=&quot;Meerkat&quot; data-config=&quot;Meerkat&quot;&gt;&lt;/div&gt;</pre>
+					<div id="Meerkat" data-sea="Meerkat" data-config="Meerkat"><p>sdgsdgsdgsdgsdgsdgsd</p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

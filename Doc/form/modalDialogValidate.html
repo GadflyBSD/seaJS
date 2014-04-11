@@ -1,0 +1,131 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>Dialog弹框表单验证</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>表单验证是Web开发中最常见的流程，一般分为前端js验证，和后端服务器脚本验证两部分。前端js验证不是必须，但为了加强用户体验，却又往往是必不可少。但很多重复的表单验证却花去了开发人员大量宝贵时间。jQuery Validation Plugin为一款简单好用的表单验证插件.。<br />
+			兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。</p>
+		<h3><strong>通过HTML文档data属性</strong></h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="Dialog"</code> 就可以为表单赋予Validation表单验证功能。<br />
+			<code>< form action="URL" method="ajax/debug/post/get" data-sea="Validate" data-msgTime="2" data-async="true" data-callback="callback" ></code><br />
+			以下是其他相关属性：
+		<ul>
+			<li><code>data-dialog</code> 属性接受一个字符串，指定弹框类型，提供三种弹框类型：showModal（模态弹出框）、dialog（普通弹出框）和FloatLayer（气泡浮层），默认是“showModal”；</li>
+			<li><code>data-float</code> 属性接受一个字符串，气泡浮层浮动于所指定元素的ID，仅当【<code>data-dialog="FloatLayer"</code>】时需要设置；</li>
+			<li><code>data-target</code> 属性接受一个字符串，指定弹出表单的模板ID。默认为“modalDialog”；</li>
+			<li><code>data-title</code> 属性接受一个字符串，指定弹出表单的标题栏内容，默认值是“My Modal Dialog Title”；</li>
+			<li><code>data-callback</code> 属性接受一个回调函数的名称，默认是空，如指定了回调函数，需要定义该回调函数；在弹框表单中这里的回调函数在表单验证提交成功触发关闭弹框前触发。作为弹框表单的回调函数时本回调函数提供三个参数：data（表单提交数据序列化后的字符串）, note（Ajax返回的Json对象）, mess（提示框对象，用于操作提示框）</li>
+		</ul>
+		</p>
+		<h3><strong>特别注意：在哪里和如何自定义回调函数?</strong></h3>
+		<p>请在seaJS的入口位置，使用jQuery.extend(object)的方式设定回调函数，例如：
+		<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var SeaOptions = ({
+	Dialog:{
+		tmpl:true,
+		width:'850px',
+		tmplData:{
+			ordersn:'这里是jQuery TMPL 传递变量'
+		}
+	}
+});</pre>
+		</p>
+		<h3><strong>小技巧：表单提交后如何阻止关闭?</strong></h3>
+		<p>答：使callback回调函数return true即可!</p>
+		<div class="bs-example">
+			<div class="bs-sidebar sea-example">
+				<a href="#DialogDemo" class="btn btn-warning btn-block" type="button" data-sea="artDialog" data-config="Dialog" data-tmpl="ordersn2:'sdgsdg'" data-option="method: 'tmpl'">检测报告查询</a>
+			</div>
+			<br />
+			<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;a href=&quot;#DialogDemo&quot; class=&quot;btn btn-warning btn-block&quot; type=&quot;button&quot; data-sea=&quot;Dialog&quot; data-config=&quot;Dialog&quot;&gt;&#26816;&#27979;&#25253;&#21578;&#26597;&#35810;&lt;/a&gt;
+&lt;script id=&quot;DialogDemo&quot; type=&quot;text/x-jquery-tmpl&quot;&gt;
+	&lt;div class=&quot;modal-body&quot;&gt;
+		&lt;form action=&quot;/Index/succ&quot; method=&quot;ajax&quot; class=&quot;form-horizontal&quot; data-sea=&quot;Validate&quot;&gt;
+			&lt;div class=&quot;form-group text-center&quot;&gt;&lt;strong&gt;${ordersn}&lt;/strong&gt;&lt;/div&gt;
+			&lt;div class=&quot;form-group&quot;&gt;
+				&lt;label for=&quot;realname&quot; class=&quot;col-sm-2 control-label&quot;&gt;&#30495;&#23454;&#22995;&#21517;&lt;/label&gt;
+				&lt;div class=&quot;col-sm-10&quot;&gt;
+					&lt;input class=&quot;form-control ignore&quot; id=&quot;realname&quot; type=&quot;text&quot; name=&quot;realname&quot; placeholder=&quot;&#22635;&#20837;&#24744;&#30340;&#30495;&#23454;&#22995;&#21517;&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;form-group&quot;&gt;
+				&lt;label for=&quot;idcard&quot; class=&quot;col-sm-2 control-label&quot;&gt;&#35777;&#20214;&#21495;&#30721;&lt;/label&gt;
+				&lt;div class=&quot;col-sm-10&quot;&gt;
+					&lt;input class=&quot;form-control ignore&quot; id=&quot;idcard&quot; type=&quot;text&quot; name=&quot;idcard&quot; placeholder=&quot;&#22635;&#20837;&#24744;&#30340;&#35777;&#20214;&#21495;&#30721;&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;form-group&quot;&gt;
+				&lt;label class=&quot;col-sm-2 control-label&quot;&gt;&#20986;&#29983;&#26085;&#26399;&lt;/label&gt;
+				&lt;div class=&quot;col-sm-10&quot;&gt;
+					&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;&#22635;&#20889;&#20986;&#29983;&#26085;&#26399;&quot; id=&quot;datepicker&quot; name=&quot;datepicker&quot; data-sea=&quot;Calendar&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;form-group&quot;&gt;
+				&lt;label for=&quot;mobile&quot; class=&quot;col-sm-2 control-label&quot;&gt;&#32852;&#31995;&#25163;&#26426;&lt;/label&gt;
+				&lt;div class=&quot;col-sm-10&quot;&gt;
+					&lt;input class=&quot;form-control ignore&quot; id=&quot;mobile&quot; type=&quot;text&quot; name=&quot;mobile&quot; placeholder=&quot;&#22635;&#20837;&#24744;&#30340;&#32852;&#31995;&#25163;&#26426;&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;form-group row&quot;&gt;
+				&lt;label class=&quot;col-sm-2 control-label&quot;&gt;&#25152;&#22312;&#22320;&#21306;&lt;/label&gt;
+					&lt;div class=&quot;col-sm-10&quot; data-sea=&quot;Reside&quot; data-option=&quot;class:'form-control ignore'&quot;&gt;
+						&lt;div class=&quot;col-sm-4 city resideprovince&quot;&gt;&lt;/div&gt;
+						&lt;div class=&quot;col-sm-4 city residecity&quot;&gt;&lt;/div&gt;
+						&lt;div class=&quot;col-sm-4 city residedist&quot;&gt;&lt;/div&gt;
+					&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;form-group row&quot;&gt;
+				&lt;div class=&quot;col-sm-12&quot;&gt;&lt;button class=&quot;btn btn-info btn-block&quot; type=&quot;submit&quot;&gt;&#30830;&#35748;&#20462;&#25913;&lt;/button&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/form&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/script&gt;</pre>
+		</div>
+	</div>
+</div>
+<script id="DialogDemo" type="text/x-jquery-tmpl">
+	<div class="modal-body">
+		<form action="/Index/succ" method="ajax" class="form-horizontal" data-sea="Validate">
+			<div class="form-group text-center"><strong>${ordersn}</strong>-${ordersn2}</div>
+			<div class="form-group">
+				<label for="realname" class="col-sm-2 control-label">真实姓名</label>
+				<div class="col-sm-10">
+					<input class="form-control ignore" id="realname" type="text" name="realname" placeholder="填入您的真实姓名" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="idcard" class="col-sm-2 control-label">证件号码</label>
+				<div class="col-sm-10">
+					<input class="form-control ignore" id="idcard" type="text" name="idcard" placeholder="填入您的证件号码" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">出生日期</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" placeholder="填写出生日期" id="datepicker" name="datepicker" data-sea="Calendar" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mobile" class="col-sm-2 control-label">联系手机</label>
+				<div class="col-sm-10">
+					<input class="form-control ignore" id="mobile" type="text" name="mobile" placeholder="填入您的联系手机" />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 control-label">所在地区</label>
+					<div class="col-sm-10" data-sea="Reside" data-option="class:'form-control ignore'">
+						<div class="col-sm-4 city resideprovince"></div>
+						<div class="col-sm-4 city residecity"></div>
+						<div class="col-sm-4 city residedist"></div>
+					</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12"><button class="btn btn-info btn-block" type="submit">确认修改</button></div>
+			</div>
+		</form>
+	</div>
+</div>
+</script>

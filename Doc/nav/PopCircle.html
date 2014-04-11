@@ -1,0 +1,78 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>PopCircle 球形导航</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery PopCircle 项目主页：<a target="_blank" href="http://jspopcircle.com/">http://jspopcircle.com/</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p>
+				<strong><code>css</code>参数，默认值：<code>False</code>，说明：</strong>
+			</p></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<ul data-sea="PopCircle">
+						<li><a href="#"><img src="images/PopCircle/blue.png"></a></li>
+						<li><a href="#"><img src="images/PopCircle/red.png"></a></li>
+						<li><a href="#"><img src="images/PopCircle/blue.png"></a></li>
+						<li><a href="#"><img src="images/PopCircle/red.png"></a></li>
+						<li><a href="#"><img src="images/PopCircle/blue.png"></a></li>
+					</ul>
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'css'">
+.PopCircleBox{
+	width:500px;
+	height: 500px;
+	float:left;
+}
+.trigger{
+	width:255px;
+	height: 255px;
+	position: absolute;
+	z-index: 10;
+	left:110px;
+	top:110px;
+	background-image:url(images/big_round.png);
+	cursor: pointer;
+}
+.popcircle{
+	position:relative;
+	z-index: 9;
+	width:500px;
+	height:500px;
+	left:0px;
+	top:0px;
+}
+.popcircle ul{
+	list-style:none;
+	padding:0px;
+	margin: 0px;
+	height: auto;
+	cursor: pointer;
+}
+.popcircle ul li{
+	top: 187.5px;
+	left: 187.5px;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+}</pre>
+				</div>
+				<div class="col-md-12">
+					<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;ul data-sea=&quot;PopCircle&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/blue.png&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/red.png&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/blue.png&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/red.png&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;images/blue.png&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

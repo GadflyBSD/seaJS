@@ -1,0 +1,76 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>jMosaic 布局</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><code>items_type</code>参数：item选择器名称。默认值：<code>img</code></li>
+			<li><code>min_row_height</code>参数：最小行高度。默认值：<code>150</code></li>
+			<li><code>margin</code>参数：item外间距。默认值：<code>0</code></li>
+			<li><code>is_first_big</code>参数：第一行是否为大的。默认值：<code>false</code></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12"><h3>1. Pictures & fixed width:</h3></div>
+				<div class="col-md-12" data-sea="jMosaic">
+					<img src="http://lorempixel.com/700/446/abstract" width="700" height="446"/>
+					<img src="http://lorempixel.com/700/448/animals" width="700" height="448"/>
+					<img src="http://lorempixel.com/640/896/business" width="640" height="896"/>
+					<img src="http://lorempixel.com/700/551/cats" width="700" height="551"/>
+					<img src="http://lorempixel.com/700/438/city" width="700" height="438"/>
+					<img src="http://lorempixel.com/700/467/food" width="700" height="467"/>
+					<img src="http://lorempixel.com/600/573/nightlife" width="600" height="573"/>
+					<img src="http://lorempixel.com/500/669/fashion" width="500" height="669"/>
+					<img src="http://lorempixel.com/460/1635/people" width="460" height="1635"/>
+					<img src="http://lorempixel.com/400/600/nature" width="400" height="600"/>
+					<img src="http://lorempixel.com/602/600/sports" width="602" height="600"/>
+					<img src="http://lorempixel.com/670/544/technics" width="670" height="544"/>
+					<img src="http://lorempixel.com/670/503/transport" width="670" height="503"/>
+				</div>
+			</div>
+			<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;col-md-12&quot; data-sea=&quot;jMosaic&quot;&gt;
+	&lt;img src=&quot;http://lorempixel.com/700/446/abstract&quot; width=&quot;700&quot; height=&quot;446&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/700/448/animals&quot; width=&quot;700&quot; height=&quot;448&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/640/896/business&quot; width=&quot;640&quot; height=&quot;896&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/700/551/cats&quot; width=&quot;700&quot; height=&quot;551&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/700/438/city&quot; width=&quot;700&quot; height=&quot;438&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/700/467/food&quot; width=&quot;700&quot; height=&quot;467&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/600/573/nightlife&quot; width=&quot;600&quot; height=&quot;573&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/500/669/fashion&quot; width=&quot;500&quot; height=&quot;669&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/460/1635/people&quot; width=&quot;460&quot; height=&quot;1635&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/400/600/nature&quot; width=&quot;400&quot; height=&quot;600&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/602/600/sports&quot; width=&quot;602&quot; height=&quot;600&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/670/544/technics&quot; width=&quot;670&quot; height=&quot;544&quot;/&gt;
+	&lt;img src=&quot;http://lorempixel.com/670/503/transport&quot; width=&quot;670&quot; height=&quot;503&quot;/&gt;
+&lt;/div&gt;</pre>
+			<div class="bs-sidebar row">
+				<div class="col-md-12"><h3>2. Blocks & relative width:</h3></div>
+				<ul class="col-md-12" data-sea="jMosaic" data-option="items_type: 'li',min_row_height: 200,is_first_big: true">
+					<li style="width: 250px; height: 400px; background: #ff0000; list-style: none;"></li>
+					<li style="width: 250px; height: 200px; background: #ffff00; list-style: none;"></li>
+					<li style="width: 450px; height: 235px; background: #000000; list-style: none;"></li>
+					<li style="width: 550px; height: 500px; background: #00ff00; list-style: none;"></li>
+					<li style="width: 700px; height: 300px; background: #00ffff; list-style: none;"></li>
+					<li style="width: 213px; height: 458px; background: #ff00ff; list-style: none;"></li>
+					<li style="width: 710px; height: 170px; background: #aa77cc; list-style: none;"></li>
+					<li style="width: 350px; height: 350px; background: #bb1100; list-style: none;"></li>
+					<li style="width: 250px; height: 400px; background: #ff0000; list-style: none;"></li>
+				</ul>
+			</div>
+			<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;ul class=&quot;col-md-12&quot; data-sea=&quot;jMosaic&quot; data-option=&quot;items_type: 'li',min_row_height: 200,is_first_big: true&quot;&gt;
+	&lt;li style=&quot;width: 250px; height: 400px; background: #ff0000; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 250px; height: 200px; background: #ffff00; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 450px; height: 235px; background: #000000; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 550px; height: 500px; background: #00ff00; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 700px; height: 300px; background: #00ffff; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 213px; height: 458px; background: #ff00ff; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 710px; height: 170px; background: #aa77cc; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 350px; height: 350px; background: #bb1100; list-style: none;&quot;&gt;&lt;/li&gt;
+	&lt;li style=&quot;width: 250px; height: 400px; background: #ff0000; list-style: none;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+		</div>
+	</div>
+</div>

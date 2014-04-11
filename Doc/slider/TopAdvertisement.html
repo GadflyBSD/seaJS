@@ -1,0 +1,68 @@
+<div class="row">
+	<div sea-toggle="TopAdvertisement" class="gg_full"></div>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">jQuery TopAdvertisement 泰山压顶式广告栏</h3>
+	</div>
+	<div class="panel-body">
+		<h3>关于</h3>
+		<p>基于jQuery旋转轮播式CarouFredSel插件制作的焦点幻灯片特效，支持无限循环播放，carouFredSel是一个内容无限循环播放容器jQuery，可以展示任何类型的HTML元素。支持水平和垂直两个方向。项目的高度和宽度可以不相同。可以动态从容器中删除/添加项目，可以利用向前/向后按纽播放项目或设置成自动播放。<br>
+			插件兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。<br>
+			插件自带有39种样式可以使用。</p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>sea-toggle="seaseaseaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。通过 <code>sea-options</code>设置可选参数<br>
+			以下是可选参数：
+		<ul>
+			<li><code>target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
+			<li><code>language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
+			<li><code>style</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaseaseaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>showNum</code> 属性指定是否显示行号。默认是true；</li>
+			<li><code>collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，showMsg、hideMsg属性有效；</li>
+			<li><code>showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当collapse为true时有效，默认是“展开示例代码”；</li>
+			<li><code>hideMsg</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当collapse为true时有效，默认是“隐藏示例代码”。</li>
+		</ul>
+		</p>
+		<div class="bs-example">
+			<div class="row">
+				<div class="col-sm-6">
+					<div data-sea="seaCarouFredSel">
+						<img src="images/slider/thumbs/leaf.jpg" href="images/slider/leaf.jpg" data-sea="ColorBox" />
+						<img src="images/slider/thumbs/bridge.jpg" href="images/slider/bridge.jpg" data-sea="ColorBox" />
+						<img src="images/slider/thumbs/road.jpg" href="images/slider/road.jpg" data-sea="ColorBox" />
+						<img src="images/slider/thumbs/sea.jpg" href="images/slider/sea.jpg" data-sea="ColorBox" />
+						<img src="images/slider/thumbs/shelter.jpg" href="images/slider/shelter.jpg" data-sea="ColorBox" />
+						<img src="images/slider/thumbs/tree.jpg" href="images/slider/tree.jpg" data-sea="ColorBox" />
+					</div>
+				</div>
+			</div>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-option="style:'ide-eclipse'">
+&lt;div sea-toggle=&quot;CarouFredSel&quot;&gt;
+	&lt;img src=&quot;images/slider/thumbs/leaf.jpg&quot; data-img=&quot;images/slider/leaf.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;images/slider/thumbs/bridge.jpg&quot; data-img=&quot;images/slider/bridge.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;images/slider/thumbs/road.jpg&quot; data-img=&quot;images/slider/road.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;images/slider/thumbs/sea.jpg&quot; data-img=&quot;images/slider/sea.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;images/slider/thumbs/shelter.jpg&quot; data-img=&quot;images/slider/shelter.jpg&quot; /&gt;&lt;/a&gt;
+	&lt;img src=&quot;images/slider/thumbs/tree.jpg&quot; data-img=&quot;images/slider/tree.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+				<h4>示例中的样式表如下</h4>
+				<pre data-sea="seaSnippet" data-option="language:'css',style:'ide-eclipse'">
+[sea-toggle=CarouFredSel] {
+	margin: 20px 0;
+	width: 100%;
+	padding: 0;
+	height: 80px;
+}
+[sea-toggle=CarouFredSel] img {
+	border: 1px solid #ccc;
+	background-color: white;
+	padding: 9px;
+	margin: 7px;
+	cursor: pointer;
+}</pre>
+			</div>
+		</div>
+	</div>
+</div>

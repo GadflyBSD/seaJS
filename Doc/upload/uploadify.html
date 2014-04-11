@@ -1,0 +1,489 @@
+<div class="panel panel-primary" id="UploadifyDoc">
+<div class="panel-heading">
+		<h3 class="panel-title"><strong>表单控件展示</strong></h3>
+	</div>
+	<div class="panel-body">
+	<div class="row" style="margin-bottom: 15px;">
+		<div class="col-md-4">
+			<a class="btn btn-info btn-block" href="#collapse1" data-sea="Collapse" data-option="parent:'#UploadifyDoc',active:'div'">Uploadify 属性</a>
+		</div>
+		<div class="col-md-4">
+			<a class="btn btn-info btn-block" href="#collapse2" data-sea="Collapse" data-option="parent:'#UploadifyDoc',active:'div'">Uploadify 事件</a>
+		</div>
+		<div class="col-md-4">
+			<a class="btn btn-info btn-block" href="#collapse3" data-sea="Collapse" data-option="parent:'#UploadifyDoc',active:'div'">Uploadify 方法</a>
+		</div>
+	</div>
+	<div class="panel panel-default sea-collapse sea-collapse-in" id="collapse1">
+		<div class="panel-heading">
+			<h3 class="panel-title">Uploadify 属性</h3>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">auto</div><i>布尔型</i></dt>
+						<dd>设置auto为true，当文件被添加至上传队列时，将会自动上传。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">buttonClass</div><i>字符串</i></dt>
+						<dd>为上传按钮添加类名。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">buttonCursor</div><i>字符串</i></dt>
+						<dd>鼠标经过上传按钮时，鼠标的形状。可选值为‘hand’(手形) 和 ‘arrow’(箭头)。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">buttonImage</div><i>字符串</i></dt>
+						<dd>定义“浏览”按钮背景图像的路径。给按钮设置背景图像的代码最好写在CSS文件中。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">buttonText</div><i>字符串</i></dt>
+						<dd>定义显示在默认按钮上的文本。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">checkExisting</div><i>字符串</i></dt>
+						<dd>定义检查目标文件夹中是否存在同名文件的脚本文件路径。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">debug</div><i>布尔型</i></dt>
+						<dd>当其值为true时，开启SWFUpload调试模式。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">fileObjName</div><i>字符串</i></dt>
+						<dd>定义上传数据处理文件中接收数据使用的文件对象名。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">fileSizeLimit</div><i>整型</i></dt>
+						<dd>上传文件大小限制。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">fileTypeDesc</div><i>字符串</i></dt>
+						<dd>可选择的文件类型的描述。此字符串出现在浏览文件对话框的文件类型下拉菜单中。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">fileTypeExts</div><i>字符串</i></dt>
+						<dd>定义允许上传的文件后缀。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">formData</div><i>JSON对象</i></dt>
+						<dd>定义在文件上传时需要一同提交的其他数据对象。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">height</div><i>整型</i></dt>
+						<dd>上传按钮的高度（单位：像素）。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">itemTemplate</div><i>布尔型</i></dt>
+						<dd>itemTemplate选项允许你为每一个添加到队列中选项设定一个不同HTML模板。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">method</div><i>字符串</i></dt>
+						<dd>上传文件的提交方法，取值'post'或'get'。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">multi</div><i>布尔型</i></dt>
+						<dd>设置值为false时，一次只能选中一个文件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">overrideEvents</div><i>JSON</i></dt>
+						<dd>该项定义了一组默认脚本中你不想执行的事件名称。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">preventCaching</div><i>布尔型</i></dt>
+						<dd>如果设置为真，一个随机的值添加到SWF文件的URL，因此它不会缓存。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">progressData</div><i>字符串</i></dt>
+						<dd>设置显示在上传进度条中的数据类型，可选项时百分比（percentage）或速度（speed）。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">queueID</div><i>字符串</i></dt>
+						<dd>queueID选项允许你设置一个拥有唯一ID的DOM元素来作为显示上传队列的容器。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">queueSizeLimit</div><i>整型</i></dt>
+						<dd>上传队列中一次可容纳的最大条数。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">removeCompleted</div><i>布尔型</i></dt>
+						<dd>不设置该选项或者将其设置为false，将使上传队列中的项目始终显示于队列中，直到点击了关闭按钮或者队列被清空。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">removeTimeout</div><i>整型</i></dt>
+						<dd>设置上传完成后从上传队列中移除的时间（单位：秒）。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">requeueErrors</div><i>布尔型</i></dt>
+						<dd>设置为真时，上传队列重置或上传多次重试时，返回错误信息。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">successTimeout</div><i>整型</i></dt>
+						<dd>表示uploadify的成功等待时间（单位：秒，默认30秒）。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">swf</div><i>字符串</i></dt>
+						<dd>定义uploadify.swf的路径。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">uploader</div><i>字符串</i></dt>
+						<dd>定义服务器端上传数据处理脚本文件uploadify.swf的路径。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">uploadLimit</div><i>整型</i></dt>
+						<dd>定义允许的最大上传数量。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">width</div><i>整型</i></dt>
+						<dd>定义浏览按钮的宽度。</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel panel-default sea-collapse" id="collapse2">
+		<div class="panel-heading">
+			<h3 class="panel-title">Uploadify 事件</h3>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onCancel</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>file</i></div>被取消的文件对象。</dd>
+						<dd>设置onCancel选项，在文件上传被取消时，将允许运行一个自定义函数。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onClearQueue</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>queueItemCount</i></div>被取消的队列的项目数量。</dd>
+						<dd>设置onClearQueue选项，上传队列清空（激活ancel方法）时，将允许运行一个自定义函数。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onDestroy</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>销毁Uploadify实例（调用destroy方法）时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onDialogClose</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>queueData</i></div>对象包括的队列信息包括：
+							<ul>
+								<li>filesSelected：在浏览文件对话框中选中的文件数量。</li>
+								<li>filesQueued：添加到队列中的文件数量。（没有返回错误）</li>
+								<li>filesReplaced：队列中替换文件的数量。</li>
+								<li>filesCancelled：从队列中取消的文件的数量。</li>
+								<li>filesErrored：返回错误信息的文件的数量。 </li>
+							</ul>
+						</dd>
+						<dd>当浏览文件对话框关闭时触发该事件。如果该事件被添加到overrideEvents属性中，在添加文件到队列中发生错误时，将不会弹出默认错误信息。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+function onDialogClose(queueData) {
+    alert('选择的' + queueData.filesSelected + '个文件中有'+queueData.filesQueued + '个被添加到队列中。现在队列中一共有' + queueData.queueLength + '个文件。');
+}
+							</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onDialogOpen</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>在浏览文件对话框被打开前一瞬触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onDisable</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>调用disable方法禁用Uploadify实例时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onEnable</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>调用disable方法启用Uploadify实例时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onFallback</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>浏览器检测不到兼容版本的Flash时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onInit</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>instance</i></div>uploadify 对象实例。</dd>
+						<dd>调用Uploadify初始化结束时触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">function onInit(instance) {
+	alert('队列ID是 ' + instance.settings.queueID);
+}</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onQueueComplete</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>queueData</i></div>queueData对象包括的队列信息包括：
+							<ul>
+								<li>uploadsSuccessful：上传成功的文件数量。</li>
+								<li>uploadsErrored：上传失败的文件数量。</li>
+							</ul>
+						</dd>
+						<dd>队列中的所有文件被处理完成时触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">function onQueueComplete(queueData) {
+	alert(queueData.uploadsSuccessful + ' 个文件上传成功.');
+}</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onSelect</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>file</i></div>添加至上传队列的文件对象。</dd>
+						<dd>每添加一个文件至上传队列时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onSelectError</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>返回错误的文件对象。</dd>
+						<dd><div class="col-md-3">回调参数：<i>errorCode</i></div>返回的错误代码。在定义错误代码时可使用以下常量：
+							<ul>
+								<li>QUEUE_LIMIT_EXCEEDED：选定的文件数量超过了设置的限值</li>
+								<li>FILE_EXCEEDS_SIZE_LIMIT：文件的大小超过了设置的限值</li>
+								<li>ZERO_BYTE_FILE：文件大小</li>
+								<li>INVALID_FILETYPE：文件类型不在设置的范围内</li>
+							</ul>
+						</dd>
+						<dd><div class="col-md-3">回调参数：<i>errorMsg</i></div>表示超过限值的错误信息。</dd>
+						<dd>选择文件返回错误时触发该事件。每一个文件返回错误都会触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+function onSelectError(file, errorCode, errorMsg) {
+	alert(file.name + '文件返回错误，没有添加到上传队列中.');
+}</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onSWFReady</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：</div>该事件没有Arguments对象。</dd>
+						<dd>当flash按钮载入完毕时触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onUploadComplete</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>上传完成的文件对象或返回的错误信息。</dd>
+						<dd>每一个文件上传完成都会触发该事件，不管是上传成功还是上传失败。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onUploadError</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>上传的文件对象。</dd>
+						<dd><div class="col-md-3">回调参数：<i>errorCode</i></div>返回的错误代码。</dd>
+						<dd><div class="col-md-3">回调参数：<i>errorMsg</i></div>返回的错误信息。</dd>
+						<dd><div class="col-md-3">回调参数：<i>errorString</i></div>错误详细信息（字符串）。</dd>
+						<dd>上传失败时触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+function onUploadError(file, errorCode, errorMsg, errorString) {
+	alert(file.name + ' 上传失败。详细信息: ' + errorString);
+}</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onUploadProgress</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>上传文件对象。</dd>
+						<dd><div class="col-md-3">回调参数：<i>bytesUploaded</i></div>已上传的文件大小</dd>
+						<dd><div class="col-md-3">回调参数：<i>bytesTotal</i></div>文件的大小</dd>
+						<dd><div class="col-md-3">回调参数：<i>totalBytesUploaded</i></div>当前上传队列中，已上传的文件总大小。</dd>
+						<dd><div class="col-md-3">回调参数：<i>totalBytesTotal</i></div>当前上传队列中，上传文件的总大小。</dd>
+						<dd>上传进度更新时触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+function onUploadProgress(file, bytesUploaded, bytesTotal, totalBytesUploaded, totalBytesTotal) {
+	$('#progress').html('已上传'+totalBytesUploaded + ' 字节。共 ' + totalBytesTotal + ' 字节.');
+}</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onUploadStart</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>上传的文件对象。</dd>
+						<dd>在开始上传之前的瞬间会触发该事件。</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">onUploadSuccess</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>file</i></div>上传成功的文件对象。</dd>
+						<dd><div class="col-md-3">回调参数：<i>data</i></div>上传数据处理文件（uploadify.php）输出的值。</dd>
+						<dd><div class="col-md-3">回调参数：<i>response</i></div>服务器端响应。上传成功为true，上传失败为false 。</dd>
+						<dd>每一个文件上传成功时触发该事件。
+							<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+function onUploadSuccess(file, data, response) {
+	alert('文件 ' + file.name + ' 上传成功.详细信息： ' + response + ':' + data);
+}</pre>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel panel-default sea-collapse" id="collapse3">
+		<div class="panel-heading">
+			<h3 class="panel-title">Uploadify 方法</h3>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">cancel</div><i>函数</i></dt>
+						<dd><div class="col-md-3">回调参数：<i>fileID</i></div>你想要取消上传的文件ID。需要取消多个文件时，添加的每个文件的ID作为参数。如果参数为星号“*”时，队列中的所有文件将被上传。如果没有ID，则取消队列中的第一个文件。</dd>
+						<dd><div class="col-md-3">回调参数：<i>suppressEvent</i></div>该项被设置为true时，onUploadCancel 事件不会被执行。一般在清空队列时使用。</dd>
+						<dd>取消上传对象。
+							<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot; sea-toggle=&quot;Uploadify&quot;/&gt;
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('cancel')&quot;&gt;&#21462;&#28040;&#31532;&#19968;&#20010;&#19978;&#20256;&#25991;&#20214;&lt;/a&gt; |
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('cancel', '*')&quot;&gt;&#28165;&#31354;&#38431;&#21015;&lt;/a&gt; |
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('upload', '*')&quot;&gt;&#19978;&#20256;&#25991;&#20214;&lt;/a&gt;</pre>
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">destroy</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该方法没有Arguments对象。</dd>
+						<dd>销毁Uploadify实例，并返回原文件域。
+							<pre data-sea="seaSnippet" data-config="seaseaseaSnippet">&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot; sea-toggle=&quot;Uploadify&quot;/&gt;
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('destroy')&quot;&gt;&#38144;&#27585;Uploadify&#23454;&#20363;&lt;/a&gt;</pre></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">disable</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>setDisabled</i></div>设置为true时禁用按钮，设置为false时，则按钮可用。</dd>
+						<dd>控制浏览按钮是否可用。
+							<pre data-sea="seaSnippet" data-config="seaseaseaSnippet">&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot; sea-toggle=&quot;Uploadify&quot;/&gt;
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('disable', true)&quot;&gt;&#25353;&#38062;&#19981;&#21487;&#29992;&lt;/a&gt; |
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('disable', false)&quot;&gt;&#25353;&#38062;&#21487;&#29992;&lt;/a&gt;</pre></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">settings</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>name</i></div>你想获取或设置的名称。只有设置这个arguments对象才能返回值。</dd>
+						<dd><div class="col-md-2">回调参数：<i>value</i></div>你想要给setting使用的值。</dd>
+						<dd><div class="col-md-2">回调参数：<i>resetObjects</i></div>设置该参数，将更新value值。</dd>
+						<dd>返回或更新一个Uploadify实例的值。
+							<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot; /&gt;
+&lt;a href=&quot;javascript:changeBtnText()&quot;&gt;&#25913;&#21464;&#25353;&#38062;&#25991;&#23383;&lt;/a&gt; | &lt;a href=&quot;javascript:returnBtnText();&quot;&gt;&#26174;&#31034;&#25353;&#38062;&#25991;&#23383;&lt;/a&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(function() {
+        $(&quot;#file_upload&quot;).uploadify({
+            'swf'      : '/uploadify/uploadify.swf',
+            'uploader' : '/uploadify/uploadify.php'
+        });
+    });
+    function changeBtnText() {
+        $('#file_upload').uploadify('settings','buttonText','BROWSE');
+    }
+    function returnBtnText() {
+        alert('The button says ' + $('#file_upload').uploadify('settings','buttonText'));
+    }
+&lt;/script&gt;</pre></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">stop</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：</div>该方法没有Arguments对象。</dd>
+						<dd>停止当前上传。
+							<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot; data-sea=&quot;Uploadify&quot; /&gt;
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('upload', '*')&quot;&gt;&#19978;&#20256;&#25991;&#20214;&lt;/a&gt; |
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('stop')&quot;&gt;&#20572;&#27490;&#19978;&#20256;!&lt;/a&gt;	</pre></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt><div class="col-md-3">upload</div><i>函数</i></dt>
+						<dd><div class="col-md-2">回调参数：<i>fileID</i></div>需要上传的文件ID。需要上传多个文件时，添加的每个文件的ID作为参数。如果参数为星号“*”时，队列中的所有文件将被上传。</dd>
+						<dd>上传指定文件或队列中的所有文件。
+						<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;file&quot; name=&quot;file_upload&quot; id=&quot;file_upload&quot;data-sea=&quot;Uploadify&quot; /&gt;
+&lt;a href=&quot;javascript:$('#file_upload').uploadify('upload', '*')&quot;&gt;&#19978;&#20256;&#25991;&#20214;&lt;/a&gt; </pre></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

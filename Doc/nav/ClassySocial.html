@@ -1,0 +1,151 @@
+<style>
+	#ClassySocialDemo{
+		margin: 70px 0;
+	}
+	#ClassySocialDemo div[data-sea=ClassySocial]{
+		margin: 0 auto;
+	}
+</style>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>ClassySocial 导航元素</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery ClassySocial 项目主页：<a target="_blank" href="http://www.class.pm/projects/jquery/classysocial/">http://www.class.pm/projects/jquery/classysocial/</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p>
+				<strong><code>css</code>参数，默认值：<code>Nav/ClassySocial/css/jquery.classysocial.css</code>，说明：</strong>CSS 样式表文件地址，如不加载请设定为False
+			</p></li>
+			<li><p>
+				<strong><code>event</code>参数，默认值：<code>click</code>，说明：</strong>可选择的动作为click、hover
+			</p></li>
+			<li><p>
+				<strong><code>networks</code>参数，说明：</strong>comma-separated list of social networks
+			</p></li>
+			<li><p>
+				<strong><code>orientation</code>参数，默认值：<code>arc</code>，说明：</strong>开打方向，可选择：arc, line or linedown
+			</p></li>
+			<li><p>
+				<strong><code>arcStart</code>参数，默认值：<code>0</code>，说明：</strong>start of the arc, from 1 to 360, default is 0
+			</p></li>
+			<li><p>
+				<strong><code>arcLength</code>参数，默认值：<code>180</code>，说明：</strong>length of the arc, from 1 to 360
+			</p></li>
+			<li><p>
+				<strong><code>radius</code>参数，默认值：<code>80</code>，说明：</strong>the radius of the arc
+			</p></li>
+			<li><p>
+				<strong><code>gap</code>参数，默认值：<code>50</code>，说明：</strong>the gap (in pixels) between the profile bubbles
+			</p></li>
+			<li><p>
+				<strong><code>picture</code>参数，默认值：<code>seajs.data.base+'Nav/ClassySocial/images/share_core_square.jpg'</code>，说明：</strong> can be either the name of the Facebook profile, an image url (ex images/test.jpg) or none,
+			</p></li>
+			<li><p>
+				<strong><code>imageType</code>参数，默认值：<code>picture</code>，说明：</strong>can be facebook if you want your Facebook profile image to be shown by default or picture
+			</p></li>
+			<li><p>
+				<strong><code>theme</code>参数，默认值：<code>default</code>，说明：</strong>
+			</p></li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div class="row" id="ClassySocialDemo">
+						<div class="col-md-4">
+							<div data-sea="ClassySocial">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div data-sea="ClassySocial" data-option="theme:'slick'">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div data-sea="ClassySocial" data-option="theme:'square',arcLength:360">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div data-sea="ClassySocial" data-option="orientation:'line'">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div data-sea="ClassySocial" data-option="orientation:'line',theme:'slick',event:'hover'">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="col-md-2">
+							<div data-sea="ClassySocial" data-option="orientation:'linedown',theme:'slick'" style="margin: 0 auto;">
+								<a href="http://www.so.cl/#/profile/marius-stanciu" target="_blank" title="View my Socl profile" class="socl">Socl</a>
+								<a href="http://www.facebook.com/picozu" target="_blank" title="View my Facebook page" class="facebook">Facebook</a>
+								<a href="https://twitter.com/picozu_editor" target="_blank" title="Check out my Twitter profile" class="twitter">Twitter</a>
+								<a href="http://instagram.com/picozu" target="_blank" title="View my Instagram profile" class="instagram">Instagram</a>
+								<a href="http://pinterest.com/picozu" target="_blank" title="View my Pinterest profile" class="pinterest">Pinterest</a>
+								<a href="mailto:office@picozu.net" target="_blank" title="Send me an e-mail" class="email">Email</a>
+							</div>
+						</div>
+						<div class="col-md-10">
+							<pre data-sea="seaSnippet" data-config="seaSnippet">
+// 使用slick的Theme， 横向排列图标
+&lt;div data-sea=&quot;ClassySocial&quot; data-option=&quot;orientation:'line',theme:'slick'&quot;&gt;
+	&lt;a href=&quot;http://www.so.cl&quot; title=&quot;View my Socl profile&quot; class=&quot;socl&quot;&gt;Socl&lt;/a&gt;
+	&lt;a href=&quot;http://www.facebook.com&quot; title=&quot;View my Facebook page&quot; class=&quot;facebook&quot;&gt;Facebook&lt;/a&gt;
+	&lt;a href=&quot;https://twitter.com&quot; title=&quot;Check out my Twitter profile&quot; class=&quot;twitter&quot;&gt;Twitter&lt;/a&gt;
+	&lt;a href=&quot;http://instagram.com&quot; title=&quot;View my Instagram profile&quot; class=&quot;instagram&quot;&gt;Instagram&lt;/a&gt;
+	&lt;a href=&quot;http://pinterest.com&quot; title=&quot;View my Pinterest profile&quot; class=&quot;pinterest&quot;&gt;Pinterest&lt;/a&gt;
+	&lt;a href=&quot;mailto:office@picozu.net&quot; title=&quot;Send me an e-mail&quot; class=&quot;email&quot;&gt;Email&lt;/a&gt;
+&lt;/div&gt;
+
+// 原始设定模式
+&lt;div class=&quot;classysocial&quot;
+    data-arc-length=&quot;180&quot;
+    data-imageType=&quot;facebook&quot;
+    data-picture=&quot;picozu&quot;
+    data-facebook-handle=&quot;picozu&quot;
+    data-github-handle=&quot;mortadella&quot;
+    data-twitter-handle=&quot;picozu_editor&quot;
+    data-orientation=&quot;arc&quot;
+    data-radius=&quot;90&quot;
+    data-networks=&quot;facebook,twitter,github&quot;&gt;&lt;/div&gt;</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

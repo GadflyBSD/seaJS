@@ -1,0 +1,140 @@
+<style>
+	/* header-content */
+	.header-content{
+		background:url(http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/header-background.jpg) no-repeat 50% -4px #d64516;line-height:22px;position:relative;z-index:1;border-top:1px solid #fff;
+		-webkit-box-shadow:inset 0px 10px 8px -10px rgba(0,0,0,0.5), inset 0px -10px 8px -10px rgba(0,0,0,0.4);
+		-moz-box-shadow:inset 0px 10px 8px -10px rgba(0,0,0,0.5), inset 0px -10px 8px -10px rgba(0,0,0,0.4);
+		box-shadow:inset 0px 10px 8px -10px rgba(0,0,0,0.5), inset 0px -10px 8px -10px rgba(0,0,0,0.4);
+	}
+	.header-content img{float:left; margin:0 0 0 15px;}
+	.header-content .text{width:470px; margin-left:50%; *width:430px; }
+	.header-content .copy{font-size:14px; line-height:21px; padding-right:15px;}
+	.header-content .button{width:100% !important;}
+	.header-content .button a{padding-top:7px; padding-bottom:7px; font-size:14px; display:inline-block;}
+	.header-content .button{float:none;}
+	.header-content .dimmed{
+		background:#b05b1b;
+		background:rgba(0, 0, 0, 0.4);
+		-webkit-transition:none;
+		/* Saf3.2+, Chrome */
+		-moz-transition:none;
+		/* FF4+ */
+		-ms-transition:none;
+		/* IE10? */
+		-o-transition:none;
+		/* Opera 10.5+ */
+		transition:none;
+	}
+	#slider-wrap{background:url(http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/header-background1.png?v=1) repeat-x 0% 0;position:relative;height:362px; overflow:hidden;}
+	#slider{background:url(http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/header-background2.png?v=1) repeat-x 0% 0;height:332px;padding-top:30px;}
+	.slider-prev,.slider-next{
+		text-indent:-9999px;width:38px;height:38px;background:url("http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/sprite.png") -263px -122px no-repeat;position:absolute;top:50%;margin-top:-19px;z-index:999;opacity:.5;display:none;
+		-webkit-transition:all 0.3s ease-out;
+		/* Saf3.2+, Chrome */
+		-moz-transition:all 0.3s ease-out;
+		/* FF4+ */
+		-ms-transition:all 0.3s ease-out;
+		/* IE10? */
+		-o-transition:all 0.3s ease-out;
+		/* Opera 10.5+ */
+		transition:all 0.3s ease-out;
+	}
+	.slider-prev{ left:12px; }
+	.slider-next{right:12px;background-position:-302px -122px;}
+	.slider-prev:hover,.slider-next:hover{opacity:1;}
+	.slider-nav{position:absolute;bottom:5px;left:50%;list-style:none;overflow:hidden;padding:2px;z-index:10;margin:0;}
+	.slider-nav li{float:left;}
+	.slider-nav li a{display:block;width:8px;height:8px;overflow:hidden;padding:0px;margin:8px;background:url("http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/sprite.png") no-repeat -234px -144px;text-decoration:none;text-indent:-999px;}
+	.slider-nav li a:hover,.slider-nav li a.selected{background-position:-225px -144px;}
+	.slider section{display:none;}
+	.slider section.first{display:block;}
+	.slider-sections, .slider-sections section{width:861px; height:335px;}
+	.slider-sections{margin:0 auto; position:relative;}
+	.slider-sections section{position:absolute; top:0; left:0px; }
+	.header-content h2{font:400 32px/1.2 "microsoft yahei", Tahoma, arial, sans-serif;color:#fff;margin:0 0 26px;}
+	.header-content p{margin:0 0 30px;}
+	.button{float:left;width:auto !important;list-style:none;}
+	.button a,.button button,.button input{
+		font-size:15px;line-height:18px;color:#fff!important;text-decoration:none;padding:5px 14px 6px 13px;display:block;width:auto;position:relative;z-index:2;border:none;cursor:pointer;background:#313131;
+		-moz-border-radius:3px;
+		border-radius:3px;
+		background:-moz-linear-gradient(top, #313131 0%, #222222 100%);
+		/* FF3.6+ */
+		background:-webkit-linear-gradient(top, #313131 0%,#222222 100%);
+		/* Chrome10+,Safari5.1+ */
+		background:-o-linear-gradient(top, #313131 0%,#222222 100%);
+		/* Opera11.10+ */
+		background:-ms-linear-gradient(top, #313131 0%,#222222 100%);
+		/* IE10+ */
+		background:linear-gradient(top, #313131 0%,#222222 100%);
+		/* W3C */
+		-webkit-transition:all 0.3s ease;
+		-moz-transition:all 0.3s ease;
+		-o-transition:all 0.3s ease;
+		transition:all 0.3s ease;
+	}
+	.button a:hover,.button input:hover,.button button:hover,.button a:focus,.button input:focus,.button button:focus{
+		background:#464646;
+		/* Old browsers */
+		background:-moz-linear-gradient(top, #464646 0%, #393939 100%);
+		/* FF3.6+ */background:-webkit-linear-gradient(top, #464646 0%,#393939 100%);
+		/* Chrome10+,Safari5.1+ */background:-o-linear-gradient(top, #464646 0%,#393939 100%);
+		/* Opera11.10+ */background:-ms-linear-gradient(top, #464646 0%,#393939 100%);
+		/* IE10+ */background:linear-gradient(top, #464646 0%,#393939 100%);
+	}
+</style>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>FocusImg 广告轮显</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>使用方法</strong></h3>
+		<div class="bs-example">
+			<div class="bs-sidebar row header-content">
+				<div class="parallax-bg" id="slider-wrap" data-sea="tlrkSlider">
+					<div class="slider parallax-bg" id="slider">
+						<div class="slider-sections sandbox">
+							<section class="first">
+								<img src="http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/home-banner-1.png" width="367" height="328" alt="Kendo UI" />
+								<div class="text">
+									<h2>SmartSite Ver 2.2<br />智能网站管理系统 </h2>
+									<p class="copy">采用前后台完全分离技术，通过标签（支持标签循环嵌套、判断标签、自定义标签、文件循环嵌套等）加模板技术.全站生成纯静态页。</p>
+									<p class="button">
+										<a href="http://www.17sucai.com/">下载软件</a>
+										<a class="dimmed" href="http://www.17sucai.com/">查看更多</a>
+									</p>
+								</div>
+							</section>
+							<section>
+								<img src="http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/dataviz-home-image-q2.png" width="383" height="239" alt="Kendo UI" />
+								<div class="text" style="padding-top: 10px;">
+									<h2>企业网站管理系统</h2>
+									<p class="copy">单页面、单页面索引、新闻、产品展示、下载、友情链接、网上商城，在线支付、配送、支付方式管理、广告等模块。</p>
+									<p class="button">
+										<a href="http://www.17sucai.com/">下载软件</a>
+										<a class="dimmed" href="http://www.17sucai.com/">查看更多</a>
+									</p>
+								</div>
+							</section>
+							<section>
+								<img src="http://www.17sucai.com/preview/1/2013-07-11/基于HTML5和CSS的焦点图特效/images/home_banner_web-q2.png" width="378" height="245" alt="Kendo UI" />
+								<div class="text">
+									<h2>智能移动网站管理系统</h2>
+									<p class="copy">基于jquery.Mobile、HTML5技术框架，前后台完全分离，采用标签加模板技术，全站生成纯静态页。</p>
+									<p class="button">
+										<a href="http://www.17sucai.com/">下载软件</a>
+										<a class="dimmed" href="http://www.17sucai.com/">查看更多</a>
+									</p>
+								</div>
+							</section>
+						</div>
+					</div>
+
+					<a class="slider-prev" href="javascript: void(0)">上一页</a>
+					<a class="slider-next" href="javascript: void(0)">下一页</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,68 @@
+/*
+	DP Number Picker jQuery Plugin, Version 1.0
+	Copyright (C) Dustin Poissant 2014
+	See Lincese.rtf (distributed with this document) for more information reguarding usage.
+*/
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+src: local('Roboto Regular'), local('RobotoCondensed-Regular'), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v8/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format('woff');
+}
+@font-face {
+font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 700;
+src: local('Roboto Bold'), local('RobotoCondensed-Bold'), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v8/b9QBgL0iMZfDSpmcXcE8nCSLrGe-fkSRw2DeVgOoWcQ.woff) format('woff');
+}
+.dp-numberPicker, .dp-numberPicker-add, .dp-numberPicker-sub, .dp-numberPicker-input {
+display: inline-block;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+height: 50px;
+text-align: center;
+line-height: 50px;
+vertical-align: top;
+font-family: 'Roboto', serif;
+}
+.dp-numberPicker {
+box-shadow: 0 0 5px rgba(255,255,255,0.5);
+border-radius: 3px;
+}
+.dp-numberPicker-add, .dp-numberPicker-sub {
+width: 50px;
+font-size: 25px;
+cursor: pointer;
+-moz-user-select: none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+-o-user-select: none;
+background-color: #33b5e5;
+color: white;
+font-weight: 700;
+text-shadow: 1px 1px 1px rgba(50,50,50,0.5);
+}
+.dp-numberPicker-add {
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.5),  inset -1px -1px 1px rgba(0,0,0,0.5);
+}
+.dp-numberPicker-sub {
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
+box-shadow: inset 1px 1px 1px rgba(255,255,255,0.5),  inset 0px -1px 1px rgba(0,0,0,0.5);
+}
+.dp-numberPicker-sub.disabled, .dp-numberPicker-add.disabled {
+background-color: #2c6a81;
+}
+.dp-numberPicker-input {
+width: 100px;
+font-size: 18px;
+background-color: #232425;
+color: white;
+border: 0;
+box-shadow: inset 0px 1px 1px rgba(255,255,255,0.3),  inset 0px -1px 1px rgba(0,0,0,0.5);
+}
+.dp-numberPicker-input:disabled {
+background-color: #232425;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>ClassySocial jQuery plugin | Class.PM</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic" />
+        <link rel="stylesheet" href="css/documentation.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.classysocial.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.classysocial.min.css" />
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="main-container">
+                <div id="page-content">
+                    <div class="content-header">
+                        <div class="header-section">
+                            <h1>ClassySocial<br><small>Socialize with the power of jQuery!</small></h1>
+                        </div>
+                    </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <li><a href="http://www.class.pm/"><i class="fa fa-home"></i> Class.PM</a></li>
+                        <li><a href="http://www.class.pm/#jquery">jQuery plugins</a></li>
+                        <li>ClassySocial</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Introduction</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>ClassySocial is a <a href="http://www.jquery.com">jQuery</a> plugin written by <a href="http://www.class.pm">Marius Stanciu - Sergiu</a>, a plugin that lets your site visitors easily see what networks you belong to and visit them in a click of a button.</p>
+                                    <p>Currently supports Facebook, Twitter, Dribbble, Socl, Youtube, Vimeo, Google Plus, Pinterest, LinkedIn, Instagram, Flickr, Blogger, GitHub, DeviantArt, Skype, Steam, Wordpress, Yahoo and e-mail.</p>
+                                    <p>Allow your users to see your presence on 18 of the most popular networks instantly with no need for a knowledge of coding! Have links to your Facebook, Twitter, Vimeo, Dribbble, Instagram, YouTube (and more!) profiles shown in a slick way, sure to impress your users.</p>
+                                    <p>Includes functionality to use your current Facebook image as the button that users press to draw out the network buttons, with automatic updating, pulled straight from Facebook!</p>
+                                    <p>
+                                        <a href="http://www.class.pm/files/jquery-classysocial.zip" class="btn btn-primary">
+                                            <i class="fa fa-folder-open"></i> Download it
+                                        </a>
+                                    </p>
+                                    <div class="alert alert-info">
+                                        <h4><i class="fa fa-info-circle"></i> License</h4>
+                                        This jQuery plugin is distributed under the <a href="http://www.class.pm/LICENSE-MIT">MIT license</a>. Enjoy!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Demo</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="classysocial" style="float: right; margin-right: 50px" data-theme="default" data-arc-length="360" data-image-type="facebook" data-picture="picozu" data-facebook-handle="picozu" data-socl-handle="marius-stanciu" data-twitter-handle="picozu_editor" data-email-handle="office@picozu.net" data-pinterest-handle="picozu" data-github-handle="classpm" data-instagram-handle="picozu" data-networks="github,socl,facebook,twitter,instagram,pinterest,email"></div>
+                                    <div class="classysocial" data-orientation="line" data-picture="images/share_core_square.jpg" data-facebook-handle="picozu" data-socl-handle="marius-stanciu" data-twitter-handle="picozu_editor" data-email-handle="office@picozu.net" data-pinterest-handle="picozu" data-instagram-handle="picozu" data-networks="socl,facebook,twitter,instagram,pinterest,email"></div>
+                                    <div class="clearfix"></div><br /><br /><br />
+                                    <div class="classysocial" style="float: right; margin-right: 50px" data-theme="slick" data-arc-length="180" data-image-type="facebook" data-picture="techcrunch" data-facebook-handle="techcrunch" data-twitter-handle="picozu_editor" data-email-handle="office@picozu.net" data-pinterest-handle="picozu" data-github-handle="classpm" data-instagram-handle="picozu" data-networks="github,facebook,twitter,instagram,pinterest,email"></div>
+                                    <div class="classysocial" data-radius="100" data-arc-length="360" data-theme="square" data-orientation="arc" data-image-type="facebook" data-picture="mashable" data-facebook-handle="mashable" data-socl-handle="marius-stanciu" data-twitter-handle="picozu_editor" data-email-handle="office@picozu.net" data-pinterest-handle="picozu" data-instagram-handle="picozu" data-networks="socl,facebook,twitter,instagram,pinterest,email"></div>
+                                    <script>
+                                        $(document).ready(function() {
+                                            $(".classysocial").ClassySocial();
+                                        });
+                                    </script>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Setup</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>First you need to include the jQuery library, since ClassySocial is a plugin. You can download it from the jQuery website or link it directly from the Google CDN.</p>
+                                    <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;</pre>
+                                    <p>Secondly, you need to include the jQuery ClassySocial javascript and the CSS file, which you can do it by adding the code below to your page.</p>
+                                    <pre>&lt;script src="js/jquery.classysocial.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/jquery.classysocial.min.css" /&gt;</pre>
+                                    <p>Next, you implement the structure on which you want to trigger the plugin.</p>
+                                    <pre>&lt;div class="classysocial" 
+    data-arc-length="360" data-image-type="facebook" 
+    data-picture="picozu" data-facebook-handle="picozu" 
+    data-twitter-handle="picozu_editor" 
+    data-email-handle="me@me.com"
+    data-networks="facebook,twitter,email"&gt;&lt;/div&gt;</pre>
+                                    <p>As the last step, you trigger the plugin on the element you just created. In this case, we trigger it on the element with the class classysocial.</p>
+                                    <pre>$(".classysocial").ClassySocial();</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Options</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <ul class="fa-ul">
+                                        <li>
+                                            <h3>Parameters</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-theme</span> - the current theme, can be <span class="label label-success">default</span>, <span class="label label-success">square</span> or <span class="label label-success">slick</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-networks</span> - comma-separated list of social networks
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-image-type</span> - can be <span class="label label-success">facebook</span> if you want your Facebook profile image to be shown by default or <span class="label label-success">picture</span>, default is <span class="label label-primary">picture</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-picture</span> -  can be either the name of the Facebook profile, an image url (ex <em>images/test.jpg</em>) or <span class="label label-success">none</span>, default is <span class="label label-primary">none</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-YYY-handle</span> - where YYY can be the name of the social networks listed in the <em>data-networks</em> setting. Create a <em>data-YYY-handle</em> for each of the social networks
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-orientation</span> - orientation, can be <span class="label label-success">arc</span>, <span class="label label-success">line</span> or <span class="label label-success">linedown</span>, default is <span class="label label-primary">arc</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-gap</span> - the gap (in pixels) between the profile bubbles, default is <span class="label label-primary">50</span> pixels
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-arc-start</span> - start of the arc, from <span class="label label-success">1</span> to <span class="label label-success">360</span>, default is <span class="label label-primary">0</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-arc-length</span> - length of the arc, from <span class="label label-success">1</span> to <span class="label label-success">360</span>, default is <span class="label label-primary">180</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">data-radius</span> - the radius of the arc, default is <span class="label label-primary">80</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Example</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <pre>&lt;div class="classysocial"
+    data-arc-length="180"
+    data-image-type="facebook"
+    data-picture="picozu"
+    data-facebook-handle="picozu"
+    data-github-handle="mortadella"
+    data-twitter-handle="picozu_editor"
+    data-orientation="arc"
+    data-radius="90"
+    data-networks="facebook,twitter,github"&gt;&lt;/div&gt;</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="clearfix">
+                    <div class="pull-left">
+                        <span>2005 - 2014</span> © <a href="http://www.class.pm" target="_blank">Class.PM</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-30825160-1', 'class.pm');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

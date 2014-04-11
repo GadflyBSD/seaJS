@@ -1,0 +1,24 @@
+[data-sea=productSelect]{background:#f7f7f7; padding:12px 0;}
+[data-sea=productSelect] dl{padding:8px 0; padding-left:70px;line-height:32px;color:#888;}
+[data-sea=productSelect] dt{margin-left:-70px; float:left; display:inline; width:60px; white-space:nowrap; text-align:right; color:#888;line-height:32px;}
+[data-sea=productSelect] ul{list-style:none;margin:0;}
+[data-sea=productSelect] dl.numberPicker>dd{padding-left:40px;}
+.marketPrice>dd>span{color:#c00; font-size:34px; font-family:Arial; text-decoration:line-through; vertical-align:middle;font-weight: bolder}
+.presentPrice>dd>span{color:#c00; font-size:34px; font-family:Arial; vertical-align:middle;font-weight: bolder}
+
+[data-sea=productSelect] dl.specText{height:28px}
+dl.specText li{ float:left; height:28px; position:relative; margin:0 6px 2px 0; outline:none;}
+dl.specText li a{ height:24px; padding:1px 6px; border:1px solid #ccc; background:#fff; display:inline-block; line-height:24px;}
+dl.specText li a:hover{ border:2px solid #e4393c; padding:0 5px; text-decoration:none;}
+dl.specText li i{ position:absolute; width:10px; height:10px; font-size:0; line-height:0; right:2px; bottom:2px; background:url(img/sys_item_selected.gif) no-repeat right bottom; z-index:99; display:none;}
+dl.specText li.selected a{ border:2px solid #e4393c; padding:0 5px;}
+dl.specText li.selected i{ display:block;}
+
+[data-sea=productSelect] dl.specImg{height:54px;}
+dl.specImg li{ float:left; height:54px; position:relative; margin:0 6px 2px 0;}
+dl.specImg li a{height:54px; width:54px; padding:1px; border:1px solid #ccc; float:left; background:#fff; display:inline-block; outline:none;}
+dl.specImg li a img{ width:50px; height:50px; display:block;}
+dl.specImg li a:hover{ border:2px solid #e4393c; padding:0; text-decoration:none;}
+dl.specImg li i{ position:absolute; width:10px; height:10px; font-size:0; line-height:0; right:2px; bottom:2px; background:url(img/sys_item_selected.gif) no-repeat right bottom; z-index:99; display:none;}
+dl.specImg li.selected a{ border:2px solid #e4393c; padding:0;}
+dl.specImg li.selected i{ display:block;}

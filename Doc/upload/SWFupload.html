@@ -1,0 +1,50 @@
+<div class="panel panel-primary" id="UploadifyDoc">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>SWFupload 上传组件</strong></h3>
+	</div>
+	<div class="panel-body">
+		<p><a href="http://www.swfupload.org">SWFUpload</a>最初是<a href="http://www.vinterwebb.se/">Vinterwebb.se</a>
+			开发的客户端文件上传工具。它联合javascript和flash，在浏览器中提供一个优于传统上传标签 <code>&lt;input type=&quot;file&quot; /&gt;</code> 的功能（和良好的用户体验）。</p>
+		<p>SWFUpload 的主要特性:</p>
+		<ul>
+			<li>文件浏览对话框中可以选择多个文件</li>
+			<li>AJAX风格的上传，不用重刷新</li>
+			<li>上传过程中的各种事件.</li>
+			<li>可以在客户端调节图片大小</li>
+			<li>它使用的类命名空间兼容各种js库(i.e., jQuery, Prototype, 等.).</li>
+			<li>支持 Flash 9 and Flash 10 (2.2.0版本后取消对flash 8的支持)</li>
+		</ul>
+		<p>SWFUpload 的设计理念与其他基于flash的上传工具不同。SWFUpload 给开发者尽可能多的UI控制能力. 开发者可以使用 XHTML, CSS, JavaScript 来使它更符合自己网站的样式风格. 它提供一组简单的js事件更新上传状态，开发者可以根据这些事件来在网页中显示文件上传进度</p>
+		<p>不过不幸的是 Flash Player 10 迫使我们不得不用一个按钮（点击后）才能触发文件选择对话框，但SWFUpload允许开发者用js来修改这个按钮的文字等外观。</p>
+		<div class="bs-example">
+			<div class="bs-sidebar sea-example">
+				<h2>SWFObject Demo</h2>
+				<form id="form1" action="index.php" method="post" enctype="multipart/form-data">
+					<p>This page demonstrates SWFUpload's use of the swfobject library to gracefully degrade the page.</p>
+					<p>
+						SWFUpload provides a variety of events to notify your application whether SWFUpload will be able to load properly.
+						Rather than SWFUpload simply degrading automatically it leaves complete control in the hands of the developer to degrade
+						in a way appropriate to the application.
+					</p>
+
+					<p>Do each of the following (one at a time) to see the plugin work: </p>
+					<ul>
+						<li>Uninstall your Flash Player or install a version less than 9.0.28</li>
+						<li>Cause the SWF file to fail to load by deleting or renaming swfupload.swf (simulating a very slow or failed download)</li>
+						<li>Disable JavaScript</li>
+					</ul>
+					<p>
+						Each of these tests demontrate how these issues can be handled by SWFUpload and the swfobject libraries.
+					</p>
+
+					<div class="row">
+						<div class="col-md-12">
+							<input type="file" id="spanButtonPlaceholder" data-sea="Swfupload" />
+						</div>
+					</div>
+				</form>
+				<pre data-sea="seaSnippet" data-config="seaseaseaSnippet">&lt;input type=&quot;file&quot; id=&quot;spanButtonPlaceholder&quot; data-sea=&quot;Swfupload&quot; /&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

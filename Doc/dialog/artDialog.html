@@ -1,0 +1,352 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>artDialog V6 弹框插件</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>artDialog v6 —— 经典的网页对话框组件，内外皆用心雕琢。</p>
+		<p>
+			兼容性测试通过：IE6~IE11、Chrome、Firefox、Safari、Opera
+			<ol>
+				<li>支持普通与气泡形式的对话框</li>
+				<li>信息无障碍支持：焦点管理；支持 ARIA 标准</li>
+				<li>面向未来：基于 HTML5 Dialog 的 API</li>
+				<li>支持标准与模态对话框</li>
+				<li>丰富的展示状态与友好的编程接口</li>
+				<li>自适应内容尺寸</li>
+			</ol>
+		</p>
+		<p>
+			jQuery artDialog 项目主页：<a target="_blank" href="http://aui.github.io/artDialog/">http://aui.github.io/artDialog/</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul id="seajPageItem">
+			<li><p>
+				<strong><code>title</code>参数，说明：</strong>写入对话框标题。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog();
+d.title('hello world');
+d.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>content</code>参数，说明：</strong>写入对话框内容。参数支持String、HTMLElement类型。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+//传入字符串：
+var d = dialog();
+d.content('hello world');
+d.show();
+
+//传入元素节点：
+var elem = document.getElementById('test');
+dialog({
+    content: elem,
+    id: 'EF893L'
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>statusbar</code>参数，说明：</strong>状态栏区域 HTML 代码，可以实现类似“不再提示”的复选框。注意：必须有按钮才会显示
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    title: '欢迎',
+    content: '欢迎使用 artDialog 对话框组件！',
+    ok: function () {},
+    statusbar: '<label><input type="checkbox">不再提醒</label>'
+});
+d.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>method</code>参数，默认值：<code>False</code>，说明：</strong>对话框内容加载方式，可选tmpl（自动加载jQuery.tmpl.js）、ajax（使用Ajax框架页面显示一个地址）和False
+			</p></li>
+			<li><p>
+				<strong><code>tmpl</code>参数，类型：<code>Object</code>，说明：</strong>当使用jQuery.tmpl.js时，所传递给模板的变量
+			</p></li>
+			<li><p>
+				<strong><code>ok</code>参数，说明：</strong>确定按钮。回调函数this指向dialog对象，执行完毕默认关闭对话框，若返回 false 则阻止关闭。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    ok: function () {
+        this
+        .title('消息')
+        .content('hello world!')
+        .width(130);
+        return false;
+    }
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>okValue</code>参数，默认值：<code>ok</code>，说明：</strong>确定按钮文本。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    okValue: '猛击我',
+    ok: function () {
+        this.content('hello world!');
+        return false;
+    }
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>cancel</code>参数，默认值：<code>False</code>，说明：</strong>取消按钮。取消按钮也等同于标题栏的关闭按钮，若值为false则不显示关闭按钮。回调函数this指向dialog对象，执行完毕默认关闭对话框，若返回false则阻止关闭。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    title: '消息',
+    ok: function () {},
+    cancel: function () {
+        alert('取消');
+    }
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>cancelValue</code>参数，默认值：<code>cancel</code>，说明：</strong>取消按钮文本。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    cancelValue: '取消我',
+    cancel: function () {
+        alert('关闭');
+    }
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>button</code>参数，类型：<code>Array</code>，说明：</strong>自定义按钮组。
+				<table>
+					<thead>
+					<tr>
+						<th>名称 </th>
+						<th> 类型 </th>
+						<th> 描述</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>value </td>
+						<td> String </td>
+						<td> 按钮显示文本</td>
+					</tr>
+					<tr>
+						<td>callback </td>
+						<td> Function </td>
+						<td> (可选) 回调函数<code>this</code>指向<code>dialog</code>对象，执行完毕默认关闭与销毁对话框（依次执行<code>close()</code>与<code>remove()</code>），若返回<code>false</code>则阻止关闭与销毁</td>
+					</tr>
+					<tr>
+						<td>autofocus </td>
+						<td> Boolean </td>
+						<td> (默认值:<code>false</code>) 是否自动聚焦</td>
+					</tr>
+					<tr>
+						<td>disabled </td>
+						<td> Boolean </td>
+						<td> (默认值: <code>false</code>) 是否禁用</td>
+					</tr>
+					</tbody>
+				</table>
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    button: [
+        {
+            value: '同意',
+            callback: function () {
+                this
+                .content('你同意了');
+                return false;
+            },
+            autofocus: true
+        },
+        {
+            value: '不同意',
+            callback: function () {
+                alert('你不同意')
+            }
+        },
+        {
+            id: 'button-disabled',
+            value: '无效按钮',
+            disabled: true
+        },
+        {
+            value: '关闭我'
+        }
+    ]
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>width</code>参数，说明：</strong>设置对话框宽度。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    content: 'hello world'
+})
+.width(320)
+.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>height</code>参数，说明：</strong>设置对话框高度。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    content: 'hello world'
+})
+.height(320)
+.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>skin</code>参数，说明：</strong>设置对话框额外的className参数。多个className请使用空格隔开。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    skin: 'min-dialog tips'
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>padding</code>参数，默认值：<code>继承 css 文件设置</code>，说明：</strong>设置消息内容与消息容器的填充边距，即 style padding属性
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    content: 'hello world',
+    padding: 0
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>align</code>参数，默认值：<code>bottom left</code>，说明：</strong>设置对话框与其他元素的对齐方式。如果show(elem)与showModal(elem)传入元素，align参数方可生效，支持如下对齐方式：<ul>
+				<li><code>"top left"</code></li>
+				<li><code>"top"</code></li>
+				<li><code>"top right"</code></li>
+				<li><code>"right top"</code></li>
+				<li><code>"right"</code></li>
+				<li><code>"right bottom"</code></li>
+				<li><code>"bottom right"</code></li>
+				<li><code>"bottom"</code></li>
+				<li><code>"bottom left"</code></li>
+				<li><code>"left bottom"</code></li>
+				<li><code>"left"</code></li>
+				<li><code>"left top"</code></li>
+			</ul>
+			<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    align: 'left',
+    content: 'Hello World!',
+    quickClose: true
+});
+d.show(document.getElementById('option-align'));</pre>
+			</p></li>
+			<li><p>
+				<strong><code>fixed</code>参数，默认值：<code>False</code>，说明：</strong>开启固定定位。固定定位是 css2.1 position的一个属性，它能固定在浏览器某个地方，也不受滚动条拖动影响。IE6 与部分移动浏览器对其支持不好，内部会转成绝对定位。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    fixed: true,
+    title: '消息',
+    content: '请拖动滚动条查看'
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>quickClose</code>参数，默认值：<code>False</code>，说明：</strong>是否点击空白出快速关闭。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    content: '点击空白处快速关闭',
+    quickClose: true
+});
+d.show(document.getElementById('option-quickClose'));</pre>
+			</p></li>
+			<li><p>
+				<strong><code>autofocus</code>参数，默认值：<code>True</code>，说明：</strong>是否支持自动聚焦
+			</p></li>
+			<li><p>
+				<strong><code>zIndex</code>参数，默认值：<code>1024</code>，说明：</strong>重置全局zIndex初始值，用来改变对话框叠加高度。比如有时候配合外部浮动层 UI 组件，但是它们可能默认zIndex没有对话框高，导致无法浮动到对话框之上，这个时候你就可以给对话框指定一个较小的zIndex值。请注意这是一个会影响到全局的配置，后续出现的对话框叠加高度将重新按此累加。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    zIndex: 87
+}).show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>onshow</code>参数，默认值：<code>False</code>，说明：</strong>对话框打开的事件。回调函数this指向dialog对象。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    content: 'loading..',
+    onshow: function () {
+        this.content('dialog ready');
+    }
+});
+d.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>onbeforeremove</code>参数，默认值：<code>False</code>，说明：</strong>对话框销毁之前事件。回调函数this指向dialog对象。
+			</p></li>
+			<li><p>
+				<strong><code>onremove</code>参数，默认值：<code>False</code>，说明：</strong>对话框销毁事件。回调函数this指向dialog对象。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    onclose: function () {
+        alert('对话框已经关闭');
+    },
+    onremove: function () {
+        alert('对话框已经销毁');
+    },
+    ok: function () {}
+});
+d.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>onclose</code>参数，说明：</strong>对话框关闭后执行的事件。回调函数this指向dialog对象。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    onclose: function () {
+        alert('对话框已经关闭');
+    },
+    ok: function () {}
+});
+d.show();</pre>
+			</p></li>
+			<li><p>
+				<strong><code>onfocus</code>参数，说明：</strong>聚焦对话框（置顶）。
+			</p></li>
+			<li><p>
+				<strong><code>onblur</code>参数，说明：</strong>让对话框失去焦点。
+			</p></li>
+			<li><p>
+				<strong><code>onreset</code>参数，说明：</strong>对话框位置重置事件。回调函数this指向dialog对象。
+			</p></li>
+			<li><p>
+				<strong><code>url</code>参数，默认值：<code>False</code>，说明：</strong>
+			</p></li>
+			<li><p>
+				<strong><code>padding</code>参数，默认值：<code>False</code>，说明：</strong>
+			</p></li>
+			<li><p>
+				<strong><code>id</code>参数，默认值：<code>False</code>，说明：</strong>设定对话框唯一标识。1、可防止重复 ID 对话框弹出。2、	支持使用dialog.get(id)获取某个对话框的接口。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+dialog({
+    id: 'id-demo',
+    content: '再次点击运行看看'
+}).show();
+dialog.get('id-demo').title('8888888888');</pre>
+			</p></li>
+			<li><p>
+				<strong><code>open</code>参数，说明：</strong>判断对话框是否被打开。这是一个只读方法。
+			</p></li>
+			<li><p>
+				<strong><code>returnValue</code>参数，说明：</strong>对话框返回值。
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var d = dialog({
+    title: '消息',
+    content: '<input id="property-returnValue-demo" value="1" />',
+    ok: function () {
+        var value = $('#property-returnValue-demo').val();
+        this.close(value);
+        this.remove();
+    }
+});
+d.addEventListener('close', function () {
+    alert(this.returnValue);
+});
+d.show();</pre>
+			</p></li>
+		</ul>
+		<div class="row" id="pagination">
+			<div class="col-md-5"><ul class="pagination" data-sea="jPage" data-option='startPage:1,perPage:8'></ul></div>
+			<div class="col-md-2"><select name="pageJump" class="form-control"></select></div>
+			<div class="col-md-5" id="pageInfo"></div>
+		</div>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div>Demo</div>
+					<pre data-sea="seaSnippet" data-config="seaseaseaSnippet"></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

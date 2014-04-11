@@ -1,0 +1,174 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">jQuery Ajax Pages 翻页效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>插件说明</h3>
+		<p>jPages 是一个客户端的分页插件，但提供很多特性例如自动翻页、键盘和滚动浏览，延迟显示以及完全可定制的导航面板。<br />
+			此款插件的最大好处在于，不管表格是静态生成的，还是由程序动态生成的，它都可以给分页，用着十分爽。由于其工作原理是先将表格一次性全部加载到客户端， 然后再将完整的表格拆分成多页进行显示，所以我认为对于行数十分庞大的表格，此插件并不适用，可能会导致加载过慢。<br />
+			兼容IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。</p>
+			<p>jPages项目主页：
+			<a href="http://luis-almeida.github.io/jPages/index.html" target="_blank">http://luis-almeida.github.io/jPages/index.html</a></p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="jPage"</code> 就可以为其赋予Ajax Pages 翻页效果。<br />
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><code>target</code> 属性接受一个ID名，需要分页的表格ID标签，不一定非得是 <code>table、tbody</code>，也可以是 <code>ul、ol、div</code>等，默认是 <code>seajPageItem</code>；</li>
+			<li><code>pageJump</code> 属性接受一个选择器，用于显示跳转页面的下拉菜单， 默认是 <code>select[name=pageJump]</code>；</li>
+			<li><code>pageInfo</code> 属性接受一个选择器，用于显示和页面的信息， 默认是 <code>#pageInfo</code>；</li>
+			<li><code>param</code> 属性接受一个或一组Options参数，格式 <code>data-param="参数名1:'参数值1',参数名2:'参数值2'"</code>，具体参数参考下方翻页部分，不指定则使用默认值；</li>
+			<li><code>callback</code> 属性接受一个回调函数的名称，默认是空，如指定了回调函数，需要定义该回调函数；</li>
+		</ul>
+		</p>
+		<div class="alert alert-success">
+			注意：<code>data-param</code>内所指定的参数优先级高于外部指定的！也就是说在<code>data-param="containerID:'seajPageList',callback:'jPageFun'"</code>所定义的被优先选择使用！此时如果同时定义了 <code>data-target="seajPageList1" data-callback="jPageFun1"</code>，将被 <code>data-param</code>所定义的同名参数替换！
+		</div>
+		<div class="bs-example">
+			<h2 style="margin-top: 0;">Options</h2>
+			<dl class="dl-horizontal" id="seajPageItem">
+				<div style="margin-bottom: 10px;"><dt><h3>navLi </h3> </dt>
+				<dd><strong>Param: </strong><span>Boolean</span>, <strong>Default value:</strong> <i>true</i>
+				<p>翻页导航部分是否使用 <code>LI</code>方式！当使用bootstrap的分页样式时，请使用 <code>LI</code>方式。</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>first </h3></dt>
+				<dd><strong>Param: </strong><span>String || false</span>, <strong>Default value:</strong> <i>false</i>
+				<p>In this parameter you can customize the button for the first page in the navigation. By default this parameter is set to false so the 'first' button won't be created.</p>
+				<p>To set the name for this button you just have to pass it as a string. <a href="customizebuttons.html">View example</a>.</p>
+				<p>In case you want to use a custom element instead of the auto generated one, you can pass the selector for that element. <a href="custombuttons.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>previous </h3></dt>
+				<dd><strong>Param: </strong><span>String || false</span>, <strong>Default value:</strong> <i>"← previous"</i>
+				<p>Same as the parameter 'first' but for the button 'previous'.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>next </h3></dt>
+				<dd><strong>Param: </strong><span>String || false</span>, <strong>Default value:</strong> <i>"next →"</i>
+				<p>Same as the parameter 'first' but for the button 'next'.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>last </h3></dt>
+				<dd><strong>Param: </strong><span>String || false</span>, <strong>Default value:</strong> <i>false</i>
+				<p>Same as the parameter 'first' but for the button 'last'.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3 id="startPage">startPage </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>1</i>
+				<p>The page you want to be displayed first when the plugin is applied.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>perPage </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>10</i>
+				<p>Number of items to be displayed per page. <a href="itemsperpage.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>midRange </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>5</i>
+				<p>Number of page links to display at one time i.e. let's say you have a total of 50 pages, instead of displaying links to each and every page, we display a range of pages around the current page that we're on.</p>
+				<p>Just a note, the mid range value should be an odd number so the display is symmetrical, but it can also be even if you like.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>startRange </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>1</i>
+				<p>Number of page links always visible at the beggining of the nav. For instance, if you set startRange to 3, page links 1, 2 and 3 will allways be visible no matter which is the current page.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>endRange </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>1</i>
+				<p>Number of page links always visible at the end of the nav.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>keyBrowse </h3></dt>
+				<dd><strong>Param: </strong><span>Boolean</span>, <strong>Default value:</strong> <i>false</i>
+				<p>If you set keyBrowse to true you can browse the pages using your keyboard left and right keys. <a href="keybrowse.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>scrollBrowse </h3></dt>
+				<dd><strong>Param: </strong><span>Boolean</span>, <strong>Default value:</strong> <i>false</i>
+				<p>If you set scrollBrowse to true when you hover the cursor over the items you can use the scroll wheel to browse between pages. <a href="scrollbrowse.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>pause </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>0</i>
+				<p>If you want the plugin to automatically rotate the "pages", with this parameter you can control the length of the pause between each "page turn" in milliseconds.</p>
+				<p>When pause is set to false or 0 (default), pages won't automatically rotate. View an example of the auto rotation <a href="auto.html">here</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>clickStop </h3></dt>
+				<dd><strong>Param: </strong><span>Boolean</span>, <strong>Default value:</strong> <i>true</i>
+				<p>If you activated page rotation by setting a pause value, you can stop auto page turn when user clicks on a navigation link for the first time by setting clickStop to true.</p>
+				<p>Set it to false if you want pages to keep turning. <a href="auto.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>delay </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>50</i>
+				<p>If you want page items to be displayed one by one, you can control the delay between item display with this parameter (in milliseconds). If you don't set any value or set it to 0, items will be displayed all at the same time.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>direction </h3></dt>
+				<dd><strong>Param: </strong><span>String</span>, <strong>Default value:</strong> <i>"forward"</i>
+				<p>If you set a delay time between each item display you can also choose in what direction will they appear.</p>
+				<p>The options are: "forward", "backwards", "auto" or "random". <a href="direction.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>animation </h3></dt>
+				<dd><strong>Param: </strong><span>String</span>, <strong>Default value:</strong> <i>empty string (No CSS3 animation)</i>
+				<p>jPages works perfectly with <a href="http://daneden.me/animate/">Animate.css</a> but you must of course add the link to this CSS3 library in the head of your page first. Once you've done that, you can choose any of the entrance animations - jPages only supports entrance animations. <a href="cssanimation.html">View example</a>.</p>
+				<p>If you don't set any animation or if the browser doesn't support CSS3 Animations, jPages will fallback to the jQuery fadeIn effect. You can customize the speed of this effect in the parameter "fallback".</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>fallback </h3></dt>
+				<dd><strong>Param: </strong><span>Integer</span>, <strong>Default value:</strong> <i>400</i>
+				<p>If you don't set a CSS3 animation in the parameter "animation" jPages will fallback to the jQuery fadeIn effect. You can costumize the fadeIn speed in this parameter. You can use milliseconds or the strings 'fast', 'slow' and 'normal'. <a href="jqueryanimation.html">View example</a>.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3>minHeight </h3></dt>
+				<dd><strong>Param: </strong><span>Boolean</span>, <strong>Default value:</strong> <i>true</i>
+				<p>When a page turn occurs, some items will be hidden and some others will be shown. If you don't set a minimum height for the container you might perceive some height collapsing every time you turn pages. If you set minHeight to true, it will automatically set a minimum height for the item container to fix this issue. Set minHeight to false if you want to style this property yourself.</p></dd></div>
+
+				<div style="margin-bottom: 10px;"><dt><h3 id="callback">callback </h3></dt>
+				<dd><strong>Param: </strong><span>function</span>, <strong>Default value:</strong> <i>function( pages, items ) {}</i>
+				<p>In this parameter you can pass a function that will run after every page turn. This function receives two arguments (objects) that contain all the information available about the pages and the items:</p>
+
+				<p style="margin-top: 20px;"><b>Pages object properties:</b></p>
+				<dl class="clearfix">
+
+					<dt>pages.current</dt>
+					<dd>current page number</dd>
+
+					<dt>pages.interval</dt>
+					<dd>an object that contains two properties - interval.start and interval.end - corresponding to the midRange edges of pages in the navigation.</dd>
+
+					<dt>pages.count</dt>
+					<dd>total number of pages</dd>
+				</dl>
+
+				<p style="margin-top: 20px;"><b>Items object properties:</b></p>
+				<dl class="clearfix">
+					<dt>items.showing</dt>
+					<dd>jQuery collection of the items currentely being displayed</dd>
+
+					<dt>items.oncomming</dt>
+					<dd>jQuery collection of the items in the next page</dd>
+
+					<dt>items.range</dt>
+					<dd>an object that contains two properties - range.start and range.end - corresponding to the range of items currentely being displayed.</dd>
+
+					<dt>items.count</dt>
+					<dd>total number of items</dd>
+				</dl>
+				<p style="margin-top:10px">See how to create a legend for your pagination <a href="callback.html">here</a>.</p></dd></div>
+			</dl>
+			<div class="row">
+				<ul class="pagination col-sm-5" data-sea="jPage" data-option='startPage:1,perPage:5'></ul>
+				<div class="col-sm-2"><select name="pageJump" class="form-control"></select></div>
+				<div class="col-sm-5" id="pageInfo"></div>
+			</div>
+			<h2>API</h2>
+			<h3>Jump to page</h3>
+			<p>After initiating the plugin you can at any time show a specific page to your users. <a href="jumptopage.html">View example</a>.</p>
+			<h3>Destroy</h3>
+			<p>After initiating the plugin you can destroy it. <a href="destroy.html">View example</a>.</p>
+
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+&lt;!-- item container --&gt;
+&lt;ul id=&quot;seajPageItem&quot;&gt;
+    &lt;li&gt;&lt;img src=&quot;img/img (1).jpg&quot; alt=&quot;image&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/img (2).jpg&quot; alt=&quot;image&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/img (3).jpg&quot; alt=&quot;image&quot;&gt;&lt;/li&gt;
+     ...
+&lt;/ul&gt;
+&lt;!-- navigation holder --&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;ul class=&quot;pagination col-sm-5&quot; sea-toggle=&quot;jPage&quot; sea-options='startPage:1,perPage:5'&gt;&lt;/ul&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;&lt;select name=&quot;pageJump&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-sm-5&quot; id=&quot;pageInfo&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,331 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>表单控件展示</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>在一些需要展示程序源码的地方，有时候需要代码语法高亮，以便方便浏览。<br>
+			jQuery插件seaseaseaSnippet是一个基于SHJS的用于程序源码语法高亮显示的插件。它提供了一种快速和简便的方式在HTML文档上对各种源码片段进行高亮显示。<br>
+			插件兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。<br>
+			插件自带有39种样式可以使用。</p>
+		<h3><strong>通过HTML文档data属性</strong></h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="eaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>data-target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
+			<li><code>data-language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
+			<li><code>data-style</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>data-clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaseaseaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>data-showNum</code> 属性指定是否显示行号。默认是true；</li>
+			<li><code>data-collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，data-showMsg、data-hideMsg属性有效；</li>
+			<li><code>data-showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“展开示例代码”；</li>
+			<li><code>data-hideMsg</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“隐藏示例代码”。</li>
+		</ul>
+		</p>
+		<hr/>
+		<h3><ul><li><strong>日历组件</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Calendar"</code> 就可以为其赋予日历组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>changeMonth</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出，默认是true；</li>
+			<li><code>changeYear</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是true；</li>
+			<li><code>dayNamesMin</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是“["日","一","二","三","四","五","六"]”；</li>
+			<li><code>monthNamesShort</code> 属性接受一个剪切Flash控件的地址，默认是“["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]”；</li>
+			<li><code>yearSuffix</code> 属性指定是否显示行号。默认是“ 年 ”；</li>
+			<li><code>showMonthAfterYear</code> 属性指定是否折叠代码，默认是“!0”；</li>
+			<li><code>yearRange</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“c-3:c+0”；</li>
+			<li><code>dateFormat</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“yy年mm月dd日”。</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="Datepicker" class="col-sm-2 control-label"><strong>demo</strong> 演示日历组件</label>
+					<div class="col-sm-10" id="calendarDemo">
+						<input type="text" class="form-control" id="Datepicker" placeholder="请输出年月日" data-sea="Calendar">
+					</div>
+				</div>
+			</form>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;text&quot; name=&quot;Datepicker&quot; placeholder=&quot;&#35831;&#36755;&#20986;&#24180;&#26376;&#26085;&quot; data-toggle=&quot;seaCalendar&quot;&gt;</pre>
+			</div>
+		</div>
+		<h3><ul><li><strong>地区三级联动下拉选单</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Reside"</code> 就可以为其赋予地区三级联动下拉选单。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>data-default</code> 属性接受一个JSON格式数组，用作选单默认值，默认是“[0,0,0]”；</li>
+			<li><code>data-reside</code> 属性接受一个JSON格式数组，用作选单默认ID，默认是“['resideprovince','residecity','residedist']”；</li>
+			<li><code>data-class</code> 属性接受一个CLASS选择器，用作选单添加class，默认是“form-control”；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="ipt-item clear">
+					<label class="lab" for="resideprovince">所在地区：</label>
+					<div class="ipt-box ipt-select">
+						<div data-sea="community" class="form-group">
+							<div class="col-sm-4 city resideprovince"></div>
+							<div class="col-sm-4 city residecity"></div>
+							<div class="col-sm-4 city residedist"></div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div data-sea=&quot;Reside&quot; class=&quot;form-group&quot;&gt;
+	&lt;div class=&quot;col-sm-4 city resideprovince&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-sm-4 city residecity&quot;&gt;&lt;/div&gt;
+	&lt;div class=&quot;col-sm-4 city residedist&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+		<h3><ul><li><strong>按钮式单选、多选表单控件组件</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="RadioCheckbox"</code> 就可以为其赋予按钮式单选、多选表单控件组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>data-default</code> 属性接受一个JSON格式数组，用作选单默认值，默认是“[0,0,0]”；</li>
+			<li><code>data-reside</code> 属性接受一个JSON格式数组，用作选单默认ID，默认是“['resideprovince','residecity','residedist']”；</li>
+			<li><code>data-class</code> 属性接受一个CLASS选择器，用作选单添加class，默认是“form-control”；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">检测人性别：</label>
+					<div class="col-sm-9" data-sea="RadioCheckbox">
+						<input type="radio" id="gender1" name="gender"><label for="gender1"><i class="icon-user"></i> 男士</label>
+						<input type="radio" id="gender2" name="gender"><label for="gender2"><i class="icon-girl"></i> 女士</label>
+					</div>
+				</div>
+			</form>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;col-sm-9&quot; data-sea=&quot;RadioCheckbox&quot;&gt;
+	&lt;input type=&quot;radio&quot; id=&quot;gender1&quot; name=&quot;gender&quot;&gt;&lt;label for=&quot;gender1&quot;&gt; &#30007;&#22763;&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; id=&quot;gender2&quot; name=&quot;gender&quot;&gt;&lt;label for=&quot;gender2&quot;&gt; &#22899;&#22763;&lt;/label&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+		<h3><ul><li><strong>Kindeditor富文本输入框</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Kindeditor"</code> 就可以为其赋予Kindeditor富文本输入框组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>width</code> 属性接受一个字符类型数据，编辑器的宽度，可以设置px或%，比textarea输入框样式表宽度优先度高。默认是“670px”；</li>
+			<li><code>height</code> 属性接受一个字符类型数据，编辑器的高度，只能设置px，比textarea输入框样式表高度优先度高。默认是“300px”；</li>
+			<li><code>filterMode</code> 属性接受一个布尔型数据，true时根据 htmlTags 过滤HTML代码，false时允许输入任何代码。默认为True；</li>
+			<li><code>allowFileManager</code> 属性接受一个布尔型数据，true时显示浏览远程服务器按钮。默认为True；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="col-sm-6">
+						<textarea data-sea="seaKindeditor" name="center"></textarea>
+					</div>
+				</div>
+			</form>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;textarea data-sea=&quot;Kindeditor&quot; name=&quot;center&quot;&gt;&lt;/textarea&gt;</pre>
+			</div>
+		</div>
+		<h3><ul><li><strong>ThinkPHP验证码</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Kindeditor"</code> 就可以为其赋予Kindeditor富文本输入框组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>width</code> 属性接受一个字符类型数据，编辑器的宽度，可以设置px或%，比textarea输入框样式表宽度优先度高。默认是“670px”；</li>
+			<li><code>height</code> 属性接受一个字符类型数据，编辑器的高度，只能设置px，比textarea输入框样式表高度优先度高。默认是“300px”；</li>
+			<li><code>filterMode</code> 属性接受一个布尔型数据，true时根据 htmlTags 过滤HTML代码，false时允许输入任何代码。默认为True；</li>
+			<li><code>allowFileManager</code> 属性接受一个布尔型数据，true时显示浏览远程服务器按钮。默认为True；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="row">
+					<div class="input-group col-sm-5">
+						<span class="input-group-addon"><b>验&nbsp证&nbsp码</b></span>
+						<input class="form-control" id="formVdcode" type="text" name="vdcode" placeholder="填入验证码" />
+						<span class="input-group-addon" style="padding: 1px 12px;">
+							<img title='刷新验证码' src='/Tool/verifyImg' data-sea="VerifyImg" />
+						</span>
+					</div>
+				</div>
+			</form><br />
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;span class=&quot;input-group-addon&quot;&gt;&lt;b&gt;&#39564;&amp;nbsp&#35777;&amp;nbsp&#30721;&lt;/b&gt;&lt;/span&gt;
+&lt;input class=&quot;form-control&quot; id=&quot;formVdcode&quot; type=&quot;text&quot; name=&quot;vdcode&quot; placeholder=&quot;&#22635;&#20837;&#39564;&#35777;&#30721;&quot; /&gt;
+&lt;span class=&quot;input-group-addon&quot; style=&quot;padding: 1px 12px;&quot;&gt;
+	&lt;img title='&#21047;&#26032;&#39564;&#35777;&#30721;' src='/Tool/verifyImg' data-sea=&quot;seaVerifyImg&quot; /&gt;
+&lt;/span&gt;</pre>
+			</div>
+		</div>
+		<hr/>
+		<h3><ul><li><strong>X-editable及时编辑弹框</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Editable"</code> 就可以为其赋予Kindeditor富文本输入框组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>width</code> 属性接受一个字符类型数据，编辑器的宽度，可以设置px或%，比textarea输入框样式表宽度优先度高。默认是“670px”；</li>
+			<li><code>height</code> 属性接受一个字符类型数据，编辑器的高度，只能设置px，比textarea输入框样式表高度优先度高。默认是“300px”；</li>
+			<li><code>filterMode</code> 属性接受一个布尔型数据，true时根据 htmlTags 过滤HTML代码，false时允许输入任何代码。默认为True；</li>
+			<li><code>allowFileManager</code> 属性接受一个布尔型数据，true时显示浏览远程服务器按钮。默认为True；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="row">
+					<div class="input-group col-sm-8">
+						<span class="input-group-addon"><b>文章标题：</b></span>
+						<span class="form-control">
+							<a href="#" id="username" data-sea="seaEditable">扥黄芳扥黄芳扥黄方干嫩干风景凤姐凤姐凤姐凤姐</a>
+						</span>
+					</div>
+				</div>
+			</form><br />
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;input-group col-sm-8&quot;&gt;
+	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;b&gt;&#25991;&#31456;&#26631;&#39064;&#65306;&lt;/b&gt;&lt;/span&gt;
+	&lt;span class=&quot;form-control&quot;&gt;
+		&lt;a href=&quot;#&quot; id=&quot;username&quot; data-sea=&quot;Editable&quot;&gt;&#25189;&#40644;&#33459;&#25189;&#40644;&#33459;&#25189;&#40644;&#26041;&#24178;&#23273;&#24178;&#39118;&#26223;&#20964;&#22992;&#20964;&#22992;&#20964;&#22992;&#20964;&#22992;&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+		<hr/>
+		<h3><ul><li><strong>Number Picker 数字按钮组</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="NumberPicker"</code> 就可以为其赋予Kindeditor富文本输入框组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>min</code> 属性接受一个布尔型或数字类型数据，为False时不限最小值，当为0时，最小值为0。默认是“false”；</li>
+			<li><code>max</code> 属性接受一个布尔型或数字类型数据，为False时不限最大值，当为0时，最大值为0。默认是“false”；</li>
+			<li><code>value</code> 属性接受一个数字类型数据，输入按钮组呈现时的默认值。默认为0；</li>
+			<li><code>step</code> 属性接受一个数字类型数据，输入按钮组改变时的步进。默认为1；</li>
+			<li><code>name</code> 属性接受一个字符类型数据，代表输入框的name属性值。默认是“NumberPicker”；</li>
+			<li><code>format</code> 属性接受一个布尔型或字符类型数据，代表数据是否格式化后呈现，可以是‘#.##’。默认是“false”；</li>
+			<li><code>editable</code> 属性接受一个布尔型，代表输入框是否可以手工编辑。默认是“true”；</li>
+			<li><code>negative</code> 属性接受一个布尔型数据，是否允许负值。默认为True；</li>
+			<li><code>addText</code> 属性接受一个字符类型数据，增加按钮的字符显示。默认为“+”；</li>
+			<li><code>subText</code> 属性接受一个字符类型数据，减少按钮的字符显示。默认为“-”；</li>
+			<li><code>formatter</code> 属性接受一个函数或函数名，用于输出值带单位的情况，函数接收一个val参数，代表当前值；
+			<pre>formatter: function(val){
+	return "$ "+val;
+}</pre>
+			</li>
+			<li><code>beforeIncrease</code> 属性接受一个函数或函数名，用于点击增加按钮后，在实际增加前的回调函数；</li>
+			<li><code>afterIncrease</code>  属性接受一个函数或函数名，用于点击增加按钮后，在实际增加后的回调函数；</li>
+			<li><code>beforeDecrease</code> 属性接受一个函数或函数名，用于点击减少按钮后，在实际减少前的回调函数；</li>
+			<li><code>afterDecrease</code> 属性接受一个函数或函数名，用于点击减少按钮后，在实际减少后的回调函数；；</li>
+			<li><code>beforeChange</code> 属性接受一个函数或函数名，用于数值改变前的回调函数；</li>
+			<li><code>afterChange</code> 属性接受一个函数或函数名，用于数值改变后的回调函数；</li>
+			<li><code>onMin</code> 属性接受一个函数或函数名，用于当数值达到最小值时的回调函数；</li>
+			<li><code>onMax</code> 属性接受一个函数或函数名，用于当数值达到最大值时的回调函数；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="row">
+					<div class="input-group col-sm-8">
+						<div data-sea="NumberPicker"></div>
+					</div>
+				</div>
+			</form><br />
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div data-sea=&quot;NumberPicker&quot;&gt;&lt;/div&gt;</pre>
+			</div>
+		</div>
+		<hr/>
+		<h3><ul><li><strong>jqSelecTable</strong></li></ul></h3>
+		<p>仅仅通过向页面表单元素添加<code>data-sea="Editable"</code> 就可以为其赋予Kindeditor富文本输入框组件。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>width</code> 属性接受一个字符类型数据，编辑器的宽度，可以设置px或%，比textarea输入框样式表宽度优先度高。默认是“670px”；</li>
+			<li><code>height</code> 属性接受一个字符类型数据，编辑器的高度，只能设置px，比textarea输入框样式表高度优先度高。默认是“300px”；</li>
+			<li><code>filterMode</code> 属性接受一个布尔型数据，true时根据 htmlTags 过滤HTML代码，false时允许输入任何代码。默认为True；</li>
+			<li><code>allowFileManager</code> 属性接受一个布尔型数据，true时显示浏览远程服务器按钮。默认为True；</li>
+		</ul>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="row">
+					<div class="input-group col-sm-8">
+						<select name="pref_noapply" data-sea="jQselectable">
+							<optgroup label="北海道">
+								<option value="01">北海道</option>
+							</optgroup>
+							<optgroup label="東北">
+								<option value="02">青森県</option>
+								<option value="03">岩手県</option>
+								<option value="04">宮城県</option>
+								<option value="05">秋田県</option>
+								<option value="06">山形県</option>
+								<option value="07">福島県</option>
+							</optgroup>
+							<optgroup label="関東">
+								<option value="08">東京都</option>
+								<option value="09">茨城県</option>
+								<option value="10">栃木県</option>
+								<option value="11">群馬県</option>
+								<option value="12">埼玉県</option>
+								<option value="13">千葉県</option>
+								<option value="14">神奈川県</option>
+							</optgroup>
+							<optgroup label="北陸">
+								<option value="15">富山県</option>
+								<option value="16">石川県</option>
+								<option value="17">福井県</option>
+							</optgroup>
+							<optgroup label="甲信越">
+								<option value="18">新潟県</option>
+								<option value="19">山梨県</option>
+								<option value="20">長野県</option>
+							</optgroup>
+							<optgroup label="東海">
+								<option value="21">岐阜県</option>
+								<option value="22">静岡県</option>
+								<option value="23">愛知県</option>
+								<option value="24">三重県</option>
+							</optgroup>
+							<optgroup label="関西">
+								<option value="25">滋賀県</option>
+								<option value="26">京都府</option>
+								<option value="27">大阪府</option>
+								<option value="28">兵庫県</option>
+								<option value="29">奈良県</option>
+								<option value="30">和歌山県</option>
+							</optgroup>
+							<optgroup label="中四国">
+								<option value="31">鳥取県</option>
+								<option value="32">島根県</option>
+								<option value="33">岡山県</option>
+								<option value="34">広島県</option>
+								<option value="35">山口県</option>
+								<option value="36">徳島県</option>
+								<option value="37">香川県</option>
+								<option value="38">愛媛県</option>
+								<option value="39">高知県</option>
+							</optgroup>
+							<optgroup label="九州">
+								<option value="40">福岡県</option>
+								<option value="41">佐賀県</option>
+								<option value="42">長崎県</option>
+								<option value="43">熊本県</option>
+								<option value="44">大分県</option>
+								<option value="45">宮崎県</option>
+								<option value="46">鹿児島県</option>
+							</optgroup>
+							<optgroup label="沖縄">
+								<option value="47">沖縄県</option>
+							</optgroup>
+						</select>
+					</div>
+				</div>
+			</form><br />
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;input-group col-sm-8&quot;&gt;
+	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;b&gt;&#25991;&#31456;&#26631;&#39064;&#65306;&lt;/b&gt;&lt;/span&gt;
+	&lt;span class=&quot;form-control&quot;&gt;
+		&lt;a href=&quot;#&quot; id=&quot;username&quot; data-sea=&quot;Editable&quot;&gt;&#25189;&#40644;&#33459;&#25189;&#40644;&#33459;&#25189;&#40644;&#26041;&#24178;&#23273;&#24178;&#39118;&#26223;&#20964;&#22992;&#20964;&#22992;&#20964;&#22992;&#20964;&#22992;&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/div&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

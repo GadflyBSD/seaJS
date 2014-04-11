@@ -1,0 +1,159 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>nivo Lightbox灯箱插件</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery nivo Lightbox项目主页：<a href="http://dev7studios.com/plugins/nivo-Lightbox/">http://dev7studios.com/plugins/nivo-Lightbox/</a>
+			版本号：jQuery Nivo Lightbox v1.1
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<ul>
+			<li><p><strong><code>effect</code>参数</strong>，默认值：<code>fade</code>
+				The effect to use when showing the lightbox</p>
+			</li>
+			<li><p><strong><code>theme</code>参数</strong>，默认值：<code>default</code>
+				The lightbox theme to use</p>
+			</li>
+			<li><p><strong><code>keyboardNav</code>参数</strong>，默认值：<code>true</code>
+				Enable/Disable keyboard navigation (left/right/escape)</p>
+			</li>
+			<li><p><strong><code>clickOverlayToClose</code>参数</strong>，默认值：<code>true</code>
+				If false clicking the "close" button will be the only way to close the lightbox</p>
+			</li>
+			<li><p><strong><code>onInit</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback when lightbox has loaded</p>
+			</li>
+			<li><p><strong><code>beforeShowLightbox</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback before the lightbox is shown</p>
+			</li>
+			<li><p><strong><code>afterShowLightbox</code>参数</strong>，默认值：<code>function(lightbox){}</code>
+				Callback after the lightbox is shown</p>
+			</li>
+			<li><p><strong><code>beforeHideLightbox</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback before the lightbox is hidden</p>
+			</li>
+			<li><p><strong><code>afterHideLightbox</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback after the lightbox is hidden</p>
+			</li>
+			<li><p><strong><code>onPrev</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback when the lightbox gallery goes to previous item</p>
+			</li>
+			<li><p><strong><code>onNext</code>参数</strong>，默认值：<code>function(){}</code>
+				Callback when the lightbox gallery goes to next item</p>
+			</li>
+			<li><p><strong><code>errorMessage</code>参数</strong>，默认值：<code>The requested content cannot be loaded. Please try again later.</code>
+				Error message when content can't be loaded</p>
+			</li>
+		</ul>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="images/large/1.jpg" class="thumbnail" data-lightbox-gallery="thumbnail1" data-sea="nivoLightbox" title="This is an image title">
+								<img src="images/small/1.jpg">
+							</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="images/large/2.jpg" class="thumbnail" data-lightbox-gallery="thumbnail1" data-sea="nivoLightbox" title="This is an image title">
+								<img src="images/small/2.jpg">
+							</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="images/large/3.jpg" class="thumbnail" data-lightbox-gallery="thumbnail1" data-sea="nivoLightbox" title="This is an image title">
+								<img src="images/small/3.jpg">
+							</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="images/large/4.jpg" class="thumbnail" data-lightbox-gallery="thumbnail" data-sea="nivoLightbox" title="This is an image title">
+								<img src="images/small/4.jpg">
+							</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="images/large/5.jpg" class="thumbnail" data-lightbox-gallery="thumbnail" data-sea="nivoLightbox" title="This is an image title">
+								<img src="images/small/5.jpg">
+							</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="images/large/6.jpg" class="thumbnail" data-sea="nivoLightbox">
+								<img src="images/small/6.jpg">
+							</a>
+						</div>
+					</div>
+					<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/1.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/1.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/2.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/2.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/3.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/3.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/4.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/4.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/5.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/5.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-sm-2&quot;&gt;
+		&lt;a href=&quot;images/large/6.jpg&quot; data-sea=&quot;nivoLightbox&quot;&gt;
+			&lt;img src=&quot;images/small/6.jpg&quot;&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+				</div>
+				<h3><strong>Other Types</strong></h3>
+				<a href="http://www.sina.com.cn" data-sea="nivoLightbox" title="http://www.sina.com.cn" data-lightbox-gallery="gallery1">http://www.sina.com.cn</a>
+				<br/>
+				<a href="http://www.163.com" data-sea="nivoLightbox" title="http://www.163.com" data-lightbox-gallery="gallery1">http://www.163.com</a>
+				<br/>
+				<a href="http://www.qq.com" data-sea="nivoLightbox" title="http://www.qq.com" data-lightbox-gallery="gallery1">http://www.qq.com</a>
+			</div>
+		</div>
+		<h3><strong>给弹出层加上标题</strong></h3>
+		<p>
+			<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;a href=&quot;image_large.jpg&quot; title=&quot;This is an image title&quot;&gt;
+    &lt;img src=&quot;image_thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;</pre>
+		</p>
+		<h3><strong>给弹出层加上分组</strong></h3>
+		<p>
+		<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;a href=&quot;image1_large.jpg&quot; data-lightbox-gallery=&quot;gallery1&quot;&gt;
+    &lt;img src=&quot;image1_thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;
+&lt;a href=&quot;image2_large.jpg&quot; data-lightbox-gallery=&quot;gallery1&quot;&gt;
+    &lt;img src=&quot;image2_thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;
+&lt;a href=&quot;image3_large.jpg&quot; data-lightbox-gallery=&quot;gallery1&quot;&gt;
+    &lt;img src=&quot;image3_thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;</pre>
+		</p>
+		<h3><strong>使用AJAX加载内容</strong></h3>
+		<p>
+		<pre data-sea="seaSnippet" data-config="seaseaseaSnippet">&lt;a href=&quot;demo.html&quot; data-lightbox-type=&quot;ajax&quot;&gt;Load via AJAX&lt;/a&gt;</pre>
+		</p>
+		<h3><strong>使用HiDPI图片</strong></h3>
+		<p>
+		<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;a href=&quot;image_large.jpg&quot; data-lightbox-hidpi=&quot;image_large@2x.jpg&quot;&gt;
+    &lt;img src=&quot;image_thumb.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;</pre>
+		</p>
+	</div>
+</div>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<title>seaJS模块化javascript</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta charset="UTF-8" />
+	<script type="text/javascript" src="../javascript/sea.js"></script>
+	<script type="text/javascript" src="../javascript/seajs-config.js"></script>
+	<script type="text/javascript">
+		var SeaOptions = {
+			CarouFredSel: {
+				direction           : "left",
+				scroll : {
+					items           : 1,
+					fx: 'crossfade',
+					duration        : 1000
+				},
+				pagination: {
+					container: '#cameraPagination',
+					anchorBuilder: function( nr ) {
+						var Pagination = [{chn: '研究', eng: 'research'}, {chn: '检测', eng: 'testing'}, {chn: '干预', eng: 'adjustment'}, {chn: '教育', eng: '教育'}]
+						$('#cameraPagination').append('<li><a href="#"><b>'+Pagination[nr-1].chn+'</b><span>'+Pagination[nr-1].eng+'</span></a></li>');
+					}
+				}
+			}
+		}
+		seajs.use(['seajs-control', 'bootstrap'], function(){
+			$(document).seaLoad();
+		});
+	</script>
+<body>
+<!-- jQuery仿易迅banner效果兼容ie6 -->
+<div id="js_banner" class="fx_banner" data-sea="seaSlider">
+	<ul id="js_banner_img" class="fx_banner_img clear list-unstyled">
+		<li style="background:#CACDEE">
+			<div class="fx_banner_inner fx_grid_c1">
+				<div class="child child0" data-z="1"><img src="images/slider/seaSlider/0.jpg" alt="misfit shine"></div>
+				<div class="child" data-z="2" style="left:0;top:0;"><img src="images/slider/seaSlider/0_1.png" alt=""></div>
+				<div class="child" data-z="3" style="left:495px;top:0;"><img src="images/slider/seaSlider/0_2.png" alt=""></div>
+			</div>
+			<a href="#" class="fx_banner_link"><span class="hide">去购买</span></a>
+		</li>
+		<li style="background:#fe5769">
+			<div class="fx_banner_inner fx_grid_c1">
+				<div class="child child0" data-z="1"><img src="images/slider/seaSlider/1.jpg" alt="latin"></div>
+				<div class="child" data-z="2" style="left:0;top:0;"><img src="images/slider/seaSlider/1_1.png" alt=""></div>
+				<div class="child" data-z="3" style="left:495px;top:0;"><img src="images/slider/seaSlider/1_2.png" alt=""></div>
+			</div>
+			<a href="#" class="fx_banner_link"><span class="hide">去购买</span></a>
+		</li>
+		<li style="background:#a3e3ff">
+			<div class="fx_banner_inner fx_grid_c1">
+				<div class="child child0" data-z="1"><img src="images/slider/seaSlider/2.jpg" alt="sony"></div>
+				<div class="child" data-z="2" style="left:0;top:0;"><img src="images/slider/seaSlider/2_1.png" alt=""></div>
+				<div class="child" data-z="3" style="left:495px;top:0;"><img src="images/slider/seaSlider/2_2.png" alt=""></div>
+			</div>
+			<a href="#" class="fx_banner_link"><span class="hide">去购买</span></a>
+		</li>
+		<li style="background:#f3eed4">
+			<div class="fx_banner_inner fx_grid_c1">
+				<div class="child child0" data-z="1"><img src="images/slider/seaSlider/3.jpg" alt="洁灵卡"></div>
+				<div class="child" data-z="2" style="left:0;top:0;"><img src="images/slider/seaSlider/3_1.png" alt=""></div>
+				<div class="child" data-z="3" style="left:495px;top:0;"><img src="images/slider/seaSlider/3_2.png" alt=""></div>
+			</div>
+			<a href="#" class="fx_banner_link"><span class="hide">去购买</span></a>
+		</li>
+		<li style="background:#87c2e3">
+			<div class="fx_banner_inner fx_grid_c1">
+				<div class="child child0" data-z="1"><img src="images/slider/seaSlider/4.jpg" alt="海尔天樽"></div>
+				<div class="child" data-z="2" style="left:0;top:0;"><img src="images/slider/seaSlider/4_1.png" alt=""></div>
+				<div class="child" data-z="3" style="left:495px;top:0;"><img src="images/slider/seaSlider/4_2.png" alt=""></div>
+			</div>
+			<a href="#" class="fx_banner_link"><span class="hide">去购买</span></a>
+		</li>
+	</ul>
+	<div class="fx_banner_common fx_grid_c1">
+		<a ytag="30000" id="js_banner_pre" href="javascript:;" class="fx_banner_pre"></a>
+		<a ytag="30010" id="js_banner_next" href="javascript:;" class="fx_banner_next"></a>
+	</div>
+</div>
+<!-- jQuery仿易迅banner效果兼容ie6 -->
+</body>
+</html>

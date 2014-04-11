@@ -1,0 +1,72 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">折叠（手风琴）效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>关于</h3>
+		<p>对为支持折叠功能的组件，例如accordions、手风琴和导航特效，赋予基本样式和灵活的支持。</p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="Collapse"</code> 就可以为其赋予控制可折叠页面元素的能力。
+			<ul>
+				<li><code>data-target</code>属性接受一个选择器作为其控制对象；</li>
+				<li><code>data-active</code>属性接受一个选择器作为当前状态，添加 active Class，默认是this，也可指定为上层选择器，如使用默认值可以不必设置；</li>
+				<li><code>data-parent</code>属性接受一个选择器给多组可折叠页面元素添加不同的控制器，如果页面仅有一组可折叠页面，可以不必设置；</li>
+				<li><code>data-speed</code>属性接受三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)，默认为slow，如使用默认值可以不必设置；</li>
+				<li><code>data-easing</code>属性指定动画效果的名称，提供jQuery Easing插件所提供的多种动画效果。如使用 "linear" 和 "swing"以外的动画效果，系统会自动异步加载jQuery Easing插件。默认是jQuery自带的"swing"，如使用默认值可以不必设置；</li>
+				<li><code>sea-collapse</code> class。请确保为每一个可折叠页面元素添加 sea-collapse class；</li>
+				<li><code>sea-collapse-in</code> class。如果你希望可折叠页面元素的默认状态是展开的，请添加 sea-collapse-in class。</li>
+			</ul>
+		</p>
+		<h3>需要给你的样式表添加两个样式</h3>
+		<p>
+		<pre data-type="seaSnippet" data-option="language:'css',style:'peachpuff'">
+.sea-collapse {display: none;}
+.sea-collapse-in {display: block}</pre>
+		</p>
+		<div class="bs-example">
+			<div class="bs-sidebar sea-example">
+<ul class="nav nav-pills nav-stacked" id="collapseDemo">
+	<li class="active">
+		<a href="#collapse1" data-sea="Collapse" data-option="parent:'#collapseDemo'">
+			动态效果
+		</a>
+		<ul id="collapse1" class="nav sea-collapse sea-collapse-in">
+			<li><a href="#">折叠（手风琴）效果</a></li>
+			<li><a href="#">如何使用</a></li>
+			<li><a href="#">案例</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#collapse2" data-sea="Collapse" data-option="parent:'#collapseDemo'">
+			下拉菜单
+		</a>
+		<ul id="collapse2" class="nav sea-collapse">
+			<li><a href="#">案例</a></li>
+			<li><a href="#">对齐选项</a></li>
+			<li><a href="#">标题</a></li>
+			<li><a href="#">禁用的菜单项</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#collapse3" data-sea="Collapse" data-option="parent:'#collapseDemo'">
+			按钮组
+		</a>
+		<ul id="collapse3" class="nav sea-collapse">
+			<li><a href="#">基本案例</a></li>
+			<li><a href="#">按钮工具栏</a></li>
+			<li><a href="#">尺寸</a></li>
+			<li><a href="#">嵌套</a></li>
+			<li><a href="#">垂直排列</a></li>
+			<li><a href="#">两端对齐的链接排列</a></li>
+		</ul>
+	</li>
+</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12" style="margin-top: 15px;">
+				<pre data-sea="seaSnippet" data-option="target:'div.sea-example',style:'ide-eclipse',collapse:true"></pre>
+			</div>
+		</div>
+	</div>
+</div>

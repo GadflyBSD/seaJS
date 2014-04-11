@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">jQuery SCO Countdown 倒计时效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>插件说明</h3>
+		<p>这是一个简单的倒计时（Countdown）插件，没什么太特别的。你给这个插件一个将来到期的时间截，他就会在你指定的页面元素内展示出来，并开始倒计时。<br />
+			兼容IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。</p>
+		<p>jPages项目主页：
+			<a href="http://luis-almeida.github.io/jPages/index.html" target="_blank">http://luis-almeida.github.io/jPages/index.html</a></p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="countDown"</code> 就可以为其赋予SCO Countdown 倒计时效果。</p>
+		<div class="alert alert-success">
+			<h2><strong>Options 参数：</strong></h2>
+			<dl>
+				<dt><h3>until</h3></dt>
+				<dd><p>属性接受一个UNIX时间截，该时间截是指未来的某个时间，从现在开始到那个时间的倒计时，默认是：下个月1日0点0分0秒的时间截；</p></dd>
+				<dt><h3>expire</h3></dt>
+				<dd><p>所提供的时间截已经到期时所显示的文本，默认是：“已到期！”</p></dd>
+				<dt><h3>d</h3></dt>
+				<dd><p>在距离还有多少天数后面显示的单位，默认是：‘天’</p></dd>
+				<dt><h3>h</h3></dt>
+				<dd><p>在距离还有多少小时后面显示的单位，默认是：‘小时’</p></dd>
+				<dt><h3>m</h3></dt>
+				<dd><p>在距离还有多少分钟后面显示的单位，默认是：‘分’</p></dd>
+				<dt><h3>s</h3></dt>
+				<dd><p>在距离还有多少秒后面显示的单位，默认是：‘秒’</p></dd>
+			</dl>
+		</div>
+		<div class="bs-example">
+			<blockquote><div data-sea="countDown" data-option="until:1424382956"></div></blockquote>
+
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-option="style:'ide-eclipse'">
+&lt;div sea-toggle=&quot;Countdown&quot; date-until=&quot;1424382956&quot; data-param=&quot;expire:'&#21040;&#26399;&#21862;&#65281;',d:'D',h:'H',m:'M',s:'S'&quot;&gt;&lt;/div&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

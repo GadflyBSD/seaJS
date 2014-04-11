@@ -1,0 +1,421 @@
+<div class="panel panel-primary" id="SmartMenusDoc">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>SmartMenus</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>
+			jQuery SmartMenus 项目主页：<a target="_blank" href="http://www.smartmenus.org">http://www.smartmenus.org</a>
+		</p>
+		<h3><strong>通过 <code>data-option</code>或者 <code>data-config</code>，设定参数</strong></h3>
+		<div class="row" style="margin-bottom: 15px;">
+			<div class="col-md-4">
+				<a class="btn btn-info btn-block" href="#collapse1" data-sea="Collapse" data-option="parent:'#SmartMenusDoc',active:'div'">SmartMenus 属性</a>
+			</div>
+			<div class="col-md-4">
+				<a class="btn btn-info btn-block" href="#collapse2" data-sea="Collapse" data-option="parent:'#SmartMenusDoc',active:'div'">SmartMenus 事件</a>
+			</div>
+			<div class="col-md-4">
+				<a class="btn btn-info btn-block" href="#collapse3" data-sea="Collapse" data-option="parent:'#SmartMenusDoc',active:'div'">SmartMenus 方法</a>
+			</div>
+		</div>
+		<div class="panel panel-default sea-collapse sea-collapse-in" id="collapse1">
+			<div class="panel-heading">
+				<h3 class="panel-title">SmartMenus 属性</h3>
+			</div>
+			<div class="panel-body">
+				<ul id="seajPageItem">
+					<li><p>
+						<strong><code>css</code>参数，默认值：<code>Nav/SmartMenus/css/sm-core-css.css</code>，说明：</strong>CSS样式表位置
+					</p></li>
+					<li><p>
+						<strong><code>theme</code>参数，默认值：<code>sm-blue</code>，说明：</strong>theme名称
+					</p></li>
+					<li><p>
+						<strong><code>bottomToTopSubMenus</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether the sub menus should be displayed from bottom to top (drop-up) instead of top to bottom (drop-down).
+					</p></li>
+					<li><p>
+						<strong><code>collapsibleHideDuration</code>参数，默认值：<code>0</code>，说明：</strong>The duration for hide animation for collapsible sub menus. This option matters only if <code>collapsibleHideFunction: null</code>
+					</p></li>
+					<li><p>
+						<strong><code>collapsibleHideFunction</code>参数，默认值：<code>0</code>，说明：</strong>Custom function to use when hiding a collapsible sub menu (the default is the jQuery 'hide').
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+	collapsibleHideFunction: function($ul, complete) { $ul.SlideUp(250, complete); }</pre>
+						</p></li>
+					<li><p>
+						<strong><code>collapsibleShowDuration</code>参数，默认值：<code>0</code>，说明：</strong>The duration for show animation for collapsible sub menus. This option matters only if <code>collapsibleShowFunction: null</code>
+					</p></li>
+					<li><p>
+						<strong><code>collapsibleShowFunction</code>参数，默认值：<code>0</code>，说明：</strong>Custom function to use when showing a collapsible sub menu (the default is the jQuery 'show').
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+	collapsibleShowFunction: function($ul, complete) { $ul.SlideDown(250, complete); }</pre>
+						</p></li>
+					<li><p>
+						<strong><code>hideDuration</code>参数，默认值：<code>10em</code>，说明：</strong>The duration in milliseconds for hide animation. Set it to 0 for no animation. This option matters only if <code>hideFunction: null</code>
+					</p></li>
+					<li><p>
+						<strong><code>hideFunction</code>参数，默认值：<code>20em</code>，说明：</strong>Custom function to use when hiding a sub menu (the default is the jQuery 'hide').
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+	hideFunction: function($ul, complete) { $ul.fadeOut(250, complete); }
+	//Note: Don't forget to call complete() at the end of whatever you do with the $ul (the sub menu).</pre>
+						</p></li>
+					<li><p>
+						<strong><code>hideOnClick</code>参数，默认值：<code>True</code>，说明：</strong>Determines whether to hide (reset) the sub menus on click/tap anywhere on the page.
+					</p></li>
+					<li><p>
+						<strong><code>hideTimeout</code>参数，默认值：<code>prepend</code>，说明：</strong>The timeout in milliseconds before hiding (resetting) the sub menus on mouseout/focusout.
+					</p></li>
+					<li><p>
+						<strong><code>isPopup</code>参数，默认值：<code>+</code>，说明：</strong>Determines whether the menu is a popup menu or a permanent menu bar. Popup menus can be shown/hidden via the popupShow and popupHide API methods. Make sure you position offscreen or hide with display:none in your CSS any popup menus you have.
+					</p></li>
+					<li><p>
+						<strong><code>keepHighlighted</code>参数，默认值：<code>30</code>，说明：</strong>Determines whether all ancestor items of the current sub menu should be kept highlighted - the script adds the highlighted class to the links (the A elements).
+					</p></li>
+					<li><p>
+						<strong><code>keepInViewport</code>参数，默认值：<code>30</code>，说明：</strong>Determines whether the sub menus should be repositioned if needed to make sure they always appear inside the viewport.
+					</p></li>
+					<li><p>
+						<strong><code>mainMenuSubOffsetX</code>参数，默认值：<code>True</code>，说明：</strong>Allows setting a horizontal offset in pixels from the default position for the first-level sub menus. You may want to check the subMenusSubOffsetX option, too.
+					</p></li>
+					<li><p>
+						<strong><code>mainMenuSubOffsetY</code>参数，默认值：<code>False</code>，说明：</strong>Allows setting a vertical offset in pixels from the default position for the first-level sub menus. You may want to check the subMenusSubOffsetY option, too.
+					</p></li>
+					<li><p>
+						<strong><code>markCurrentItem</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether the script should automatically add the current class to the A element of the item linking to the current page URL.
+					</p></li>
+					<li><p>
+						<strong><code>markCurrentTree</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether the script should automatically add the current class to the A elements of all ancestor items of the current item. This option matters only if <code>markCurrentItem: true</code>
+					</p></li>
+					<li><p>
+						<strong><code>overlapControlsInIE</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether the script should make sure the sub menus appear on top of special OS controls in Internet Explorer (i.e. SELECT, OBJECT, EMBED, etc.) You may opt to disable this feature if you don't need this fix and would like to achieve best possible runtime performance in IE (other browsers are not affected anyway).
+					</p></li>
+					<li><p>
+						<strong><code>rightToLeftSubMenus</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether the sub menus should be displayed from right to left instead of left to right. You may need to check and update the CSS for the sub indicators' position, too (i.e. look for <code>span.sub-arrow</code>).
+					</p></li>
+					<li><p>
+						<strong><code>scrollAccelerate</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether to accelerate scrolling or use a fixed step for long sub menus that do not fully fit in the viewport height (i.e. start slower and then gradually increase the step).
+					</p></li>
+					<li><p>
+						<strong><code>scrollInterval</code>参数，默认值：<code>False</code>，说明：</strong>Interval in milliseconds between each scrolling step for long sub menus that do not fully fit in the viewport height.
+					</p></li>
+					<li><p>
+						<strong><code>scrollStep</code>参数，默认值：<code>False</code>，说明：</strong>Step in pixels when scrolling long sub menus that do not fit in the viewport height.
+					</p></li>
+					<li><p>
+						<strong><code>showDuration</code>参数，默认值：<code>False</code>，说明：</strong>The duration in milliseconds for show animation. Set it to 0 for no animation. This option matters only if <code>showFunction: null</code>
+					</p></li>
+					<li><p>
+						<strong><code>showFunction</code>参数，默认值：<code>False</code>，说明：</strong>Custom function to use when showing a sub menu (the default is the jQuery 'show').
+					<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+	showFunction: function($ul, complete) { $ul.fadeIn(250, complete); }
+	// Note: Don't forget to call complete() at the end of whatever you do with the $ul (the sub menu).</pre>
+						</p></li>
+					<li><p>
+						<strong><code>showOnClick</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether to show the first-level sub menus onclick instead of onmouseover - i.e. like drop-down menus on desktop applications. This option matters only for mouse input.
+					</p></li>
+					<li><p>
+						<strong><code>showTimeout</code>参数，默认值：<code>False</code>，说明：</strong>The timeout in milliseconds before showing the sub menus on mouseover/focusin.
+					</p></li>
+					<li><p>
+						<strong><code>subIndicators</code>参数，默认值：<code>False</code>，说明：</strong>Determines whether to create sub menu indicators. The script creates a SPAN and inserts it in the item's A element.
+					</p></li>
+					<li><p>
+						<strong><code>subIndicatorsPos</code>参数，默认值：<code>False</code>，说明：</strong>Position of the sub menu indicator SPAN relative to the menu item content. A keyword specifying the jQuery method to use when inserting the SPAN in the menu item's A element - either <code>'prepend'</code>, or <code>'append'</code>.
+					</p></li>
+					<li><p>
+						<strong><code>subIndicatorsText</code>参数，默认值：<code>False</code>，说明：</strong>A text string to be added in the sub menu indicator SPAN (e.g. '+'). You may need to check and update the CSS for the sub indicators, too (i.e. look for <code>span.sub-arrow</code>).
+					</p></li>
+					<li><p>
+						<strong><code>subMenusMaxWidth</code>参数，默认值：<code>False</code>，说明：</strong>Max-width for the sub menus in any valid CSS unit. If a value is set, any fixed width set in CSS will be ignored by the script.
+					</p></li>
+					<li><p>
+						<strong><code>subMenusMinWidth</code>参数，默认值：<code>False</code>，说明：</strong>Min-width for the sub menus in any valid CSS unit. If a value is set, any fixed width set in CSS will be ignored by the script.
+					</p></li>
+					<li><p>
+						<strong><code>subMenusSubOffsetX</code>参数，默认值：<code>False</code>，说明：</strong>Allows setting a horizontal offset in pixels from the default position for the second+ level sub menus. You may want to check the <code>mainMenuSubOffsetX</code> option, too.
+					</p></li>
+					<li><p>
+						<strong><code>subMenusSubOffsetY</code>参数，默认值：<code>False</code>，说明：</strong>Allows setting a vertical offset in pixels from the default position for the second+ level sub menus. You may want to check the <code>mainMenuSubOffsetY</code> option, too.
+					</p></li>
+				</ul>
+				<div class="row mypagination">
+					<div class="col-md-5"><ul class="pagination" data-sea="jPage" data-option='startPage:1,perPage:10'></ul></div>
+					<div class="col-md-2"><select name="pageJump" class="form-control"></select></div>
+					<div class="col-md-5" id="pageInfo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default sea-collapse" id="collapse2">
+			<div class="panel-heading">
+				<h3 class="panel-title">SmartMenus 事件</h3>
+			</div>
+			<div class="panel-body">
+				<ul id="seajPageItem2">
+					<li><p>
+						<strong>Events: <code>activate</code>参数，说明：</strong>Fired when an item is activated, right before its sub menu (if the item has a sub menu) is shown. You can cancel the event with return false and the item's sub menu will not be shown.
+						Cancelable: Yes
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('activate.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>beforefirstshow</code>参数，说明：</strong>Fired right before a sub menu is shown. You can cancel the event with return false and the sub menu will not be shown.
+						Cancelable: Yes
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>menu</dt>
+							<dd>The sub menu UL element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('beforeshow.smapi', function(e, menu) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>beforehide</code>参数，说明：</strong>Fired right before a sub menu is hidden. You can cancel the event with return false and the sub menu will not be hidden.
+						Cancelable: Yes
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>menu</dt>
+							<dd>The sub menu UL element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('beforehide.smapi', function(e, menu) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>blur</code>参数，说明：</strong>
+						Fired when an item loses focus.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('blur.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>click</code>参数，说明：</strong>Fired when an item is clicked. You can cancel the event with return false and the item will not be selected (i.e. it's link won't be loaded) and if there is a sub menu which should appear on click, it won't be shown, too. This event is fired even for disabled items so you may want to check the select event, too.
+						Cancelable: Yes
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('click.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>focus</code>参数，说明：</strong>Fired when an item is focused.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('focus.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>hide</code>参数，说明：</strong>Fired right after a sub menu is hidden.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>menu</dt>
+							<dd>The sub menu UL element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('hide.smapi', function(e, menu) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>mouseenter</code>参数，说明：</strong>Fired when an item is hovered.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('mouseenter.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>mouseleave</code>参数，说明：</strong>Fired when an item is hovered out.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('mouseleave.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>select</code>参数，说明：</strong>Fired when an item is selected, right before it's link is loaded. You can cancel the event with return false and the item will not be selected (i.e. it's link won't be loaded). This event is not fired for disabled items so you may want to check the click event, too.
+						Cancelable: Yes
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>item</dt>
+							<dd>The menu item A element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('select.smapi', function(e, item) {});</pre>
+						</p></li>
+					<li><p>
+						<strong>Events: <code>show</code>参数，说明：</strong>Fired right after a sub menu is shown.
+						Cancelable: No
+						Arguments:
+						<dl class="dl-horizontal">
+							<dt>e</dt>
+							<dd>The jQuery.Event object.</dd>
+							<dt>menu</dt>
+							<dd>The sub menu UL element.</dd>
+						</dl>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').bind('show.smapi', function(e, menu) {});</pre>
+						</p></li>
+				</ul>
+				<div class="row mypagination">
+					<div class="col-md-5"><ul class="pagination" data-sea="jPage" data-option="startPage:1,perPage:5,legend:'pageInfo2',pageJump: 'select[name=pageJump2]',containerID: 'seajPageItem2'"></ul></div>
+					<div class="col-md-2"><select name="pageJump2" class="form-control"></select></div>
+					<div class="col-md-5" id="pageInfo2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default sea-collapse" id="collapse3">
+			<div class="panel-heading">
+				<h3 class="panel-title">SmartMenus 方法</h3>
+			</div>
+			<div class="panel-body">
+				<ul id="seajPageItem3">
+					<li><p>
+						<strong>Global methods: <code>destroy</code>参数，说明：</strong>Destroys all menu instances initialized on the page and cleans up everything.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$.SmartMenus.destroy();</pre>
+						</p></li>
+					<li><p>
+						<strong>Global methods: <code>hideAll</code>参数，说明：</strong>Hides (resets) all sub menus of all menu instances on the page.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$.SmartMenus.hideAll();</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>blur</code>参数，说明：</strong>Use the native JavaScript method for any menu item's A element if you need. This will deactivate the item and hide any sub menus.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('a#myItem')[0].blur();</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>destroy</code>参数，说明：</strong>Destroys the menu instance and cleans up.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').smartmenus('destroy');</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>disable</code>参数，说明：</strong>Disables the menu and optionally displays a transparent overlay DIV over the main menu.
+						Arguments: <code>noOverlay</code>，Type: <code>Boolean</code>，Default value: <code>false</code>，If true is passed, no overlay will be displayed over the main menu.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+// disable the menu
+$('#main-menu').smartmenus('disable');
+
+// disable the menu but don't display an overlay over the main menu
+$('#main-menu').smartmenus('disable', true);</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>enable</code>参数，说明：</strong>Enable the menu after it has been disabled.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').smartmenus('enable');</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>focus</code>参数，说明：</strong>Use the native JavaScript method for any menu item's A element to send keyboard focus to it. Note that you may need to call itemActivate first to make sure the menu containing the item is visible when you try to focus it, otherwise the item might not be focused by the browser.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('a#myItem')[0].focus();</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>itemActivate</code>参数，说明：</strong>Activates any menu item. This will show its sub menu (if the item has a sub menu). If you want to also send keyboard focus to the item, you can additionally call the focus method.
+						Arguments: <code>$a</code>，Type: <code>jQuery</code>，The jQuery wrapped A element of the item you would like to activate.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+// activate the item
+$('#main-menu').smartmenus('itemActivate', $('a#myItem'));
+
+// activate the item and focus it
+$('#main-menu').smartmenus('itemActivate', $('a#myItem'));
+$('a#myItem')[0].focus();</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>menuHideAll</code>参数，说明：</strong>Hides (resets) all sub menus.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">$('#main-menu').smartmenus('menuHideAll');</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>popupHide</code>参数，说明：</strong>Hides any popup menu. A menu is a popup menu when the isPopup: true option is set. When isPopup: false the main menu is permanent (always visible) and cannot be hidden with this method.
+						Arguments: <code>noHideTimeout</code>，Type: <code>Boolean</code>，Default value: <code>false</code>，If true is passed, the menu will be hidden immediately, otherwise the hideTimeout option specifies the delay before hiding the popup menu.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+// hide a popup menu
+$('#popup-menu').smartmenus('popupHide');
+
+// hide a popup menu immediately without a delay
+$('#popup-menu').smartmenus('popupHide', true);</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>popupShow</code>参数，说明：</strong>Shows any popup menu. A menu is a popup menu when the isPopup: true option is set. When isPopup: false the main menu is permanent (always visible) and cannot be shown with this method.
+						Arguments:
+						<ol>
+							<li><code>left</code>，Type: <code>String</code>，Pass a value for the CSS left declaration to be set for the popup menu before it is shown.</li>
+							<li><code>top</code>，Type: <code>String</code>，Pass a value for the CSS top declaration to be set for the popup menu before it is shown.</li>
+						</ol>
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+// show the popup at left:100px;top:100px;
+$('#popup-menu').smartmenus('popupShow', '100px', '100px');
+
+// show the popup right below some target element
+var $targetElm = $('#targetElm'),
+    targetOffset = $targetElm.offset();
+$('#popup-menu').smartmenus('popupShow', targetOffset.left, targetOffset.top + $targetElm.outerHeight());</pre>
+						</p></li>
+					<li><p>
+						<strong>Instance methods: <code>refresh</code>参数，说明：</strong>Refreshes (re-initializes) the menu after any DOM operations have been applied - e.g. adding/removing items and sub menus or completely replacing the innerHTML of the root UL element.
+						<pre data-sea="seaSnippet" data-config="seaSnippet" data-option="language:'javascript'">
+var $menu = $('#main-menu');
+
+// append a new main menu item
+$menu.append('&lt;li&gt;&lt;a href=&quot;#&quot;&gt;New item&lt;/a&gt;&lt;/li&gt;');
+
+// add a sub menu with 3 items to the new main menu item
+$menu.children('li:last').append('&lt;ul&gt;\
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;New item&lt;/a&gt;&lt;/li&gt;\
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;New item&lt;/a&gt;&lt;/li&gt;\
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;New item&lt;/a&gt;&lt;/li&gt;\
+&lt;/ul&gt;');
+
+// refresh the menu after the DOM operations
+$menu.smartmenus('refresh');</pre>
+						</p></li>
+				</ul>
+				<div class="row mypagination">
+					<div class="col-md-5"><ul class="pagination" data-sea="jPage" data-option="startPage:1,perPage:5,legend:'pageInfo3',pageJump: 'select[name=pageJump3]',containerID: 'seajPageItem3'"></ul></div>
+					<div class="col-md-2"><select name="pageJump3" class="form-control"></select></div>
+					<div class="col-md-5" id="pageInfo3"></div>
+				</div>
+			</div>
+		</div>
+		<div class="bs-example">
+			<div class="bs-sidebar row">
+				<div class="col-md-12">
+					<ul data-sea="SmartMenus">
+						<li><a href="#">Item 1</a></li>
+						<li><a href="#">Item 2</a>
+							<ul>
+								<li><a href="#">Item 2-1</a></li>
+								<li><a href="#">Item 2-2</a></li>
+								<li><a href="#">Item 2-3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Item 3</a></li>
+					</ul>
+					<pre data-sea="seaSnippet" data-config="seaseaseaSnippet"></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

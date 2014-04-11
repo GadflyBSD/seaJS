@@ -1,0 +1,21 @@
+.sea-collapse {display: none;}
+.sea-collapse-in {display: block}
+
+ul.pagination[data-toggle="seajPage"]{
+	margin: 0;
+}
+[data-toggle="seajPage"] a {
+	font-size:12px;
+	cursor:pointer;
+}
+[data-toggle="seajPage"] a.jp-current,a.jp-current:hover {
+	color:#FF4242;
+	font-weight:bold;
+}
+[data-toggle="seajPage"] a.jp-disabled,a.jp-disabled:hover {
+	color:#bbb;
+}
+[data-toggle="seajPage"] a.jp-current,a.jp-current:hover, a.jp-disabled,a.jp-disabled:hover {
+	cursor:default;
+	background:none;
+}

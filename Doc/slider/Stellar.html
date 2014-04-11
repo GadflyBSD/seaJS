@@ -1,0 +1,89 @@
+<style>
+	[data-sea=seaStellar] {
+		background-attachment: fixed;
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		height: 450px;
+		position: relative;
+	}
+	[data-sea=seaStellar] span {
+		color: white;
+		top: 50%;
+		width: 100%;
+		font-size: 38px;
+		position: absolute;
+		text-shadow: 0 2px 0 black, 0 0 10px black;
+	}
+</style>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title">jQuery Stellar.js 视察滚动效果</h3>
+	</div>
+	<div class="panel-body">
+		<h3>关于</h3>
+		<p>正如它的口号所说：实现视差滚动效果从未如此容易，的确，它能帮助轻松的实现网页视差滚动效果。<br>
+			插件兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。<br>
+			插件自带有39种样式可以使用。</p>
+		<h3>通过HTML文档data属性</h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="seaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。通过 <code>sea-options</code>设置可选参数<br>
+			以下是可选参数：
+		<ul>
+			<li><code>target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
+			<li><code>language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
+			<li><code>style</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaseaseaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>showNum</code> 属性指定是否显示行号。默认是true；</li>
+			<li><code>collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，showMsg、hideMsg属性有效；</li>
+			<li><code>showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当collapse为true时有效，默认是“展开示例代码”；</li>
+			<li><code>hideMsg</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当collapse为true时有效，默认是“隐藏示例代码”。</li>
+		</ul>
+		</p>
+		<div class="bs-example">
+			<div class="row">
+				<div class="col-sm-12">
+					<div data-sea="seaStellar" href="images/slider/shelter.jpg">
+						<span class="text-center">Summer</span>
+					</div>
+					<div class="bs-sidebar sea-example">
+						<h4>为图片模块添加样式添加样式表</h4>
+						<pre data-sea="seaSnippet" data-option="style:'ide-eclipse',language:'css'">
+[data-sea=seaStellar] {
+	background-attachment: fixed;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	height: 450px;
+	position: relative;
+}</pre>
+					</div>
+					<div data-sea="seaStellar" href="images/slider/tree.jpg">
+						<span class="text-center">Autumn</span>
+					</div>
+					<div class="bs-sidebar sea-example">
+						<h4>为图片里的文字添加样式添加样式表</h4>
+						<pre data-sea="seaSnippet" data-option="style:'ide-eclipse',language:'css'">
+[data-sea=seaStellar] span {
+	color: white;
+	top: 50%;
+	width: 100%;
+	font-size: 38px;
+	position: absolute;
+	text-shadow: 0 2px 0 black, 0 0 10px black;
+}</pre>
+					</div>
+					<div data-sea="seaStellar" href="images/slider/road.jpg">
+						<span>Winter</span>
+					</div>
+					<div class="bs-sidebar sea-example">
+						<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;div data-sea=&quot;seaStellar&quot; href=&quot;images/slider/shelter.jpg&quot;&gt;
+	&lt;span class=&quot;text-center&quot;&gt;Summer&lt;/span&gt;
+&lt;/div&gt;</pre>
+					</div>
+					<div data-sea="seaStellar" href="images/slider/sea.jpg">
+						<span class="text-right">Spring</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
