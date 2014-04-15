@@ -357,10 +357,9 @@ define( function(require, exports, module) {
 						$.extend(config.messages, expandRules.messages);
 					}
 					$this.validate(config);
-					$this.on('focusin', 'input,select,textarea,iframe', function(){
-						$this.removeClass('error');
-						$this.closest('.form-group').removeClass('has-error has-success has-warning');
-						$this.closest('.input-group').removeClass('has-error has-success has-warning');
+					$('.form-group, .input-group', $this).on('focusin', function(){
+						$(this).removeClass('has-error has-success has-warning');
+						$(this).find('input,select,textarea,iframe').removeClass('error');
 					});
 				});
 			}
