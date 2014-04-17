@@ -53,7 +53,6 @@ seajs.config({
 		"SWFupload": "Upload/swfupload/swfupload",
 		"seaSWFupload": "Upload/swfupload/handlers",
 		"underscore": "Frame/underscore-min",
-		"zTreeCore": "zTree/jquery.ztree.core-3.5.min",
 		'poshytip': "Gallery/poshytip/jquery.poshytip.min",
 		'PopCircle': "Nav/PopCircle/jquery.popcircle.1.0",
 		'ClassySocial': "Nav/ClassySocial/jquery.classysocial",
@@ -80,7 +79,13 @@ seajs.config({
 		'seaCarouFredSel': "Other/jquery.custom-gallery",
 		'seaElastislide': "Other/jquery.custom-gallery",
 		'seaColorbox': "Other/jquery.custom-gallery",
-		'seaIconmenu': "Other/jquery.custom-gallery"
+		'seaIconmenu': "Other/jquery.custom-gallery",
+		"seaTree": "Effect/zTree/jquery.seaTree",
+		"zTreeCore": "Effect/zTree/jquery.ztree.core-3.5.min",
+		"zTreeExedit": "Effect/zTree/jquery.ztree.exedit-3.5.min",
+		"zTreeExcheck": "Effect/zTree/jquery.ztree.excheck-3.5.min",
+		"zTreeExhide": "Effect/zTree/jquery.ztree.exhide-3.5.min",
+		"zTreeAll": "Effect/zTree/jquery.ztree.all-3.5.min"
 	},
 	vars: {
 		locale: 'zh-CN',
