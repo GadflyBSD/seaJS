@@ -8,7 +8,7 @@ define(function(require, exports, module){
 		$.extend($, {
 			treeAddHoverDom: function(treeId, treeNode){
 				var sObj = $("#" + treeNode.tId + "_span"),
-					zTree = $.fn.zTree.getZTreeObj($(this).closest('ul.ztree').attr('id'));;
+					zTree = $.fn.zTree.getZTreeObj(sObj.closest('ul.ztree').attr('id'));
 				if (treeNode.editNameFlag || $("#"+treeNode.tId+"_add").length>0 || $("#"+treeNode.tId+"_display").length>0) return;
 				var showStr = "<span class='button display' id='"+treeNode.tId+"_display' title='查看节点信息'></span>",
 					addStr = "<span class='button add' id='"+treeNode.tId+"_add' title='添加新的节点'></span>";

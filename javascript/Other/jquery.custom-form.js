@@ -23,7 +23,7 @@ define(function(require, exports, module){
 			},
 			seaKindeditor: function(options){
 				var $this = $(this), config = {filterMode : true, allowFileManager : true, langPath: '/Form/kindeditor/lang/',
-					action: 'post', height: '300px', width: '670px', afterBlur: function(){this.sync();}};
+					action: 'post', height: '300px', width: '670px', afterBlur: function(){this.sync();}, htmls: '<b>fg</b>'};
 				require.async('kindeditor', function(KindEditor){
 					KindEditor.basePath = '..'+seajs.data.vars.jspath+'/Form/kindeditor/';
 					$.seaBase.run(config, options, function(config){

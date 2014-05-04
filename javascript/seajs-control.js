@@ -27,7 +27,7 @@ define(function(require, exports, module){
 					}
 					$.extend(options, (conf)?eval(optStr+'.'+conf):(typeof opti == 'object')?opti:{});
 					if($(dom).data('tmpl')){
-						if(typeof options.tmpl != 'object') config.tmpl= {};
+						if(typeof options.tmpl != 'object') options.tmpl= {};
 						try{
 							$.extend(options.tmpl, eval('({'+$(dom).data('tmpl')+'})'));
 						}catch(error){
@@ -38,7 +38,6 @@ define(function(require, exports, module){
 					}
 					if(typeof param == 'object') $.extend(options, param);
 					$(dom).seaModule(module, options);
-					//if($(dom).data('sea') == 'Dialog') 	console.log(options);
 				});
 			},
 			seaModule: function(){

@@ -26,6 +26,7 @@ define(function(require, exports, module){
 						else
 							var dialogForm = dialog(settings).show();
 						$('[dialog-id='+settings.id+']').seaLoad({dialog:dialogForm, object:dialog});
+						if(typeof settings.callback == 'function') settings.callback(dialogForm);
 					});
 				});
 				return false;
