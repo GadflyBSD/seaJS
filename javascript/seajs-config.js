@@ -87,8 +87,6 @@ seajs.config({
 		"zTreeAll": "Effect/zTree/jquery.ztree.all-3.5.min"
 	},
 	vars: {
-		locale: 'zh-CN',
-		base: '/Public/javascript/',
-		jspath: '/javascript'
+		locale: 'zh-CN'
 	}
 });

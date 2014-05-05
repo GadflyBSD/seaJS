@@ -22,7 +22,7 @@ define( function(require, exports, module) {
 			$(this).find('.city:eq(2)').empty().append('<select id="' + config.dist + '" name="' + config.dist + '" class="'+config.class+'" data-rule="所在区县:required"></select>');
 			if (config.cDefault == 0) $('#'+config.city).empty().hide();
 			if (config.dDefault == 0) $('#'+config.dist).empty().hide();
-			$.get('/Public/city.json', function(city){
+			$.get(seajs.data.base+'Json/city.json', function(city){
 				var data = $.Enumerable.From(city);
 				$.linq(data, 0, config.pDefault, config.province, '省份');
 				var upid = $('#'+config.province+' option:selected').attr('_value');

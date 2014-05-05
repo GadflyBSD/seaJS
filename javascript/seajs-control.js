@@ -25,7 +25,7 @@ define(function(require, exports, module){
 							$.extend(options, eval('('+$(dom).data('option')+')'));
 						}catch(error){}
 					}
-					$.extend(options, (conf)?eval(optStr+'.'+conf):(typeof opti == 'object')?opti:{});
+					$.extend(options, (conf)?eval(conf):(typeof opti == 'object')?opti:{});
 					if($(dom).data('tmpl')){
 						if(typeof options.tmpl != 'object') options.tmpl= {};
 						try{
