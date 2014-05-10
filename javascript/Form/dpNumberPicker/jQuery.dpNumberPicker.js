@@ -166,10 +166,11 @@ define( function(require, exports, module) {
 		};
 	};
 	$.fn.NumberPicker = function(options){
-		var $this = $(this), config = {style:'holoDark'};
-		config.css =  'Form/dpNumberPicker/css/jquery.dpNumberPicker.'+config.style+'.css';
+		var $this = $(this), config = {style:'plain'};
 		$.seaBase.run(config, options, function(settings){
-			$this.dpNumberPicker(settings);
+			require.async('Form/dpNumberPicker/css/jquery.dpNumberPicker.'+config.style+'.css', function(){
+				$this.dpNumberPicker(settings);
+			});
 		});
 	};
 }(jQuery));
