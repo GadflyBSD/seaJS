@@ -56,7 +56,7 @@ define(function(require, exports, module){
 							$(dom).append(prop);
 						});
 						if(config.number){
-							var requireFile = ['NumberPicker','dpNumberPicker/css/jquery.dpNumberPicker.plain.css'];
+							var requireFile = ['dpNumberPicker','dpNumberPicker/css/jquery.dpNumberPicker.plain.css'];
 							$(dom).append('<dl class="numberPicker"><dt>'+config.number+'</dt><dd></dd></dl>');
 							require.async(requireFile, function(){$(dom).find('.numberPicker>dd').dpNumberPicker({Name: config.numberInput, min:1, value:1});});
 						}

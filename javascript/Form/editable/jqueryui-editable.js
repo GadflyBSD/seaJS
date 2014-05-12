@@ -12,8 +12,8 @@ Editableform is linked with one of input types, e.g. 'text', 'select' etc.
 @uses textarea
 **/
 define( function(require, exports, module) {
-	require('Frame/ui/jquery.ui.button.min');
-	require('Frame/ui/jquery.ui.tooltip.min')
+	require('ui/jquery.ui.button.min');
+	require('ui/jquery.ui.tooltip.min')
 	require('Form/editable/css/jqueryui-editable.css');
 (function ($) {
     "use strict";

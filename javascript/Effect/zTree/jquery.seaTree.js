@@ -63,7 +63,7 @@ define(function(require, exports, module){
 							otherParam: { "type":"Category"},
 							url: "/Tool/getTreeJson"
 						},
-						css: 'Effect/zTree/zTreeStyle/zTreeStyle.css',
+						css: 'zTree/zTreeStyle/zTreeStyle.css',
 						expand: false,
 						id: 'seaTree_'+$.seaBase.mathRand()
 					};

@@ -14,16 +14,6 @@ define(function(require, exports, module){
 					});
 				});
 			},
-			seaPoshyTip: function(options){
-				var $this = $(this), config = {bgImageFrameSize: 11, offsetX: -25, className: 'darkgray', followCursor: true, slide: false};
-				config.className = $.seaBase.poshytipClass(config.className);
-				config.css = 'poshytip/css/'+options.className+'.css';
-				$.seaBase.run(config, options, function(config){
-					require.async(poshytip, function(){
-						$this.poshytip(config);
-					});
-				});
-			},
 			seaCarouFredSel: function(options){
 				var $this = $(this), config = {prev: '#prev', next: '#next', pagination: '#pager', scroll: 1000, height: '200px'};
 				$.seaBase.run(config, options, function(config){

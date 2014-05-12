@@ -9,7 +9,7 @@ define(function(require, exports, module){
 				var $this = $(this), config = {changeMonth: true, changeYear: true, dayNamesMin: ["日","一","二","三","四","五","六"],
 					monthNamesShort: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],
 					yearSuffix: " 年 ", showMonthAfterYear: !0, yearRange: "c-3:c+0", dateFormat: "yy年mm月dd日"};
-				require.async('Frame/ui/jquery.ui.datepicker.min', function(){
+				require.async('ui/jquery.ui.datepicker.min', function(){
 					$.seaBase.run(config, options, function(config){
 						if(typeof config.onSelect == 'function'){
 							config.onSelect = function(){
@@ -25,7 +25,7 @@ define(function(require, exports, module){
 				var $this = $(this), config = {filterMode : true, allowFileManager : true, langPath: '/Form/kindeditor/lang/',
 					action: 'post', height: '300px', width: '670px', afterBlur: function(){this.sync();}, htmls: '<b>fg</b>'};
 				require.async('kindeditor', function(KindEditor){
-					KindEditor.basePath = seajs.data.base+'Form/kindeditor/';
+					KindEditor.basePath = '..'+seajs.data.vars.jspath+'/Form/kindeditor/';
 					$.seaBase.run(config, options, function(config){
 						config.uploadJson = KindEditor.basePath+'php/upload_json.php?ac='+config.action;
 						config.fileManagerJson = KindEditor.basePath+'php/file_manager_json.php?ac='+options.action;
@@ -48,7 +48,7 @@ define(function(require, exports, module){
 			},
 			RadioCheckbox: function(options){
 				var $this = $(this);
-				require.async('Frame/ui/jquery.ui.button.min', function(){
+				require.async('ui/jquery.ui.button.min', function(){
 					$this.buttonset(options);
 				});
 			},
