@@ -47,16 +47,6 @@ define(function(require, exports, module){
 					});
 				});
 			},
-			seaPoshyTip: function(options){
-				var $this = $(this), config = {bgImageFrameSize: 11, offsetX: -25, className: 'darkgray', followCursor: true, slide: false};
-				config.className = $.seaBase.poshytipClass(config.className);
-				config.css = 'poshytip/css/'+options.className+'.css';
-				$.seaBase.run(config, options, function(config){
-					require.async('poshytip/jquery.poshytip.min', function(){
-						$this.poshytip(config);
-					});
-				});
-			},
 			Shake: function(options){
 				var $this = $(this), config = {direction: 'top', offset: '5px', speed: 800, easing: 'swing'};
 				function animUp() {

@@ -426,7 +426,7 @@ define( function(require, exports, module) {
 			}
 
 			var opts = $.extend({}, $.fn.poshytip.defaults, options);
-			require.async('Gallery/poshytip/css/'+opts.className+'.css', function(){
+			require.async('poshytip/css/'+opts.className+'.css', function(){
 				// generate CSS for this tip class if not already generated
 				if (!$('#poshytip-css-' + opts.className)[0])
 					$(['<style id="poshytip-css-',opts.className,'" type="text/css">',

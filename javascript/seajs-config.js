@@ -40,7 +40,7 @@ seajs.config({
 		jQCloud:            "Effect/jQCloud/jqcloud-1.0.4.min",
 		Anchor:             "Effect/jquery.custom-effect",
 		Collapse:           "Effect/jquery.custom-effect",
-		seaPoshyTip:        "Effect/jquery.custom-gallery",
+		poshytip:           "Effect/poshytip/jquery.poshytip.min",
 		Shake:              "Effect/jquery.custom-effect",
 		Confirm:            "Effect/jquery.custom-effect",
 		Turns:              "Effect/jquery.custom-effect",
@@ -96,8 +96,8 @@ seajs.config({
 	},
 	vars: {
 		locale:             'zh-CN',
-		base:               '/static/javascript/',
-		jspath:             '/static/javascript'
+		base:               'javascript/',
+		jspath:             'javascript'
 	},
 	paths:{
 		poshytip:           'Effect/poshytip',
