@@ -12,6 +12,7 @@ define( function(require, exports, module) {
 				oldpw: { required: true},
 				password: { required: true, password: true},
 				repasswd: { required: true, equalTo: "[name=password]" },
+				email: { required: true, email: true},
 				age:{required: true, range: [17,75]},
 				gender: { required: true},
 				idcardtype: { required: true},
@@ -46,6 +47,7 @@ define( function(require, exports, module) {
 				oldpw: '原始密码密码必须填写！',
 				password: { required:'登录密码必须填写！'},
 				repasswd: { required: '重复密码必须填写！', equalTo: '重复密码与新设定的密码不一致！'},
+				email: { required: '请输入电子邮箱地址', email: '请输入正确格式的电子邮件'},
 				age: {required: '年龄必须填写或选择！', range: '年龄必须在17岁至75岁范围之间！'},
 				gender: '性别必须选择！',
 				idcardtype: '证件类型必须选择！',
@@ -326,16 +328,16 @@ define( function(require, exports, module) {
 								message: '请等待，正在提交数据...',
 								type: 'info'
 							});
-							var data = $(form).serialize();
+							var formData = $(form).serialize();
 							if($(form).attr('method') == 'ajax'){
-								$.post($(form).attr('action'), data, function(note){
+								$.post($(form).attr('action'), formData, function(note){
 									mess.update({
 										message: note.msg,
 										type: note.type,
 										showCloseButton: true,
 										hideAfter: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5
 									});
-									if(config.callback && typeof config.callback == 'function'){ config.callback(data, note, mess);}
+									if(config.callback && typeof config.callback == 'function'){ config.callback(note, mess, formData);}
 									if(config.dialog && typeof config.dialog == 'object') config.dialog.close().remove();
 								});
 							}else{
