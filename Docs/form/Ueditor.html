@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>百度Editor编辑器展示</strong></h3>
+	</div>
+	<div class="panel-body">
+		<h3><strong>关于</strong></h3>
+		<p>UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码...。</p>
+		<h3><strong>通过HTML文档data属性</strong></h3>
+		<p>仅仅通过向页面元素添加<code>data-sea="eaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。<br>
+			以下是可选属性：
+		<ul>
+			<li><code>data-target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
+			<li><code>data-language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
+			<li><code>data-style</code> 属性接受一个Query插件seaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>data-clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>data-showNum</code> 属性指定是否显示行号。默认是true；</li>
+			<li><code>data-collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，data-showMsg、data-hideMsg属性有效；</li>
+			<li><code>data-showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“展开示例代码”；</li>
+			<li><code>data-hideMsg</code> 属性指定折叠代码时，关闭折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“隐藏示例代码”。</li>
+		</ul>
+		</p>
+		<div class="bs-example">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="Datepicker" class="col-sm-2 control-label"><strong>demo</strong> 演示日历组件</label>
+					<div class="col-sm-10" data-sea="Ueditor">
+						<script id="container" name="content" type="text/plain"></script>
+					</div>
+				</div>
+			</form>
+			<div class="bs-sidebar sea-example">
+				<pre data-sea="seaSnippet" data-config="seaSnippet">
+&lt;input type=&quot;text&quot; name=&quot;Datepicker&quot; placeholder=&quot;&#35831;&#36755;&#20986;&#24180;&#26376;&#26085;&quot; data-toggle=&quot;seaCalendar&quot;&gt;</pre>
+			</div>
+		</div>
+	</div>
+</div>

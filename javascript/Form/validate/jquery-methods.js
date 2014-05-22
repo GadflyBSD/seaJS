@@ -1,11 +1,20 @@
 /**
  * Created by Administrator on 14-2-25.
  */
-define( function(require, exports, module) {
+define(function(require, exports, module) {
 	var jQuery  = require('jquery'),
 		config = {
 			async: true,
 			callback: function(){},
+			poshytip: {
+				className: 'tip-yellowsimple',
+				showOn: 'focus',
+				alignTo: 'target',
+				alignX: 'right',
+				alignY: 'center',
+				offsetX: 5,
+				showTimeout: 100
+			},
 			rules: {
 				username: { required: true, byteRangeLength: [4,12]},
 				realname: { required: true, chinese: true },
@@ -245,8 +254,12 @@ define( function(require, exports, module) {
 				});
 			},
 			seaValidate: function(config){
-				var $this = $(this);
-				require.async(['messenger', 'validate'], function(){
+				var $this = $(this),
+					asyncFile = ['validate'];
+				if(config && config.notty == 'Classy') asyncFile.push('ClassyNotty');
+				else asyncFile.push('messenger');
+				require.async(asyncFile, function(){
+
 					$.validator.addMethod("byteRangeLength", function(value, element, param) {
 						var length = value.length;
 						for(var i = 0; i < value.length; i++){
@@ -315,28 +328,57 @@ define( function(require, exports, module) {
 						ignore: ".ignore,:hidden",
 						errorPlacement: function(error, element) {
 							$.map(error, function(msg){
-								$.globalMessenger().post({
-									message: '<b>'+$(msg).html()+'</b>',
-									type: 'error',
-									showCloseButton: true
-								});
+								if($.inArray('messenger', asyncFile) != '-1'){
+									$.globalMessenger().post({
+										message: '<b>'+$(msg).html()+'</b>',
+										type: 'error',
+										showCloseButton: true
+									});
+								}
+								if($.inArray('ClassyNotty', asyncFile) != '-1'){
+									$.ClassyNotty({
+										title: '<strong>表单字段验证错误：</strong>',
+										content: $(msg).html(),
+										showTime: false,
+										img: seajs.data.base+'Dialog/ClassyNotty/image/error.png',
+										timeout: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5000,
+									});
+								}
 							});
 							element.closest('.form-group, .input-group').addClass('has-error');
 						},
 						submitHandler: function(form){
-							var mess = $.globalMessenger().post({
-								message: '请等待，正在提交数据...',
-								type: 'info'
-							});
+							if($.inArray('messenger', asyncFile) != '-1'){
+								var mess = $.globalMessenger().post({
+									message: '请等待，正在提交数据...',
+									type: 'info'
+								});
+							}
+							if($.inArray('ClassyNotty', asyncFile) != '-1'){
+								$.ClassyNotty({
+									content: '请等待，正在提交数据...',
+									img: 'images/info.jpg',
+									timeout: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5000,
+								});
+							}
 							var formData = $(form).serialize();
 							if($(form).attr('method') == 'ajax'){
 								$.post($(form).attr('action'), formData, function(note){
-									mess.update({
-										message: note.msg,
-										type: note.type,
-										showCloseButton: true,
-										hideAfter: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5
-									});
+									if($.inArray('messenger', asyncFile) != '-1'){
+										mess.update({
+											message: note.msg,
+											type: note.type,
+											showCloseButton: true,
+											hideAfter: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5
+										});
+									}
+									if($.inArray('ClassyNotty', asyncFile) != '-1'){
+										$.ClassyNotty({
+											content: note.msg,
+											timeout: ($(form).attr('data-msgTime'))?$(form).attr('data-msgTime'):5000,
+											img: 'images/'+note.type+'.jpg'
+										});
+									}
 									if(config.callback && typeof config.callback == 'function'){ config.callback(note, mess, formData);}
 									if(config.dialog && typeof config.dialog == 'object') config.dialog.close().remove();
 								});

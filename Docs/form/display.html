@@ -5,17 +5,17 @@
 	<div class="panel-body">
 		<h3><strong>关于</strong></h3>
 		<p>在一些需要展示程序源码的地方，有时候需要代码语法高亮，以便方便浏览。<br>
-			jQuery插件seaseaseaSnippet是一个基于SHJS的用于程序源码语法高亮显示的插件。它提供了一种快速和简便的方式在HTML文档上对各种源码片段进行高亮显示。<br>
+			jQuery插件seaSnippet是一个基于SHJS的用于程序源码语法高亮显示的插件。它提供了一种快速和简便的方式在HTML文档上对各种源码片段进行高亮显示。<br>
 			插件兼容IE 6, IE 7, IE 8, FF 3.6, Chrome 6.0, Safari 5.0, Opera 10.62。<br>
 			插件自带有39种样式可以使用。</p>
 		<h3><strong>通过HTML文档data属性</strong></h3>
-		<p>仅仅通过向页面元素添加<code>data-sea="eaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。<br>
+		<p>仅仅通过向页面元素添加<code>data-sea="seaSnippet"</code> 就可以为其赋予代码语法高亮效果，以便方便浏览。<br>
 			以下是可选属性：
 		<ul>
 			<li><code>data-target</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出；</li>
 			<li><code>data-language</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是HTML；</li>
-			<li><code>data-style</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
-			<li><code>data-clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaseaseaSnippet/ZeroClipboard.swf，设定为flase则不显示剪切；</li>
+			<li><code>data-style</code> 属性接受一个Query插件seaSnippet代码语法高亮效果的样式文件名，默认是random（随机）；</li>
+			<li><code>data-clipboard</code> 属性接受一个剪切Flash控件的地址，默认是../SeaJS/seaSnippet/ZeroClipboard.swf，设定为false则不显示剪切；</li>
 			<li><code>data-showNum</code> 属性指定是否显示行号。默认是true；</li>
 			<li><code>data-collapse</code> 属性指定是否折叠代码，默认是false；当选择true时，data-showMsg、data-hideMsg属性有效；</li>
 			<li><code>data-showMsg</code> 属性指定折叠代码时，展开折叠显示的按钮显示的字样。当data-collapse为true时有效，默认是“展开示例代码”；</li>
@@ -29,7 +29,7 @@
 		<ul>
 			<li><code>changeMonth</code> 属性接受一个选择器，将选择器内的代码进行语法高亮输出，默认是true；</li>
 			<li><code>changeYear</code> 属性接受一个高亮显示的语言名称，高亮显示按该语言语法进行显示，默认是true；</li>
-			<li><code>dayNamesMin</code> 属性接受一个Query插件seaseaseaSnippet代码语法高亮效果的样式文件名，默认是“["日","一","二","三","四","五","六"]”；</li>
+			<li><code>dayNamesMin</code> 属性接受一个Query插件seaSnippet代码语法高亮效果的样式文件名，默认是“["日","一","二","三","四","五","六"]”；</li>
 			<li><code>monthNamesShort</code> 属性接受一个剪切Flash控件的地址，默认是“["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]”；</li>
 			<li><code>yearSuffix</code> 属性指定是否显示行号。默认是“ 年 ”；</li>
 			<li><code>showMonthAfterYear</code> 属性指定是否折叠代码，默认是“!0”；</li>
@@ -92,7 +92,7 @@
 			<form class="form-horizontal" role="form">
 				<div class="form-group">
 					<label class="col-sm-2 control-label">检测人性别：</label>
-					<div class="col-sm-9" data-sea="RadioCheckbox">
+					<div class="col-sm-9" data-sea="RadioCheckbox" placeholder="请选择检测人性别">
 						<input type="radio" id="gender1" name="gender"><label for="gender1"><i class="icon-user"></i> 男士</label>
 						<input type="radio" id="gender2" name="gender"><label for="gender2"><i class="icon-girl"></i> 女士</label>
 					</div>
@@ -144,7 +144,7 @@
 						<span class="input-group-addon"><b>验&nbsp证&nbsp码</b></span>
 						<input class="form-control" id="formVdcode" type="text" name="vdcode" placeholder="填入验证码" />
 						<span class="input-group-addon" style="padding: 1px 12px;">
-							<img title='刷新验证码' src='/Tool/verifyImg' data-sea="VerifyImg" />
+							<!--<img title='刷新验证码' src='/Tool/verifyImg' data-sea="VerifyImg" />-->
 						</span>
 					</div>
 				</div>

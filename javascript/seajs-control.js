@@ -39,6 +39,7 @@ define(function(require, exports, module){
 					if(typeof param == 'object') $.extend(options, param);
 					$(dom).seaModule(module, options);
 				});
+				$.seaPoshytip($(this));
 			},
 			seaModule: function(){
 				var module = (typeof arguments[0] == 'string')?arguments[0]:'alert',
@@ -152,6 +153,30 @@ define(function(require, exports, module){
 				require.async(module, function(){
 					$.extend($, {seaFunction: eval('$.'+module)});
 					$.seaFunction(option);
+				});
+			},
+			seaPoshytip: function(param){
+				var poshytip = {
+					className: 'tip-yellowsimple',
+					showOn: 'focus',
+					alignTo: 'target',
+					alignX: 'right',
+					alignY: 'center',
+					offsetX: 5,
+					showTimeout: 100
+				};
+				$('input, select, textarea', param).each(function(index, dom){
+					if($(dom).attr('placeholder')) poshytip.content = $(dom).attr('placeholder');
+					else if($(dom).attr('title')) poshytip.content = $(dom).attr('title');
+					else poshytip.content = undefined;
+					if(typeof poshytip.content != undefined){
+						if($(dom).is('select')){
+							poshytip.showOn = 'hover';
+						}
+						require.async('poshytip', function(){
+							$(dom).poshytip(poshytip);
+						});
+					}
 				});
 			}
 		});

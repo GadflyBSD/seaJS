@@ -47,7 +47,26 @@ define(function(require, exports, module){
 				});
 			},
 			RadioCheckbox: function(options){
-				var $this = $(this);
+				var $this = $(this),
+					poshytip = {
+					className: 'tip-yellowsimple',
+					showOn: 'hover',
+					alignTo: 'target',
+					alignX: 'right',
+					alignY: 'center',
+					offsetX: 10,
+					showTimeout: 100
+				};
+				if($this.attr('placeholder')) poshytip.content = $this.attr('placeholder');
+				else if($this.attr('title')) poshytip.content = $this.attr('title');
+				else poshytip.content = undefined;
+				if(typeof poshytip.content != undefined){
+					require.async('poshytip', function(){
+						var html = $this.html();
+						$this.empty().append('<span>'+html+'</span>');
+						$('span', $this).poshytip(poshytip);
+					});
+				}
 				require.async('ui/jquery.ui.button.min', function(){
 					$this.buttonset(options);
 				});
@@ -82,7 +101,7 @@ define(function(require, exports, module){
 						$(ele).bootstrapSwitch(config);
 					});
 				});
-			}
+			},
 		});
 	}(jQuery));
 	return jQuery;
